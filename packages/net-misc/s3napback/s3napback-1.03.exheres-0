@@ -27,9 +27,9 @@ BUGS_TO="jedahan@gmail.com"
 WORK="${WORKBASE}/${PN}"
 
 src_install() {
-    dodir /usr/local/{bin,${PN}}
-    insinto /usr/local/${PN}
+    dodir /opt/${PN}
+    insinto /opt/${PN}
     doins *
-    dosym /usr/local/${PN}/s3napback.pl /usr/bin/s3napback
+    dosym /opt/${PNV/s3napback.pl /usr/bin/s3napback
 }
 

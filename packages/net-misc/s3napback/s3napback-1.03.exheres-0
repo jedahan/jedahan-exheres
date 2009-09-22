@@ -30,6 +30,6 @@ src_install() {
     dodir /opt/${PN}
     insinto /opt/${PN}
     doins *
-    dosym /opt/${PNV/s3napback.pl /usr/bin/s3napback
+    dosym /opt/${PNV}/s3napback.pl /usr/bin/${PN}
 }
 

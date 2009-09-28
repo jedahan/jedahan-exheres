@@ -3,23 +3,27 @@
 # Based on chromium-bin-9999.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-require eutils multilib chromium-bin
+require chromium-bin multilib
 
 DOWNLOADS=""
 
-PLATFORMS="~amd64"
+PLATFORMS="~amd64 ~x86"
+
 MY_PV=`curl -s ${BUILDBOT}/LATEST`
 
-DEPEDENCIES="${DEPENDENCIES}
+RESTRICT="strip"
+
+DEPEDENCIES+="
     build:
         net-misc/curl
 "
 
 src_fetch_extra() {
     if option platform:amd64; then
-        BUILDBOT="${BUILDBOT}-64"
+        BUILDBOT+="-64"
     fi
     if [ ! -f "${FETCHEDDIR}"/${PN}-${MY_PV}.zip ]; then
+        einfo "Fetching chromium snapshot ${MY_PV}"
         curl -o "${FETCHEDDIR}"/${PN}-${MY_PV}.zip ${BUILDBOT}/${MY_PV}/chrome-linux.zip
     fi
 }

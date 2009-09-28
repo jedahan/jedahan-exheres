@@ -1,0 +1,29 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based on chromium-bin-9999.ebuild', which is:
+#   Copyright 1999-2009 Gentoo Foundation
+
+require eutils multilib chromium-bin
+
+DOWNLOADS=""
+
+PLATFORMS="~amd64"
+MY_PV=`curl -s ${BUILDBOT}/LATEST`
+
+DEPEDENCIES="${DEPENDENCIES}
+    build:
+        net-misc/curl
+"
+
+src_fetch_extra() {
+    if option platform:amd64; then
+        BUILDBOT="${BUILDBOT}-64"
+    fi
+    if [ ! -f "${FETCHEDDIR}"/${PN}-${MY_PV}.zip ]; then
+        curl -o "${FETCHEDDIR}"/${PN}-${MY_PV}.zip ${BUILDBOT}/${MY_PV}/chrome-linux.zip
+    fi
+}
+
+src_unpack() {
+    unpack ${PN}-${MY_PV}.zip
+}

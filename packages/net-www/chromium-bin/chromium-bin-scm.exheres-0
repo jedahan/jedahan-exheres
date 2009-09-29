@@ -5,7 +5,7 @@
 # Based in part upon 'chromium.exlib', which is:
 #   Copyright 2009 Heiko Przybyl <zuxez@cs.tu-berlin.de>
 
-require alternatives
+require alternatives multilib
 
 SUMMARY="The open-source project behind Google Chrome"
 DESCRIPTION="

@@ -1,7 +1,7 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-SCM_REPOSITORY="http://hg.scrapping.cc/subtle/"
+SCM_REPOSITORY="http://hg.scrapping.cc/${PN}/"
 SCM_BRANCH="trunk"
 
 require scm-hg
@@ -13,10 +13,12 @@ handling and look and feel. Semi-automatic tiling means that there is no layout 
 general rule: Clients can freely be arranged in different positions of a variable grid.
 "
 
-HOMEPAGE="http://unexist.scrapping.cc/projects/subtle/"
+HOMEPAGE="http://unexist.scrapping.cc/projects/${PN}"
 DOWNLOADS=""
 
 BUGS_TO="jedahan@gmail.com"
+UPSTREAM_CHANGELOG="${HOMEPAGE}/repository/revisions/"
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}/wiki/"
 
 LICENCES="GPL-2"
 SLOT="0"
@@ -29,11 +31,6 @@ DEPENDENCIES="
         x11-libs/libX11
 "
 
-src_prepare() {
-    default
-    sed -i -e 's/-Werror//' "${WORK}"/Rakefile
-}
-
 src_compile() {
     rake destdir="${IMAGE}"
 }
@@ -41,5 +38,6 @@ src_compile() {
 src_install() {
     rake install
     emagicdocs
+    keepdir /usr/share/${PN}/sublets
 }
 

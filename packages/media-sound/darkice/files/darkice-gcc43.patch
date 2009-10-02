@@ -1,0 +1,14 @@
+  Reason: Missing header
+  Source: Gentoo 
+Upstream: no
+--- darkice-0.19/src/JackDspSource.cpp
++++ darkice-0.19/src/JackDspSource.cpp
+@@ -31,6 +31,8 @@
+ 
+ /* ============================================================ include files */
+ 
++#include <climits>
++
+ #include "AudioSource.h"
+ 
+ #ifdef SUPPORT_JACK_DSP

@@ -16,15 +16,10 @@ LICENCES="as-is"
 SLOT="0"
 PLATFORMS="~amd64"
 
-src_unpack() {
-    default
-    chmod +x NaDa_0.5
-    ln -s NaDa_0.5 nada
-    mkdir "${WORK}"
-    mv NaDa_0.5 nada "${WORK}"
-}
+WORK=${WORKBASE}
 
 src_install(){
-    dobin NaDa_0.5 nada
+    insinto /usr/share/${PN}
+    doins NaDa_0.5
 }
 

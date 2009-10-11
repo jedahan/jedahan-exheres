@@ -15,8 +15,7 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    build+run:
-        x11-libs/libsexy[>=${PV}]
-        gnome-bindings/pygtk[>=2.6.2]
+    x11-libs/libsexy[>=${PV}]
+    gnome-bindings/pygtk[>=2.6.2]
 "
 

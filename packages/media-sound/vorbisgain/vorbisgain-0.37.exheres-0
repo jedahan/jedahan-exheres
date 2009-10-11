@@ -17,9 +17,8 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    build+run:
-        media-libs/libvorbis[>=1]
-    	media-libs/libogg
+    media-libs/libvorbis[>=1]
+    media-libs/libogg
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --enable-recursive )

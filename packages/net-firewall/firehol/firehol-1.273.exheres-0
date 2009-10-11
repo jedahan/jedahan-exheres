@@ -27,8 +27,7 @@ PLATFORMS="~amd64"
 SLOT="0"
 
 DEPENDENCIES="
-    build+run:
-        sys-apps/iproute2
+    sys-apps/iproute2
     run:
         net-firewall/iptables
 "

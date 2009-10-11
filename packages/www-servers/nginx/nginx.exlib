@@ -17,15 +17,15 @@ UPSTREAM_DOCUMENTATION="http://wiki.${PN}.org/"
 MYOPTIONS="addition debug fastcgi flv imap pcre perl random-index status sub webdav zlib"
 
 DEPENDENCIES="
-    build+run:
-        user/${PN}
-        group/${PN}
-        pcre? ( dev-libs/pcre )
-        dev-libs/openssl [[
-            description = [ newer nginx versions are very broken without it ]
-        ]]
-        zlib? ( sys-libs/zlib )
-        perl? ( dev-lang/perl )"
+    user/${PN}
+    group/${PN}
+    dev-libs/openssl [[
+        description = [ newer nginx versions are very broken without it ]
+    ]]
+    pcre? ( dev-libs/pcre )
+    perl? ( dev-lang/perl )
+    zlib? ( sys-libs/zlib )
+"
 
 option_with_no_inverse() {
     option "${1}" && option_with ${1#!} ${2}

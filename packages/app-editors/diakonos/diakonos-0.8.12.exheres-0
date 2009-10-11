@@ -20,8 +20,7 @@ LICENCES="MIT"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    build+run:
-        dev-lang/ruby[>=1.9]
+    dev-lang/ruby[>=1.9]
 "
 
 src_install() {

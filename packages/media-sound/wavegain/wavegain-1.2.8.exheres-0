@@ -22,10 +22,9 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
+    media-libs/libsndfile
     build:
         app-arch/unzip
-    build+run:
-        media-libs/libsndfile
 "
 
 WORK=${WORKBASE}/${PNV/wavegain/WaveGain}

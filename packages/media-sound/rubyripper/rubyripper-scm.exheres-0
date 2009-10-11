@@ -26,11 +26,12 @@ DEPENDENCIES="
         mp3? ( media-sound/lame )
         flac? ( media-libs/flac )
         ogg? ( media-sound/vorbis-tools )
-    suggested,run:
+    recommendation:
         dev-ruby/gettext
         media-sound/cd-discid
         media-sound/normalize
         media-sound/vorbisgain
+    suggestion:
         media-sound/wavegain
 "
 # build: gtk? ( dev-ruby/gtk )

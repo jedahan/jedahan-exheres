@@ -45,9 +45,10 @@ MYOPTIONS=" platform:x86 [[ requires = [ x86_cpu_features: sse2 ] ]]
             amd64_cpu_features: sse2"
 
 DEPENDENCIES="
+    fetch:
+        net-misc/curl
     build:
         app-arch/unzip
-        net-misc/curl
     run:
         gnome-platform/GConf
         media-fonts/corefonts

@@ -19,10 +19,7 @@ MYOPTIONS=""
 
 REMOTE_IDS="sourceforge:pam-ssh"
 
-DEPENDENCIES="
-    build+run:
-        sys-libs/pam
-"
+DEPENDENCIES="sys-libs/pam"
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --with-pam-dir=$(getpam_mod_dir) )
 

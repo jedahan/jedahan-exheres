@@ -15,8 +15,7 @@ PLATFORMS="~amd64"
 SLOT="0"
 
 DEPENDENCIES="
-    build+run:
-        media-libs/libpng
+    media-libs/libpng
 "
 
 src_install() {

@@ -15,9 +15,8 @@ PLATFORMS="~amd64"
 SLOT="0"
 
 DEPENDENCIES="
-    build+run:
-        !app-text/pastie
     run:
+        !app-text/pastie
         dev-lang/ruby
 "
 

@@ -21,7 +21,7 @@ DEPENDENCIES="
     gnome-desktop/gtksourceview[>=2.3]
     build:
 	    doc? (
-		    dev-util/gtk-doc[>=1.10]
+		    dev-doc/gtk-doc[>=1.10]
     		dev-libs/libxslt
     		app-text/docbook-xml-dtd[>=4.1.2]
     		app-text/docbook-xsl-stylesheets[>=1.70.1] )

@@ -47,7 +47,6 @@ DEPENDENCIES="
 "
 
 DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'X xsel' 'nls gettext' )
-DEFAULS_SRC_CONFIGURE_PARAMS=( --docdir=/usr/share/doc/${PNVR} )
 
 src_install() {
     dodoc ChangeLog

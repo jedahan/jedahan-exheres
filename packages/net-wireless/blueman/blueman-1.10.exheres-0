@@ -1,0 +1,67 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part upon 'blueman-1.10.ebuild', which is:
+#   Copyright 1999-2009 Gentoo Foundation
+
+require multilib python
+
+SUMMARY="GTK+ Bluetooth Manager, designed to be simple and intuitive for everyday bluetooth tasks."
+HOMEPAGE="http://blueman-project.org/"
+DOWNLOADS="http://download.tuxfamily.org/${PN}/${PNV}.tar.gz"
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="gnome network nls"
+
+DEPENDENCIES="
+    dev-libs/glib:2
+	x11-libs/gtk+:2
+	x11-libs/startup-notification
+	dev-lang/python[>=2.5]
+	gnome-bindings/pygobject
+	net-wireless/bluez
+    nls? ( 
+        dev-util/intltool
+        sys-devel/gettext )
+    dev-python/Pyrex[>=0.9.8]
+run:
+	net-wireless/obex-data-server[>=0.4.4]
+	gnome-desktop/PolicyKit-gnome
+	x11-apps/notification-daemon
+	sys-apps/dbus
+	gnome-bindings/pygtk
+	dev-python/notify-python
+	dev-python/dbus-python
+	gnome? ( gnome-bindings/gnome-python[gconf] )
+    network? ( || ( net-misc/dnsmasq
+                    net-apps/dhcp ) )
+"
+
+src_prepare() {
+    # disable pyc compiling
+    rm py-compile
+    ln -s $(type -P true) py-compile
+}
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'nls' )
+DEFAULT_SRC_CONFIGURE_PARAMS=( --with-no-runtime-deps-check )
+
+src_install() {
+    default
+
+    if ! option gnome ; then
+        python_version
+        rm "${IMAGE}/usr/$(get_libdir)/python${PYVER}/site-packages/blueman/plugins/config/Gconf.py"
+    fi
+
+    python_need_rebuild
+}
+
+pkg_postinst() {
+    python_version
+    python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/blueman
+}
+
+pkg_postrm() {
+    python_mod_cleanup
+}

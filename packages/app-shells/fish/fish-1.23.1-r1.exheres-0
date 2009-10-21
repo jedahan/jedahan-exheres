@@ -1,8 +1,6 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require eutils
-
 SUMMARY="Friendly Interactive SHell"
 DESCRIPTION="
 The friendly interactive shell (fish) is a Unix shell which focuses on interactive use, discoverability, and user friendliness. The design goal of fish is to give the user a rich set of powerful features in a way that is easy to discover, remember, and use.

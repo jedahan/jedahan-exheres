@@ -1,0 +1,32 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part upon 'powertop-1.11.exheres-0', which is:
+#   Copyright 2008 Mike Kelly
+
+SCM_REPOSITORY="git://git.moblin.org/${PN}"
+require scm-git
+
+SUMMARY="a tool for reducing power usage"
+DESCRIPTION="
+Computer programs can make your computer use more power. PowerTOP is a
+Linux tool that helps you find those programs that are misbehaving while
+your computer is idle.
+"
+HOMEPAGE="http://www.lesswatts.org/projects/powertop/"
+DOWNLOADS="http://www.lesswatts.org/projects/powertop/download/${PNV}.tar.gz"
+
+SLOT="0"
+PLATFORMS="~amd64"
+DOWNLOADS=""
+MYOPTIONS=""
+
+LICENCES="GPL-2"
+
+DEPENDENCIES=""
+
+BUGS_TO="jedahan@gmail.com"
+
+REMOTE_IDS="freshmeat:powertop"
+
+UPSTREAM_CHANGELOG="http://freshmeat.net/redir/powertop/69680/url_changelog/Changelog"
+

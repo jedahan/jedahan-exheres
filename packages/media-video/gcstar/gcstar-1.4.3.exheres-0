@@ -1,0 +1,66 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome-2
+
+SUMMARY="A personal collections manager"
+HOMEPAGE="http://www.${PN}.org/"
+DOWNLOADS="http://download.gna.org/${PN}/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+LANGS="ar bg ca cs de el en es fr gl hu id it nl pl pt ro ru sr sv tr uk"
+MYOPTIONS="cddb gnome mp3 spell tellico vorbis
+        linguas: ${LANGS}"
+
+DEPENDENCIES="
+    dev-lang/perl
+    dev-perl/Archive-Zip
+    dev-perl/IO-Compress
+    dev-perl/Gtk2-Perl
+    dev-perl/HTML-Parser
+    dev-perl/URI
+    dev-perl/File-Temp
+    dev-perl/Time-Piece
+    dev-perl/libnet
+    cddb?  ( dev-perl/Net-FreeDB )
+    gnome? ( dev-perl/gnome2-vfs-perl )
+    spell? ( dev-perl/gtk2-spell )
+    tellico? ( 
+        dev-perl/Digest-MD5
+	    dev-perl/MIME-Base64 )
+"
+    #vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )
+    #mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
+    #dev-perl/File-Spec
+    #dev-perl/XML-LibXML
+
+WORK="${WORKBASE}/${PN}"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PN}-1.4.0-man.patch" )
+
+src_prepare() {
+    default
+    # Remove unused languages
+    for lang in ${LANGS}; do
+        if ! option linguas:${lang}; then
+            rm -rf "${WORK}"/lib/${PN}/GCLang/$(echo ${lang} | tr '[:lower:]' '[:upper:]')
+        fi
+    done
+}
+
+src_compile() {
+    :
+}
+
+src_install() {
+    # TODO: edo
+    ./install --noclean --nomenu --prefix="${IMAGE}"/usr
+#    domenu share/applications/gcstar.desktop
+#    newicon share/gcstar/icons/gcstar_64x64.png gcstar.png
+    insinto /usr/share/mime/packages
+    doins share/applications/gcstar.xml
+
+}
+

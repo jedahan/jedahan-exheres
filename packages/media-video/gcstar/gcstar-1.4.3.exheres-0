@@ -55,12 +55,15 @@ src_compile() {
 }
 
 src_install() {
-    # TODO: edo
-    ./install --noclean --nomenu --prefix="${IMAGE}"/usr
-#    domenu share/applications/gcstar.desktop
-#    newicon share/gcstar/icons/gcstar_64x64.png gcstar.png
-    insinto /usr/share/mime/packages
-    doins share/applications/gcstar.xml
+    edo ./install --noclean --nomenu --prefix="${IMAGE}"/usr
 
+    # TODO: patch install to honor prefix in installDesktop
+    insinto /usr/share/pixmaps
+    edo mv share/gcstar/icons/{${PN}_64x64,${PN}}.png
+    doins share/gcstar/icons/${PN}.png
+    insinto /usr/share/applications
+    doins share/applications/${PN}.desktop
+    insinto /usr/share/mime/packages
+    doins share/applications/${PN}.xml
 }
 

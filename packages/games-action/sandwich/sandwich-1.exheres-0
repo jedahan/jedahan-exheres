@@ -15,9 +15,7 @@ PLATFORMS="~amd64"
 WORK="${WORKBASE}"
 
 src_install() {
-    insinto /usr/local/bin
-    dobin "${FILES}/make"
-    cp "${FILES}"/Makefile "${WORK}/"
-    dodoc Makefile
+    dobin "${FILES}"/make_me_a_sandwich
+    dodoc "${FILES}"/Makefile
 }
 

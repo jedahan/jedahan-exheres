@@ -4,7 +4,7 @@
 # TODO: DEPENDENCIES+=( kernel: TABLET_USB_WACOM)
 # TODO: Add modules option
 
-require eutils autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.10 ] ]
+require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.10 ] ]
 
 MY_PV=${PV/_p/-}
 MY_PNV=${PN}-${MY_PV}

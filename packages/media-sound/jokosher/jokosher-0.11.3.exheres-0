@@ -3,7 +3,7 @@
 # Based upon 'jokosher-0.11.1.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-require eutils gnome-2 distutils [ python_dep=2.4 ]
+require gnome-2 distutils [ python_dep=2.4 ]
 
 SUMMARY="A simple yet powerful multi-track studio"
 DESCRIPTION="${SUMMARY}"

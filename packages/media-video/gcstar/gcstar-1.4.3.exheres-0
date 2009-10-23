@@ -11,31 +11,33 @@ LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
 LANGS="ar bg ca cs de el en es fr gl hu id it nl pl pt ro ru sr sv tr uk"
-MYOPTIONS="cddb gnome mp3 spell tellico vorbis
+MYOPTIONS="util 
         linguas: ${LANGS}"
 
 DEPENDENCIES="
     dev-lang/perl
     dev-perl/Archive-Zip
-    dev-perl/IO-Compress
+    dev-perl/File-Temp
+    dev-perl/File-Spec
     dev-perl/Gtk2-Perl
     dev-perl/HTML-Parser
-    dev-perl/URI
-    dev-perl/File-Temp
-    dev-perl/Time-Piece
+    dev-perl/IO-Compress
     dev-perl/libnet
+    dev-perl/Time-Piece
+    dev-perl/URI
+    dev-perl/XML-LibXML
+
     cddb?  ( dev-perl/Net-FreeDB )
-    gnome? ( dev-perl/gnome2-vfs-perl )
-    spell? ( dev-perl/gtk2-spell )
+    gnome?  ( dev-perl/Gnome2-VFS )
+    mp3?  ( dev-perl/MP3-Info
+              dev-perl/MP3-Tag  )
+    spell? ( dev-perl/Gtk2-Spell )
     tellico? ( 
         dev-perl/Digest-MD5
 	    dev-perl/MIME-Base64 )
+    util?  ( dev-perl/DateTime-Format-Strptime )
+    vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )
 "
-    #vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )
-    #mp3? ( dev-perl/MP3-Info dev-perl/MP3-Tag )
-    #dev-perl/File-Spec
-    #dev-perl/XML-LibXML
-
 WORK="${WORKBASE}/${PN}"
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PN}-1.4.0-man.patch" )

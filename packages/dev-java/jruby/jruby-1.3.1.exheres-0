@@ -16,6 +16,7 @@ DEPENDENCIES="
     build:
         dev-java/apache-ant[>=1.7]
     run:
+        virtual/jre
         dev-lang/ruby[>=1.9]
 "
 

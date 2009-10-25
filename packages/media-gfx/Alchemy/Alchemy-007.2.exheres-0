@@ -16,8 +16,7 @@ SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
 
-# TODO: run: java-jre
-DEPENDENCIES=""
+DEPENDENCIES="virtual/jre"
 
 BUGS_TO="jedahan@gmail.com"
 

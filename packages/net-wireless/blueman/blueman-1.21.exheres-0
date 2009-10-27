@@ -11,30 +11,31 @@ DOWNLOADS="http://download.tuxfamily.org/${PN}/${PNV}.tar.gz"
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS="gnome network nls"
+MYOPTIONS="gnome policykit pulseaudio"
 
 DEPENDENCIES="
-    dev-libs/glib:2
-	x11-libs/gtk+:2
-	x11-libs/startup-notification
 	dev-lang/python[>=2.5]
 	gnome-bindings/pygobject
-	net-wireless/bluez
-    nls? ( 
-        dev-util/intltool
-        sys-devel/gettext )
+	net-wireless/bluez[>=4.25]
+
+build:
+    dev-libs/glib:2
+	x11-libs/gtk+:2[>=2.14]
+	x11-libs/startup-notification
+    dev-util/intltool
     dev-python/Pyrex[>=0.9.8]
+
 run:
-	net-wireless/obex-data-server[>=0.4.4]
-	gnome-desktop/PolicyKit-gnome
-	x11-apps/notification-daemon
-	sys-apps/dbus
-	gnome-bindings/pygtk
-	dev-python/notify-python
 	dev-python/dbus-python
-	gnome? ( gnome-bindings/gnome-python[gconf] )
-    network? ( || ( net-misc/dnsmasq
-                    net-apps/dhcp ) )
+	dev-python/notify-python
+	gnome-bindings/pygtk
+	sys-apps/dbus
+	net-wireless/obex-data-server[>=0.4.3]
+    virtual/notification-daemon
+
+	gnome? ( gnome-bindings/gnome-python[gconf] ) 
+    policykit? ( gnome-desktop/PolicyKit-gnome )
+    pulseaduio? ( media-sound/pulseaudio[>=9.15] ) 
 "
 
 src_prepare() {
@@ -43,8 +44,7 @@ src_prepare() {
     ln -s $(type -P true) py-compile
 }
 
-DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'nls' )
-DEFAULT_SRC_CONFIGURE_PARAMS=( --with-no-runtime-deps-check )
+DEFAULT_SRC_CONFIGURE_PARAMS=( --with-no-runtime-deps-check --enable-nls )
 
 src_install() {
     default

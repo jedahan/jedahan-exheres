@@ -7,14 +7,7 @@
 
 require chromium-bin alternatives multilib
 
-SLOT="${PV}"
+SLOT="${PV//_p*/}"
 PLATFORMS="~amd64 ~x86"
 
-MY_PV=`curl -s ${BUILDBOT}/LATEST`
-
-DEPENDENCIES="
-    fetch:
-        net-misc/curl
-    ${DEPENDENCIES}
-"
-
+MY_PV="${PV//*_p/}"

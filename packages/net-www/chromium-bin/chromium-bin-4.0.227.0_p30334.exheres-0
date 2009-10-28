@@ -52,7 +52,7 @@ DEPENDENCIES="
         app-arch/unzip
     run:
         gnome-platform/GConf
-        media-fonts/corefonts
+        fonts/corefonts
         sys-sound/alsa-lib[>=1.0.19]
         sys-devel/gcc[>=4.2]
         dev-libs/nspr[>=4.7]

@@ -18,6 +18,10 @@ DOWNLOADS=""
 BUGS_TO="jedahan@gmail.com"
 UPSTREAM_DOCUMENTATION="http://dev.chromium.org/"
 
+SLOT="${PV//_p*/}"
+MY_PV="${PV//*_p/}"
+PLATFORMS="~amd64 ~x86"
+
 BUILDBOT="http://build.chromium.org/buildbot/snapshots/chromium-rel-linux"
 
 RESTRICT="strip"
@@ -112,13 +116,6 @@ src_install() {
 
 pkg_postinst() {
     alternatives_pkg_postinst
-
-    einfo "Make sure to have shm-support turned on and properly mounted"
-    einfo "/dev/shm, otherwise chromium will probably crash at launch."
-    einfo
-    einfo "To enable experimental plugin support you will have to"
-    einfo "properly set up the environment variable MOZ_PLUGIN_PATH"
-    einfo "and launch chromium with the option --enable-plugins."
 }
 
 chromium_do_wrapper() {

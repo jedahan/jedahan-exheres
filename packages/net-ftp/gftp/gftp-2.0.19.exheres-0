@@ -1,0 +1,26 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="gtk+ FTP Client"
+HOMEPAGE="http://www.gftp.org"
+DOWNLOADS="${HOMEPAGE}/${PNV}.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+MYOPTIONS="gtk ssl"
+
+DEPENDENCIES="
+    dev-libs/glib:2
+    sys-devel/gettext
+	sys-libs/ncurses
+	sys-libs/readline
+	gtk? ( x11-libs/gtk+:2 )
+	ssl? ( dev-libs/openssl )
+"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-expand-path-sigsegv.patch" )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'gtk gtkport' 'ssl' )
+DEFAULT_SRC_INSTALL_EXTRA_DOCS=( 'docs/USERS-GUIDE' )
+

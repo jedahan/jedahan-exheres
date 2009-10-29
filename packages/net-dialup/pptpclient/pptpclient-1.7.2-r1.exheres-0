@@ -1,6 +1,8 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+require toolchain-funcs
+
 SUMMARY="Linux client for PPTP"
 DESCRIPTION="
 PPTP Client is a Linux, FreeBSD, NetBSD and OpenBSD client for the proprietary Microsoft Point-to-Point Tunneling Protocol, PPTP. Allows connection to a PPTP based Virtual Private Network (VPN).
@@ -25,6 +27,16 @@ DEPENDENCIES="
 WORK="${WORKBASE}/pptp-${PV}"
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-ip-path.patch" )
+DEFAULT_SRC_COMPILE_PARAMS=( CC=$(tc-getCC) )
+
+src_prepare() {
+    default
+
+    sed -e "/^OPTIMIZE=/s:.*:& ${CFLAGS}:" \
+        -e "/^LDFLAGS\t=/s:.*:& ${LDFLAGS}:" \
+        -e "/^DEBUG\t=/s:.*::" \
+        -i Makefile || die "sed Makefile failed"
+}
 
 src_install() {
     default

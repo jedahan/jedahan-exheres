@@ -24,7 +24,7 @@ DOWNLOADS="${HOMEPAGE}/files/${PV}/${PNV}.tar.bz2"
 BUGS_TO="jedahan@gmail.com"
 
 UPSTREAM_CHANGELOG="${HOMEPAGE}changes.html"
-UPSTREAM_DOCUEMENTATION="${HOMEPAGE}/user_doc"
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}/user_doc"
 
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
@@ -51,8 +51,7 @@ src_install() {
     insinto /usr/share/doc/${PNVR}
     doins -r user_doc/html
     default
-    find "${IMAGE}"/usr/share/doc/ -maxdepth 1 -type f | xargs rm -f || die 'Failed to clean up
-    /usr/share/doc'
+    find "${IMAGE}"/usr/share/doc/ -maxdepth 1 -type f | xargs rm -f || die 'Failed to clean up /usr/share/doc'
     rm "${IMAGE}"/usr/share/doc/${PNVR}/history.{c,h,o} || die 'Failed to clean up history'
 }
 

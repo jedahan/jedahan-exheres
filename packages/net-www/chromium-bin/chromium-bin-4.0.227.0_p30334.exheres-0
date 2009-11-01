@@ -125,7 +125,7 @@ chromium_do_wrapper() {
 
 LD_LIBRARY_PATH="${1}:${LD_LIBRARY_PATH}" "${1}"/chrome "\$@"
 EOF
-    alternatives_for ${PN} "${PN}-${MY_PV}" \
+    alternatives_for ${PN%-bin} "${PN}-${MY_PV}" \
         ${CHROMIUM_IMPORTANCE:-${MY_PV}} /usr/bin/chromium ${PN}-${MY_PV}
 }
 

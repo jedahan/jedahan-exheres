@@ -13,7 +13,6 @@ Chromium is the open-source project behind Google Chrome based on WebKit
 and using Google's V8 JavaScript engine.
 "
 HOMEPAGE="http://code.google.com/chromium/"
-DOWNLOADS=""
 
 BUGS_TO="jedahan@gmail.com"
 UPSTREAM_DOCUMENTATION="http://dev.chromium.org/"
@@ -23,6 +22,11 @@ MY_PV="${PV//*_p/}"
 PLATFORMS="~amd64 ~x86"
 
 BUILDBOT="http://build.chromium.org/buildbot/snapshots/chromium-rel-linux"
+DOWNLOADS="
+    platform:amd64? ( ${BUILDBOT}-64/${MY_PV}/chrome-linux.zip -> ${PNV}.zip )
+    platform:x86?   ( ${BUILDBOT}/${MY_PV}/chrome-linux.zip -> ${PNV}.zip )
+"
+
 
 RESTRICT="strip"
 LICENCES="
@@ -46,8 +50,6 @@ MYOPTIONS=" platform:x86 [[ requires = [ x86_cpu_features: sse2 ] ]]
             amd64_cpu_features: sse2"
 
 DEPENDENCIES="
-    fetch:
-        net-misc/curl
     build:
         app-arch/unzip
     run:
@@ -62,20 +64,6 @@ DEPENDENCIES="
 
 WORK=${WORKBASE}/chrome-linux
 
-src_fetch_extra() {
-    if option platform:amd64; then
-        BUILDBOT+="-64"
-    fi
-    if [ ! -f "${FETCHEDDIR}"/${PN}-${MY_PV}.zip ]; then
-        einfo "Fetching chromium snapshot ${MY_PV}"
-        curl -o "${FETCHEDDIR}"/${PN}-${MY_PV}.zip ${BUILDBOT}/${MY_PV}/chrome-linux.zip
-    fi
-}
-
-src_unpack() {
-    unpack ${PN}-${MY_PV}.zip
-}
-
 src_install() {
     # destination
     local dest=/opt/chromium-${MY_PV}
@@ -86,7 +74,7 @@ src_install() {
 
     # install data
     insinto ${dest}
-    doins -r *.* locales resources themes
+    doins -r *.* locales resources
 
     # plugins symlink
     [[ -d /opt/netscape/plugins ]] && dosym /opt/netscape/plugins ${dest}/plugins

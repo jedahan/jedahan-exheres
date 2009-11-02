@@ -1,3 +1,8 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part upon 'nginx-0.7.51.exheres-0', which is:
+#   Copyright 2009 Timothy Redaelli
+
 SUMMARY="Small and fast HTTP server and mail proxy server"
 DESCRIPTION="A free, open-source, high-performance HTTP server and reverse proxy, as well as an IMAP/POP3 proxy server.
 It's known for its high performance, stability, rich feature set, simple configuration, and low resource consumption.
@@ -81,7 +86,5 @@ src_install() {
     option perl && emake -C objs/src/http/modules/perl install DESTDIR="${IMAGE}"
 }
 
-pkg_postinst() {
-    # FIXME porting install_cert
-    ewarn "You should generate your certificates and put it in /etc/ssl/${PN}/"
-}
+# FIXME: port install_cert
+

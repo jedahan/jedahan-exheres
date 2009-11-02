@@ -11,8 +11,11 @@ LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
 LANGS="ar bg ca cs de el en es fr gl hu id it nl pl pt ro ru sr sv tr uk"
-MYOPTIONS="util 
-        linguas: ${LANGS}"
+# TODO: mp3? (dev-perl/MP3-Info MP3-Tag)
+#       spell? ( dev-perl/Gtk2-Spell )
+#       vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )
+
+MYOPTIONS="cddb gnome spell tellico util linguas: ${LANGS}"
 
 DEPENDENCIES="
     dev-lang/perl
@@ -29,14 +32,10 @@ DEPENDENCIES="
 
     cddb?  ( dev-perl/Net-FreeDB )
     gnome?  ( dev-perl/Gnome2-VFS )
-    mp3?  ( dev-perl/MP3-Info
-              dev-perl/MP3-Tag  )
-    spell? ( dev-perl/Gtk2-Spell )
     tellico? ( 
         dev-perl/Digest-MD5
 	    dev-perl/MIME-Base64 )
     util?  ( dev-perl/DateTime-Format-Strptime )
-    vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )
 "
 WORK="${WORKBASE}/${PN}"
 

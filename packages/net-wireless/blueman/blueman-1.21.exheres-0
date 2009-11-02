@@ -35,7 +35,7 @@ run:
 
 	gnome? ( gnome-bindings/gnome-python[gconf] ) 
     policykit? ( gnome-desktop/PolicyKit-gnome )
-    pulseaduio? ( media-sound/pulseaudio[>=9.15] ) 
+    pulseaudio? ( media-sound/pulseaudio[>=9.15] ) 
 "
 
 src_prepare() {

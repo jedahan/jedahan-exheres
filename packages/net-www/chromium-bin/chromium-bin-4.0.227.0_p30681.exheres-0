@@ -27,7 +27,6 @@ DOWNLOADS="
     platform:x86?   ( ${BUILDBOT}/${MY_PV}/chrome-linux.zip -> ${PNV}.zip )
 "
 
-
 RESTRICT="strip"
 LICENCES="
     BSD-3      [[ note = [ chromium itself ] ]]
@@ -44,10 +43,11 @@ LICENCES="
     MIT        [[ note = [ harfbuzz, jpeg, libxml, libxslt ] ]]
 "
 
-MYOPTIONS=" platform:x86 [[ requires = [ x86_cpu_features: sse2 ] ]]
-            platform:amd64 [[ requires = [ amd64_cpu_features: sse2 ] ]]
-            x86_cpu_features: sse2
-            amd64_cpu_features: sse2"
+MYOPTIONS="platform:
+               amd64 [[ requires = [ amd64_cpu_features: sse2 ] ]]
+               x86   [[ requires = [ x86_cpu_features: sse2 ] ]]
+           amd64_cpu_features: sse2
+           x86_cpu_features: sse2"
 
 DEPENDENCIES="
     build:

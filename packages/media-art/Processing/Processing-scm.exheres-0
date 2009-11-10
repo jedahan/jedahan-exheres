@@ -1,0 +1,43 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+MY_PN=${PN/P/p}
+MY_PNV=${PN}-${PV}
+SCM_REPOSITORY="svn://${MY_PN}.org"
+SCM_SUBPATH="${MY_PN}"
+SCM_SVN_USERNAME="anonymous"
+
+require scm-svn
+
+SUMMARY="Easy to use language and ide for digital artists"
+DESCRIPTION="
+Processing is an open source programming language and environment for people who want to program images, animation, and interactions. It is used by students, artists, designers, researchers, and hobbyists for learning, prototyping, and production. It is created to teach fundamentals of computer programming within a visual context and to serve as a software sketchbook and professional production tool.
+"
+HOMEPAGE="http://${MY_PN}.org"
+DOWNLOADS=""
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        virtual/jdk
+    run:
+        virtual/jre
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+WORK="${WORK}/build/linux"
+
+src_compile() {
+    mkdir -p ${WORK}/work/lib
+    ln -s /opt/jdk1.5.0_21 ${WORK}/work/java
+    ./make.sh
+}
+
+#src_install() {
+#    :
+#}

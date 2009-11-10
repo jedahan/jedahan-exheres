@@ -1,0 +1,29 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+MY_PV="r${PV}-source"
+
+SUMMARY="Amazon mounting S3 via fuse"
+HOMEPAGE="http://s3fs.googlecode.com/"
+DOWNLOADS="${HOMEPAGE}files/${PN}-${MY_PV}.tar.gz"
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+WORK=${WORKBASE}/${PN}
+
+DEPENDENCIES="
+    net-misc/curl[>=7.17.1]
+	sys-fs/fuse[>=2.6.0]
+	dev-libs/libxml2
+	dev-libs/openssl
+    run:
+        app-admin/mime-support
+    "
+
+BUGS_TO="jedahan@gmail.com"
+
+src_install() {
+    dobin s3fs
+}
+

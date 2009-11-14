@@ -33,9 +33,7 @@ DEPENDENCIES="
 
 SRC_CONFIGURE_OPTIONS_WITH=( 'aac faac' 'mp3 lame' 'jack' 'mp2 twolame' 'vorbis' )
 DEFAULT_SRC_PREPARE_PATCHES=(
-    "${FILES}"/${PN}-gcc43.patch
     "${FILES}"/${PN}-gcc44.patch
-    "${FILES}"/${PN}-typecast.patch
 )
 
 src_install() {

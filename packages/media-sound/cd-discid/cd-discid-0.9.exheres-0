@@ -9,7 +9,7 @@ SUMMARY="Returns the disc id for the cd in the cd-rom drive"
 DESCRIPTION="
 cd-discid is a backend utility for getting CDDB discid information for a CD. It was originally designed for cdgrab (now abcde), but can be used for any purpose requiring CDDB data. It has been developed with attention to the CDDB specifications.
 "
-HOMEPAGE="http://lly.org/~rcw/${PN}/"
+HOMEPAGE="http://lly.org/~rcw/cd-discid/"
 DOWNLOADS="${HOMEPAGE}${PN}_${PV}.orig.tar.gz"
 
 BUGS_TO="jedahan@gmail.com"
@@ -18,8 +18,9 @@ LICENCES="GPL-2"
 PLATFORMS="~amd64"
 SLOT="0"
 
-src_compile() {
-    $(tc-getCC) ${CFLAGS} ${LDFLAGS} -o cd-discid cd-discid.c \
-    || die "compile failed"
+src_prepare() {
+    sed -i -e "s/^CFLAGS.*$/CFLAGS\ =\ ${CFLAGS}/" \
+           -e "s/^LDFLAGS.*$/LDFLAGS\ =\ ${LDFLAGS}/" \
+           -e 's/$(INSTALL) -s/$(INSTALL)/' Makefile
 }
 

@@ -13,7 +13,7 @@ handling and look and feel. Semi-automatic tiling means that there is no layout 
 general rule: Clients can freely be arranged in different positions of a variable grid.
 "
 
-HOMEPAGE="http://unexist.scrapping.cc/projects/${PN}"
+HOMEPAGE="http://unexist.scrapping.cc/projects/subtle"
 DOWNLOADS=""
 
 BUGS_TO="jedahan@gmail.com"
@@ -29,6 +29,10 @@ DEPENDENCIES="
     dev-ruby/rake[>=0.8]
     x11-libs/libX11
 "
+
+src_prepare() {
+    edo sed -i -e 's/\-Werror//' Rakefile
+}
 
 src_compile() {
     rake destdir="${IMAGE}"

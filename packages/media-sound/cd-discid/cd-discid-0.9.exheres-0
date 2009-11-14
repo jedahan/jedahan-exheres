@@ -19,8 +19,10 @@ PLATFORMS="~amd64"
 SLOT="0"
 
 src_prepare() {
-    sed -i -e "s/^CFLAGS.*$/CFLAGS\ =\ ${CFLAGS}/" \
-           -e "s/^LDFLAGS.*$/LDFLAGS\ =\ ${LDFLAGS}/" \
-           -e 's/$(INSTALL) -s/$(INSTALL)/' Makefile
+    sed -i -e 's/$(INSTALL) -s/$(INSTALL)/' Makefile
+}
+
+src_compile() {
+    emake CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 }
 

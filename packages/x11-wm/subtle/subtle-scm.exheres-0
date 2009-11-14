@@ -30,10 +30,6 @@ DEPENDENCIES="
     x11-libs/libX11
 "
 
-src_prepare() {
-    edo sed -i -e 's/\-Werror//' Rakefile
-}
-
 src_compile() {
     rake destdir="${IMAGE}"
 }

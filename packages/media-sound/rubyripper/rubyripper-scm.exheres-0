@@ -6,9 +6,10 @@ require scm-git
 
 SUMMARY="Secure audiodisc ripper"
 DESCRIPTION="
-Through multiple times ripping the same track and correcting any differences rubyripper tries to deliver a secure rip.
+Through multiple times ripping the same track and correcting any differences 
+rubyripper tries to deliver a secure rip.
 "
-HOMEPAGE="http://${PN}.googlecode.com/"
+HOMEPAGE="http://rubyripper.googlecode.com/"
 DOWNLOADS=""
 
 BUGS_TO="jedahan@gmail.com"
@@ -16,9 +17,11 @@ BUGS_TO="jedahan@gmail.com"
 LICENCES="GPL-3"
 PLATFORMS="~amd64"
 SLOT="0"
-MYOPTIONS="flac mp3 ogg"
+MYOPTIONS="flac gtk mp3 ogg"
 
 DEPENDENCIES="
+    build:
+        dev-ruby/ruby-gtk
     run:
         media/cdparanoia
         sys-apps/eject
@@ -34,8 +37,7 @@ DEPENDENCIES="
     suggestion:
         media-sound/wavegain
 "
-# build: gtk? ( dev-ruby/gtk )
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --enable-cli )
-#DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'gtk' )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'gtk' )
 

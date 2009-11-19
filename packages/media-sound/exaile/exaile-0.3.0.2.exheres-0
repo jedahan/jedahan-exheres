@@ -44,7 +44,7 @@ DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PN}-${MY_PV}-Makefile.patch" "${FILES}
 src_install() {
     default
     insinto /usr/share/exaile/data
-    doins -r data/migrations || die "doins failed"
+    doins -r data/migrations
 }
 
 pkg_postinst() {

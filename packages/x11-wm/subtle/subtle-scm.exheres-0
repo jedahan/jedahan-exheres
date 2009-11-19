@@ -25,9 +25,11 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    dev-lang/ruby:1.8
+    dev-lang/ruby[>=1.8]
     dev-ruby/rake[>=0.8]
     x11-libs/libX11
+    recommendation:
+        dev-ruby/sur
 "
 
 src_compile() {
@@ -35,7 +37,7 @@ src_compile() {
 }
 
 src_install() {
-    rake install
+    rake destdir="${IMAGE}" install
     emagicdocs
 }
 

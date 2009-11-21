@@ -1,0 +1,38 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="A Library of Bullet Markup Language"
+HOMEPAGE="http://shinh.skr.jp/libbulletml/index_en.html"
+DOWNLOADS="http://shinh.skr.jp/${PN}/${PNV}.tar.bz2"
+
+
+LICENCES="BSD"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+BUGS_TO="jedahan@gmail.com"
+
+WORK="${WORKBASE}/${PN#lib}/src"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-gcc43.patch" )
+
+#src_compile() {
+#    emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+#}
+
+src_install() {
+    dolib.a libbulletml.a || die "dolib.a failed"
+
+    insinto /usr/include/bulletml
+    doins *.h || die "doins .h failed"
+
+    insinto /usr/include/bulletml/tinyxml
+    doins tinyxml/tinyxml.h || die "doins tinyxml.h failed"
+
+    insinto /usr/include/bulletml/ygg
+    doins ygg/ygg.h || die "doins ygg.h failed"
+
+    dodoc ../README*
+}
+

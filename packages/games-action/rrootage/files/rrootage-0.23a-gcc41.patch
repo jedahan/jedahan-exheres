@@ -1,6 +1,6 @@
---- src/foecommand.h.old	2006-04-21 23:26:03.000000000 +0200
-+++ src/foecommand.h	2006-04-21 23:26:26.000000000 +0200
-@@ -39,10 +39,10 @@
+--- src/foecommand.h.old	2009-11-22 16:45:53.067851262 -0500
++++ src/foecommand.h	2009-11-22 16:46:08.334873177 -0500
+@@ -36,10 +36,10 @@
    
    virtual void doChangeDirection(double d);
    virtual void doChangeSpeed(double s);
@@ -15,14 +15,3 @@
    
   private:
    struct foe *foe;
---- src/screen.c.old	2006-04-21 23:50:01.000000000 +0200
-+++ src/screen.c	2006-04-21 23:50:30.000000000 +0200
-@@ -73,7 +73,7 @@
- void loadGLTexture(char *fileName, GLuint *texture) {
-   SDL_Surface *surface;
- 
--  char name[32];
-+  char name[128];
-   strcpy(name, SHARE_LOC);
-   strcat(name, "images/");
-   strcat(name, fileName);

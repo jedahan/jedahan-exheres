@@ -26,12 +26,12 @@ DEPENDENCIES="
 
 WORK="${WORKBASE}/${MY_PN}/src"
 
-src_prepare() {
-    sed -e 's/-lglut/-lGL -lGLU/' makefile.lin > Makefile || die "sed failed"
-    sed -i -e 's/FoeCommand:://' foecommand.h
-}
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-gcc41.patch" )
 
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${MY_PNV}-gcc41.patch" )
+src_prepare() {
+    default
+    sed -e 's/-lglut/-lGL -lGLU/' makefile.lin > Makefile || die "sed failed"
+}
 
 src_compile() {
     emake MORE_CFLAGS="${CFLAGS}"

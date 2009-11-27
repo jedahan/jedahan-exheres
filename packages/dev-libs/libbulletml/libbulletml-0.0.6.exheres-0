@@ -17,21 +17,17 @@ WORK="${WORKBASE}/${PN#lib}/src"
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-gcc43.patch" )
 
-#src_compile() {
-#    emake CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-#}
-
 src_install() {
-    dolib.a libbulletml.a || die "dolib.a failed"
+    dolib.a libbulletml.a
 
     insinto /usr/include/bulletml
-    doins *.h || die "doins .h failed"
+    doins *.h
 
     insinto /usr/include/bulletml/tinyxml
-    doins tinyxml/tinyxml.h || die "doins tinyxml.h failed"
+    doins tinyxml/tinyxml.h
 
     insinto /usr/include/bulletml/ygg
-    doins ygg/ygg.h || die "doins ygg.h failed"
+    doins ygg/ygg.h
 
     dodoc ../README*
 }

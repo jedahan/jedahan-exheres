@@ -21,7 +21,7 @@ MYOPTIONS="flac gtk mp3 ogg"
 
 DEPENDENCIES="
     build:
-        dev-ruby/ruby-gtk
+        gtk? ( dev-ruby/ruby-gtk )
     run:
         media/cdparanoia
         sys-apps/eject

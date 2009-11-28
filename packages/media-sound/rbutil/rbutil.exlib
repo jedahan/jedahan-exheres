@@ -1,0 +1,30 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="svn://svn.rockbox.org/rockbox"
+
+require qmake4 scm-svn
+
+SUMMARY="Install and manage rockbox on various hardware"
+HOMEPAGE="http://www.rockbox.org/twiki/bin/view/Main/RockboxUtility"
+
+LICENCES="GPL-2"
+SLOT="0"
+DOWNLOADS=""
+
+BUGS_TO="jedahan@gmail.com"
+
+DEPENDENCIES="
+    x11-libs/qt:4 
+"
+
+WORK="${WORK}/${PN}"
+
+src_install() {
+    dobin ${WORK}/rbutilqt/rbutilqt
+    insinto "/etc"
+    doins ${WORK}/rbutilqt/rbutil.ini
+#	newicon ${S}/rbutil/rbutilqt/icons/rockbox.ico ${PN}.ico
+#	make_desktop_entry rbutilqt "Rockbox Utility" /usr/share/pixmaps/${PN}.ico
+}
+

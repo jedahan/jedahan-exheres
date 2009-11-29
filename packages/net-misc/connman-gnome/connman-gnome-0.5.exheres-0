@@ -1,0 +1,23 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="GTK+ applet for managing network connections with connman"
+HOMEPAGE="http://connman.net"
+DOWNLOADS="mirror://kernel/linux/network/connman/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+BUGS_TO="jedahan@gmail.com"
+
+DEPENDENCIES="
+    build:
+	    dev-util/intltool[>=0.35]
+    build+run:
+        dev-libs/glib[>=2.16]
+        sys-apps/dbus[>=1.2]
+        dev-libs/dbus-glib[>=0.73]
+        x11-libs/gtk+[>=2.10]
+        net-misc/connman
+"
+

@@ -1,0 +1,52 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based in part upon 'connman-0.47.ebuild', which is:
+#   Copyright 1999-2009 Gentoo Foundation
+
+SUMMARY="Provides a daemon for managing internet connections"
+HOMEPAGE="http://connman.net"
+DOWNLOADS="mirror://kernel/linux/network/${PN}/${PNV}.tar.gz"
+BUGS_TO="jedahan@gmail.com"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="3G bluetooth debug dhclient dnsproxy doc ethernet policykit ppp
+threads tools udev wifi" # modemmanager ofono ospm resolvconf wimax
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/glib[>=2.16]
+        sys-apps/dbus[>=1.2]
+    	bluetooth?    ( net-wireless/bluez )
+    	dhclient?     ( net-misc/dhcp )
+    	policykit?    ( sys-auth/PolicyKit[>=0.7] )
+    	ppp?          ( net-dialup/ppp )
+    	udev?         ( sys-fs/udev[>=141] )
+    	wifi?         ( net-wireless/wpa_supplicant[dbus] )
+    build:
+	    doc? ( dev-util/gtk-doc )
+"
+DEFAULT_SRC_CONFIGURE_PARAMS=( 
+    --localstatedir=/var
+    --enable-{client,datafiles,fake,loopback}
+    --disable-{iospm,udhcp,iwmx}
+)
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 
+    '3G novatel huawei hso mbm' 'bluetooth' 'debug' 'dhclient' 'dnsproxy'
+    'doc gtk-doc' 'ethernet' 'ofono' 'policykit polkit' 'ppp' 'threads' 
+    'tools' 'udev' 'wifi'
+)
+
+src_install() {
+    emake DESTDIR=${IMAGE} install
+    dobin client/cm
+
+    keepdir /var/lib/${PN}
+    keepdir /var/lib64/${PN}
+    keepdir /usr/lib/${PN}/scripts
+    keepdir /usr/lib64/${PN}/scripts
+#    newinitd "${FILES}"/${PN}.initd ${PN} || die
+}
+

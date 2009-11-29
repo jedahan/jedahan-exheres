@@ -13,6 +13,7 @@ SLOT="0"
 DEPENDENCIES="
     app-text/docbook-xml-dtd:4.5
     group/audio
+    group/games
     group/haldaemon
     group/news
     group/smmsp

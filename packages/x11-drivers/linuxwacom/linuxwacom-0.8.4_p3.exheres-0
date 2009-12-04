@@ -4,7 +4,7 @@
 # TODO: DEPENDENCIES+=( kernel: TABLET_USB_WACOM)
 # TODO: Add modules option
 
-require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.10 ] ]
+require multilib autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.10 ] ]
 
 MY_PV=${PV/_p/-}
 MY_PNV=${PN}-${MY_PV}
@@ -41,7 +41,7 @@ WORK="${WORKBASE}/${MY_PNV}"
 
 src_prepare() {
     default
-    sed -i -e "s:WCM_EXECDIR/lib:WCM_EXECDIR/$(get_libdir):" configure.in
+    edo sed -i -e "s:WCM_EXECDIR/lib:WCM_EXECDIR/$(get_libdir):" configure.in
     eautoreconf
 }
 

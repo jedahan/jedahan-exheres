@@ -51,7 +51,7 @@ src_install() {
 
     if ! option gnome ; then
         python_version
-        rm "${IMAGE}/usr/$(get_libdir)/python${PYVER}/site-packages/blueman/plugins/config/Gconf.py"
+        rm "${IMAGE}$(python_get_sitedir)/blueman/plugins/config/Gconf.py"
     fi
 
     python_need_rebuild
@@ -59,7 +59,7 @@ src_install() {
 
 pkg_postinst() {
     python_version
-    python_mod_optimize /usr/$(get_libdir)/python${PYVER}/site-packages/blueman
+    python_mod_optimize $(python_get_sitedir)/blueman
 }
 
 pkg_postrm() {

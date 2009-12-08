@@ -1,0 +1,30 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="A desktop session recorder producing Ogg video/audio files"
+HOMEPAGE="http://recordmydesktop.sourceforge.net/"
+DOWNLOADS="mirror://sourceforge/recordmydesktop/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="jack alsa"
+
+DEPENDENCIES="
+    x11-libs/libXext
+	x11-libs/libXdamage
+	x11-libs/libXfixes
+	x11-libs/libICE
+	x11-libs/libSM
+	media-libs/libogg
+	media-libs/libvorbis
+	media-libs/libtheora
+	alsa? ( sys-sound/alsa-lib )
+	jack? ( media-sound/jack-audio-connection-kit )
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-shmstr2shmproto.patch" )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'jack' 'alsa' )
+

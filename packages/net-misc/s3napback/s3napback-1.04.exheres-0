@@ -11,7 +11,7 @@ DESCRIPTION="
     * Integrated handling of MySQL dumps
     * Integrated handling of Subversion repositories, and of directories containing multiple Subversion repositories (including incremental backups-- thanks to Kevin Ross for that). 
 "
-HOMEPAGE="http://dev.davidsoergel.com/trac/${PN}"
+HOMEPAGE="http://dev.davidsoergel.com/trac/s3napback"
 DOWNLOADS="${HOMEPAGE}/raw-attachment/wiki/Releases/${PNV}.tgz"
 
 LICENCES="as-is"
@@ -27,9 +27,9 @@ BUGS_TO="jedahan@gmail.com"
 WORK="${WORKBASE}/${PN}"
 
 src_install() {
-    dodir /opt/${PN}
-    insinto /opt/${PN}
+    dodir /usr/share/${PN}
+    insinto /usr/share/${PN}
     doins *
-    dosym /opt/${PNV}/s3napback.pl /usr/bin/${PN}
+    dosym /usr/share/${PNV}/s3napback.pl /usr/bin/${PN}
 }
 

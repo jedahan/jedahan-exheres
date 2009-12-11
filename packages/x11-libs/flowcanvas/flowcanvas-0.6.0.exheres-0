@@ -1,0 +1,28 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require waf
+
+SUMMARY="Gtkmm/Gnomecanvasmm widget for boxes and lines environments"
+HOMEPAGE="http://wiki.drobilla.net/FlowCanvas"
+DOWNLOADS="http://download.drobilla.net/${PNV}.tar.bz2"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    dev-libs/boost
+	gnome-bindings/gtkmm[>=2.4]
+	gnome-platform/libgnomecanvasmm[>=2.6]
+	media-gfx/graphviz
+    build:
+    	dev-util/pkg-config
+        app-doc/doxygen
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+WAF_SRC_CONFIGURE_PARAMS=( '--build-docs' )
+

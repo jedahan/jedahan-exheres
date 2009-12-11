@@ -1,0 +1,21 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome-2
+
+SUMMARY="C++ bindings for libgnomecanvas"
+HOMEPAGE="http://www.gtkmm.org"
+
+LICENCES="LGPL-2.1"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    gnome-platform/libgnomecanvas
+	gnome-bindings/gtkmm
+    build:
+	    dev-util/pkg-config
+"
+
+BUGS_TO="jedahan@gmail.com"
+

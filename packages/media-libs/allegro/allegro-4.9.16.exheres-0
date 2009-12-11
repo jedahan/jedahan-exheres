@@ -30,7 +30,9 @@ MYOPTIONS="
     sndfile [[ description = [ WAV/AIFF/FLAC audio codec support ] ]]
     ttf 
     vorbis
-    x11
+    X
+
+    ( jpeg opengl png ttf ) [[ requires = X ]]
 "
 
 DEPENDENCIES="
@@ -45,10 +47,5 @@ DEPENDENCIES="
     vorbis? ( media-libs/libvorbis )
 "
 
-CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'x11 X11' )
-
-src_install() {
-    cmake_src_install
-    dosym lib${PNV}.so /usr/$(get_libdir)/lib${PN}.so
-}
+CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'X X11' )
 

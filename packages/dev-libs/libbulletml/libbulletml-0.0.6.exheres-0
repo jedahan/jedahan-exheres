@@ -1,10 +1,9 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-DESCRIPTION="A Library of Bullet Markup Language"
+SUMMARY="A Library of Bullet Markup Language"
 HOMEPAGE="http://shinh.skr.jp/libbulletml/index_en.html"
 DOWNLOADS="http://shinh.skr.jp/${PN}/${PNV}.tar.bz2"
-
 
 LICENCES="BSD"
 SLOT="0"

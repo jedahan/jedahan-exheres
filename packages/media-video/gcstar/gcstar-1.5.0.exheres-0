@@ -19,6 +19,7 @@ MYOPTIONS="cddb gnome spell tellico util linguas: ${LANGS}"
 
 DEPENDENCIES="
     dev-lang/perl
+    dev-perl/Archive-Tar
     dev-perl/Archive-Zip
     dev-perl/File-Temp
     dev-perl/File-Spec
@@ -26,9 +27,11 @@ DEPENDENCIES="
     dev-perl/HTML-Parser
     dev-perl/IO-Compress
     dev-perl/libnet
+	dev-perl/libwww-perl
     dev-perl/Time-Piece
     dev-perl/URI
-    dev-perl/XML-LibXML
+	dev-perl/XML-Parser
+	dev-perl/XML-Simple
 
     cddb?  ( dev-perl/Net-FreeDB )
     gnome?  ( dev-perl/Gnome2-VFS )
@@ -38,8 +41,6 @@ DEPENDENCIES="
     util?  ( dev-perl/DateTime-Format-Strptime )
 "
 WORK="${WORKBASE}/${PN}"
-
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PN}-1.4.0-man.patch" )
 
 src_prepare() {
     default

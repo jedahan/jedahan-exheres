@@ -7,9 +7,11 @@ DESCRIPTION="
     * Automatic rotation of backup sets
     * Alternation of full and incremental backups (using 'tar -g')
     * Integrated GPG encryption
-    * No temporary files used anywhere, only pipes and TCP streams (optionally, uses smallish temp files to save memory)
+    * No temporary files used anywhere, only pipes and TCP streams
     * Integrated handling of MySQL dumps
-    * Integrated handling of Subversion repositories, and of directories containing multiple Subversion repositories (including incremental backups-- thanks to Kevin Ross for that). 
+    * Integrated handling of Subversion repositories, and of directories
+      containing multiple Subversion repositories (including incremental
+      backups-- thanks to Kevin Ross for that). 
 "
 HOMEPAGE="http://dev.davidsoergel.com/trac/s3napback"
 DOWNLOADS="${HOMEPAGE}/raw-attachment/wiki/Releases/${PNV}.tgz"

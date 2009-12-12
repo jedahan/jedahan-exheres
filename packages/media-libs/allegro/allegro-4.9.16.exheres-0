@@ -5,7 +5,12 @@ require cmake multilib
 
 SUMMARY="C/C++ game programming library"
 DESCRIPTION="
-Allegro is a game programming library for C/C++ developers distributed freely, supporting the following platforms: DOS, Unix (Linux, FreeBSD, Irix, Solaris, Darwin), Windows, QNX, BeOS and MacOS X. It provides many functions for graphics, sounds, player input (keyboard, mouse and joystick) and timers. It also provides fixed and floating point mathematical functions, 3d functions, file management functions, compressed datafile and a GUI.
+Allegro is a game programming library for C/C++ developers distributed freely,
+supporting the following platforms: DOS, Unix (Linux, FreeBSD, Irix, Solaris, 
+Darwin), Windows, QNX, BeOS and MacOS X. It provides many functions for graphics
+, sounds, player input (keyboard, mouse and joystick) and timers. It also 
+provides fixed and floating point mathematical functions, 3d functions, file 
+management functions, compressed datafile and a GUI.
 "
 HOMEPAGE="http://alleg.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/alleg/${PNV}.tar.gz"
@@ -36,15 +41,16 @@ MYOPTIONS="
 "
 
 DEPENDENCIES="
-    alsa? ( sys-sound/alsa-lib )
-    flac? ( media-libs/flac )
-    jpeg? ( media-libs/jpeg )
-    png? ( media-libs/libpng )
-    openal? ( media-libs/openal )
-    opengl? ( x11-dri/mesa )
-    physfs? ( dev-games/physfs )
-    sndfile? ( media-libs/libsndfile )
-    vorbis? ( media-libs/libvorbis )
+    build+run:
+        alsa? ( sys-sound/alsa-lib )
+        flac? ( media-libs/flac )
+        jpeg? ( media-libs/jpeg )
+        png? ( media-libs/libpng )
+        openal? ( media-libs/openal )
+        opengl? ( x11-dri/mesa )
+        physfs? ( dev-games/physfs )
+        sndfile? ( media-libs/libsndfile )
+        vorbis? ( media-libs/libvorbis )
 "
 
 CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'X X11' )

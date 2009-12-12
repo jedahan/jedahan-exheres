@@ -5,8 +5,7 @@ SCM_REPOSITORY="http://hg.scrapping.cc/${PN}/"
 
 require scm-hg
 
-SUMMARY="The subtle user repository, a manager and repository for sublets in a
-rubygems like fashion"
+SUMMARY="sublet management similar to rubygems"
 DESCRIPTION="
 sur consists of two parts which are designed to work with each other:
 
@@ -27,14 +26,15 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    dev-lang/ruby[>=1.8]
-    dev-ruby/curb[>=0.5.1.0]
-    dev-ruby/rake[>=0.8]
-    x11-wm/subtle[>=0.8]
-    server? (
-        dev-ruby/datamapper[>=0.9.11]
-        dev-ruby/sinatra[>=0.9.4]
-    )
+    build+run:
+        dev-lang/ruby[>=1.8]
+        dev-ruby/curb[>=0.5.1.0]
+        dev-ruby/rake[>=0.8]
+        x11-wm/subtle[>=0.8]
+        server? (
+            dev-ruby/datamapper[>=0.9.11]
+            dev-ruby/sinatra[>=0.9.4]
+        )
 "
 
 src_compile() {

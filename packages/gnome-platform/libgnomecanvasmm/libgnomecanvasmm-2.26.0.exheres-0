@@ -9,11 +9,11 @@ HOMEPAGE="http://www.gtkmm.org"
 LICENCES="LGPL-2.1"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
 DEPENDENCIES="
-    gnome-platform/libgnomecanvas
-    gnome-bindings/gtkmm
+    build+run:
+        gnome-bindings/gtkmm
+        gnome-platform/libgnomecanvas
     build:
         dev-util/pkg-config
 "

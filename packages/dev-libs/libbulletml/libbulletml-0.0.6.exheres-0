@@ -8,7 +8,6 @@ DOWNLOADS="http://shinh.skr.jp/${PN}/${PNV}.tar.bz2"
 LICENCES="BSD"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
 BUGS_TO="jedahan@gmail.com"
 

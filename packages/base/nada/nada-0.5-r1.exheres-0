@@ -3,7 +3,10 @@
 
 SUMMARY="Does nothing for everybody"
 DESCRIPTION="
-NaDa is a new concept. A thought, really. It is very light : 1 byte. It doesn't take long to fetch. It doesn't take long to understand. It doesn't disturb your habits nor does it makes you feel insecure. It is a reassuring piece of software that does nothing, and does it very well. That's a lot !
+NaDa is a new concept. A thought, really. It is very light : 1 byte. It doesn't
+take long to fetch. It doesn't take long to understand. It doesn't disturb your
+habits nor does it makes you feel insecure. It is a reassuring piece of software
+that does nothing, and does it very well. That's a lot !
 "
 HOMEPAGE="http://www.bernardbelanger.com/computing/NaDa"
 DOWNLOADS="${HOMEPAGE}/download/NaDa_0_5.tar"

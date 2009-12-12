@@ -3,7 +3,13 @@
 
 SUMMARY="Online multiplayer 3D tank battle game"
 DESCRIPTION="
-In a game of BZFlag, players drive around tanks, viewed from a first-person view, in a server-defined world (aka 'map'), which can be modified. Tanks have the ability to drive through other tanks, but cannot travel through buildings or other world objects. The basic objective is to destroy opponents' tanks, which are tanks of another team's color. For example, green tanks are supposed to try to destroy red, purple, blue, and rogue tanks. Rogue tanks do not have any allegiances to a certain team and are therefore able to kill anybody.
+In a game of BZFlag, players drive around tanks, viewed from a first-person 
+view, in a server-defined world (aka 'map'), which can be modified. Tanks have
+the ability to drive through other tanks, but cannot travel through buildings 
+or other world objects. The basic objective is to destroy opponents' tanks, 
+which are tanks of another team's color. For example, green tanks are supposed 
+to try to destroy red, purple, blue, and rogue tanks. Rogue tanks do not have 
+any allegiances to a certain team and are therefore able to kill anybody.
 "
 HOMEPAGE="http://www.bzflag.org/"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.bz2"
@@ -16,20 +22,21 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    media-libs/SDL
-    media-libs/glew
-    net-misc/curl[>=7.15.0]
-    net-dns/c-ares
-    x11-dri/freeglut
-    x11-libs/libICE
-    x11-libs/libSM
-    x11-libs/libX11
-    x11-libs/libXau
-    x11-libs/libXdmcp
-    x11-libs/libXext
-    x11-libs/libXi
-    x11-libs/libXmu
-    x11-libs/libXt
-    x11-libs/libXxf86vm
+    build+run:
+        media-libs/SDL
+        media-libs/glew
+        net-misc/curl[>=7.15.0]
+        net-dns/c-ares
+        x11-dri/freeglut
+        x11-libs/libICE
+        x11-libs/libSM
+        x11-libs/libX11
+        x11-libs/libXau
+        x11-libs/libXdmcp
+        x11-libs/libXext
+        x11-libs/libXi
+        x11-libs/libXmu
+        x11-libs/libXt
+        x11-libs/libXxf86vm
 "
 

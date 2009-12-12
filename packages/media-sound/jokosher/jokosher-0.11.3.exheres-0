@@ -20,20 +20,20 @@ MYOPTIONS="alsa flac mp3 ogg"
 # NOTE: setuptools are a runtime requirement as the app
 #       loads its extensions via pkg_resources
 DEPENDENCIES="
-    dev-python/dbus-python
-    dev-python/gst-python[>=0.10.8]
-    dev-python/pycairo
-    dev-python/pyxdg
-    dev-python/setuptools
-    gnome-bindings/pygtk[>=2.10]
-    gnome-desktop/librsvg
-    media-plugins/gnonlin[>=0.10.9]
-    x11-themes/hicolor-icon-theme
-    alsa? ( media-plugins/gst-plugins-base[>=0.10.5][gstreamer_plugins:alsa] )
-    flac? ( media-plugins/gst-plugins-good[>=0.10.6][gstreamer_plugins:flac] )
-    mp3?  ( media-sound/lame )
-    ogg?  ( media-plugins/gst-plugins-base[gstreamer_plugins:ogg][gstreamer_plugins:vorbis] )
-
+    build+run:
+        dev-python/dbus-python
+        dev-python/gst-python[>=0.10.8]
+        dev-python/pycairo
+        dev-python/pyxdg
+        dev-python/setuptools
+        gnome-bindings/pygtk[>=2.10]
+        gnome-desktop/librsvg
+        media-plugins/gnonlin[>=0.10.9]
+        x11-themes/hicolor-icon-theme
+        alsa? ( media-plugins/gst-plugins-base[>=0.10.5][gstreamer_plugins:alsa] )
+        flac? ( media-plugins/gst-plugins-good[>=0.10.6][gstreamer_plugins:flac] )
+        mp3?  ( media-sound/lame )
+        ogg?  ( media-plugins/gst-plugins-base[gstreamer_plugins:ogg][gstreamer_plugins:vorbis] )
     build:
         app-text/scrollkeeper-dtd
 "

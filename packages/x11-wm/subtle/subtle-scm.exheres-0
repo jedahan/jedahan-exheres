@@ -25,9 +25,10 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    dev-lang/ruby[>=1.8]
-    dev-ruby/rake[>=0.8]
-    x11-libs/libX11
+    build+run:
+        dev-lang/ruby[>=1.8]
+        dev-ruby/rake[>=0.8]
+        x11-libs/libX11
     recommendation:
         dev-ruby/sur
 "

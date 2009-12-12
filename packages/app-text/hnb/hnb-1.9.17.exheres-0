@@ -3,7 +3,10 @@
 
 SUMMARY="Helps structure many kinds of data in one place"
 DESCRIPTION="
-hierarchical notebook(hnb) is a curses program to structure many kinds of data in one place, for example addresses, to-do lists, ideas, book reviews or to store snippets of brainstorming. Writing structured documents and speech outlines.
+hierarchical notebook(hnb) is a curses program to structure many kinds of data
+in one place, for example addresses, to-do lists, ideas, book reviews or to 
+store snippets of brainstorming. Writing structured documents and speech 
+outlines.
 "
 HOMEPAGE="http://${PN}.sourceforge.net"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
@@ -22,3 +25,4 @@ src_install(){
     doman doc/hnb.1
     dobin src/hnb
 }
+

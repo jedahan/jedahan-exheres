@@ -3,9 +3,13 @@
 
 SUMMARY="Customizable, usable, console-based text editor written in Ruby"
 DESCRIPTION="
-Frustrated by those other console editors? You already know what keys to press in your GUI applications to open, save, copy, cut, paste and undo. Why should your console text editor behave differently? Answer: it shouldn't.
+Frustrated by those other console editors? You already know what keys to press
+in your GUI applications to open, save, copy, cut, paste and undo. Why should 
+your console text editor behave differently? Answer: it shouldn't.
 
-Welcome to Diakonos, the console text editor with a key mapping you practically already know. Easy to use and easy to configure, but potent in the hands of power users.
+Welcome to Diakonos, the console text editor with a key mapping you practically
+already know. Easy to use and easy to configure, but potent in the hands of 
+power users.
 "
 HOMEPAGE="http://purepistos.net/${PN}"
 DOWNLOADS="${HOMEPAGE}/${PNV}.tar.bz2"
@@ -20,7 +24,8 @@ LICENCES="MIT"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    dev-lang/ruby[>=1.9]
+    build+run:
+        dev-lang/ruby[>=1.9]
 "
 
 src_install() {

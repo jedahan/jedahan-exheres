@@ -14,37 +14,35 @@ PLATFORMS="~amd64"
 MYOPTIONS="gnome policykit pulseaudio"
 
 DEPENDENCIES="
-    dev-lang/python[>=2.5]
-    gnome-bindings/pygobject
-    net-wireless/bluez[>=4.25]
-
-build:
-    dev-libs/glib:2
-    x11-libs/gtk+:2[>=2.14]
-    x11-libs/startup-notification
-    dev-util/intltool
-    dev-python/Pyrex[>=0.9.8]
-
-run:
-    dev-python/dbus-python
-    dev-python/notify-python
-    gnome-bindings/pygtk
-    sys-apps/dbus
-    net-wireless/obex-data-server[>=0.4.3]
-    virtual/notification-daemon
-
-    gnome? ( gnome-bindings/gnome-python[gconf] ) 
-    policykit? ( gnome-desktop/PolicyKit-gnome )
-    pulseaudio? ( media-sound/pulseaudio[>=9.15] ) 
+    build+run:
+        dev-lang/python[>=2.5]
+        gnome-bindings/pygobject
+        net-wireless/bluez[>=4.25]
+    build:
+        dev-libs/glib:2
+        dev-python/Pyrex[>=0.9.8]
+        dev-util/intltool
+        x11-libs/gtk+:2[>=2.14]
+        x11-libs/startup-notification
+    run:
+        dev-python/dbus-python
+        dev-python/notify-python
+        gnome-bindings/pygtk
+        net-wireless/obex-data-server[>=0.4.3]
+        sys-apps/dbus
+        virtual/notification-daemon
+        gnome? ( gnome-bindings/gnome-python[gconf] ) 
+        policykit? ( gnome-desktop/PolicyKit-gnome )
+        pulseaudio? ( media-sound/pulseaudio[>=9.15] ) 
 "
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --with-no-runtime-deps-check --enable-nls )
 
 src_prepare() {
     # disable pyc compiling
     rm py-compile
     ln -s $(type -P true) py-compile
 }
-
-DEFAULT_SRC_CONFIGURE_PARAMS=( --with-no-runtime-deps-check --enable-nls )
 
 src_install() {
     default

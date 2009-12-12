@@ -5,7 +5,9 @@ require toolchain-funcs
 
 SUMMARY="Linux client for PPTP"
 DESCRIPTION="
-PPTP Client is a Linux, FreeBSD, NetBSD and OpenBSD client for the proprietary Microsoft Point-to-Point Tunneling Protocol, PPTP. Allows connection to a PPTP based Virtual Private Network (VPN).
+PPTP Client is a Linux, FreeBSD, NetBSD and OpenBSD client for the proprietary 
+Microsoft Point-to-Point Tunneling Protocol, PPTP. Allows connection to a PPTP 
+based Virtual Private Network (VPN).
 "
 HOMEPAGE="http://${PN}.sourceforge.net"
 DOWNLOADS="mirror://sourceforge/pptpclient/pptp-${PV}.tar.gz"
@@ -17,11 +19,11 @@ UPSTREAM_DOCUMENTATION="${HOMEPAGE}/howto-gentoo.phtml"
 SLOT="0"
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
 DEPENDENCIES="
-    net-dialup/ppp
-    dev-lang/perl
+    build+run:
+        dev-lang/perl
+        net-dialup/ppp
 "
 
 WORK="${WORKBASE}/pptp-${PV}"
@@ -42,3 +44,4 @@ src_install() {
     default
     dodoc DEVELOPERS USING
 }
+

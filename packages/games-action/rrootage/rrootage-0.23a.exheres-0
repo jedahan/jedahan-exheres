@@ -6,22 +6,23 @@ require distutils
 MY_PN="rRootage"
 MY_PNV="${MY_PN}-${PV}"
 SUMMARY="Abstract shooter - defeat auto-created huge battleships"
-HOMEPAGE="http://www.asahi-net.or.jp/~cs8k-cyu/windows/rr_e.html
+HOMEPAGE="
+    http://www.asahi-net.or.jp/~cs8k-cyu/windows/rr_e.html
     http://rrootage.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/${PN}/${MY_PNV}.tar.gz"
 
 LICENCES="BSD"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
 BUGS_TO="jedahan@gmail.com"
 
 DEPENDENCIES="
-    x11-dri/mesa
-    media-libs/SDL
-    media-libs/SDL_mixer[ogg]
-    dev-libs/libbulletml[>=0.0.3]
+    build+run:
+        dev-libs/libbulletml[>=0.0.3]
+        media-libs/SDL
+        media-libs/SDL_mixer[ogg]
+        x11-dri/mesa
 "
 
 WORK="${WORKBASE}/${MY_PN}/src"

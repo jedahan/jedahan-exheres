@@ -13,13 +13,14 @@ PLATFORMS="~amd64"
 MYOPTIONS=""
 
 DEPENDENCIES="
-    dev-libs/boost
-    gnome-bindings/gtkmm[>=2.4]
-    gnome-platform/libgnomecanvasmm[>=2.6]
-    media-gfx/graphviz
     build:
-        dev-util/pkg-config
         app-doc/doxygen
+        dev-util/pkg-config
+    build+run:
+        dev-libs/boost
+        gnome-bindings/gtkmm[>=2.4]
+        gnome-platform/libgnomecanvasmm[>=2.6]
+        media-gfx/graphviz
 "
 
 BUGS_TO="jedahan@gmail.com"

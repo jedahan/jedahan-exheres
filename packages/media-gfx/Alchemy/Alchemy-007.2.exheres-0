@@ -3,7 +3,12 @@
 
 SUMMARY="Sketching software"
 DESCRIPTION="
-Alchemy is an open drawing project aimed at exploring how we can sketch, draw, and create on computers in new ways. Alchemy isn\u2019t software for creating finished artwork, but rather a sketching environment that focuses on the absolute initial stage of the creation process. Experimental in nature, Alchemy lets you brainstorm visually to explore an expanded range of ideas and possibilities in a serendipitous way.
+Alchemy is an open drawing project aimed at exploring how we can sketch, draw,
+and create on computers in new ways. Alchemy isn\u2019t software for creating 
+finished artwork, but rather a sketching environment that focuses on the 
+absolute initial stage of the creation process. Experimental in nature, Alchemy
+lets you brainstorm visually to explore an expanded range of ideas and 
+possibilities in a serendipitous way.
 "
 HOMEPAGE="http://al.chemy.org"
 DOWNLOADS="${HOMEPAGE}/downloads/${PNV}.tar.gz"
@@ -14,9 +19,11 @@ UPSTREAM_CHANGELOG=""
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS=""
 
-DEPENDENCIES="virtual/jre"
+DEPENDENCIES="
+    run:
+        virtual/jre
+"
 
 BUGS_TO="jedahan@gmail.com"
 
@@ -31,3 +38,4 @@ src_install() {
     doins -r .
     dobin "${FILES}"/Alchemy
 }
+

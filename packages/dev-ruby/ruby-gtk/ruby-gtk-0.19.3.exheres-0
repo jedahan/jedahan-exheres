@@ -4,8 +4,14 @@
 SUMMARY="Ruby Gtk2 bindings"
 PLATFORMS="~amd64"
 MYOPTIONS=""
+
+LICENCES="GPL-2"
+SLOT="0"
+BUGS_TO="jedahan@gmail.com"
+
 DEPENDENCIES="
-    x11-libs/gtk+:2
+    build+run:
+        x11-libs/gtk+:2
 
     run:
         dev-ruby/ruby-atk[>=${PV}]
@@ -14,8 +20,4 @@ DEPENDENCIES="
         dev-ruby/ruby-pango[>=${PV}]
 "
 
-LICENCES="GPL-2"
-SLOT="0"
-
-BUGS_TO="jedahan@gmail.com"
 

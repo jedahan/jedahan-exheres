@@ -6,31 +6,31 @@
 #     Distributed under the terms of the GNU General Public License v2
 
 depend() {
-	need localmount
-	after bootmisc
-	before net
+    need localmount
+    after bootmisc
+    before net
 }
 
 checkrules() {
-	if [ ! -f ${FIREHOL_CONF} ]; then
-		eerror "Not starting FireHOL. Create ${FIREHOL_CONF}"
-		eerror "and fill it with some rules."
-		eerror "man firehol.conf for more info."
-		return 1
-	fi
+    if [ ! -f ${FIREHOL_CONF} ]; then
+        eerror "Not starting FireHOL. Create ${FIREHOL_CONF}"
+        eerror "and fill it with some rules."
+        eerror "man firehol.conf for more info."
+        return 1
+    fi
 }
 
 start() {
-	checkrules || return 1
-	ebegin "Starting FireHOL"
-		/usr/sbin/firehol ${FIREHOL_CONF} start > /dev/null
-	eend $? 
+    checkrules || return 1
+    ebegin "Starting FireHOL"
+        /usr/sbin/firehol ${FIREHOL_CONF} start > /dev/null
+    eend $? 
 }
 
 stop() {
-	ebegin "Stopping FireHOL"
-		/usr/sbin/firehol stop > /dev/null
-	eend $?
+    ebegin "Stopping FireHOL"
+        /usr/sbin/firehol stop > /dev/null
+    eend $?
 }
 
 restart() {
@@ -42,25 +42,25 @@ restart() {
 
 
 try() {
-	ebegin "Trying FireHOL configuration"
-	/usr/sbin/firehol ${FIREHOL_CONF} try
-	eend $?
+    ebegin "Trying FireHOL configuration"
+    /usr/sbin/firehol ${FIREHOL_CONF} try
+    eend $?
 }
 
 status() {
-	ebegin "Showing FireHOL status"
-	/usr/sbin/firehol status
-	eend $?
+    ebegin "Showing FireHOL status"
+    /usr/sbin/firehol status
+    eend $?
 }
 
 panic() {
-	ebegin "FireHOL PANIC"
-	/usr/sbin/firehol panic
-	eend $?
+    ebegin "FireHOL PANIC"
+    /usr/sbin/firehol panic
+    eend $?
 }
 
 save() {
-	ebegin "Saving FireHOL configuration"
-	/usr/sbin/firehol save
-	eend $?
+    ebegin "Saving FireHOL configuration"
+    /usr/sbin/firehol save
+    eend $?
 }

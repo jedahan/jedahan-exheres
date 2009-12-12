@@ -2,8 +2,8 @@
 # Upstream: no
 #   Reason: we install ip to /sbin, not /bin
 diff -Nru pptp-1.7.2.orig/routing.c pptp-1.7.2/routing.c
---- pptp-1.7.2.orig/routing.c	2008-05-14 08:33:55.000000000 +0200
-+++ pptp-1.7.2/routing.c	2009-09-16 23:28:11.000000000 +0200
+--- pptp-1.7.2.orig/routing.c    2008-05-14 08:33:55.000000000 +0200
++++ pptp-1.7.2/routing.c    2009-09-16 23:28:11.000000000 +0200
 @@ -55,7 +55,7 @@
  
  void routing_init(char *ip) {

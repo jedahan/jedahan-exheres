@@ -27,17 +27,17 @@ DEPENDENCIES="
     dev-perl/HTML-Parser
     dev-perl/IO-Compress
     dev-perl/libnet
-	dev-perl/libwww-perl
+    dev-perl/libwww-perl
     dev-perl/Time-Piece
     dev-perl/URI
-	dev-perl/XML-Parser
-	dev-perl/XML-Simple
+    dev-perl/XML-Parser
+    dev-perl/XML-Simple
 
     cddb?  ( dev-perl/Net-FreeDB )
     gnome?  ( dev-perl/Gnome2-VFS )
     tellico? ( 
         dev-perl/Digest-MD5
-	    dev-perl/MIME-Base64 )
+        dev-perl/MIME-Base64 )
     util?  ( dev-perl/DateTime-Format-Strptime )
 "
 WORK="${WORKBASE}/${PN}"

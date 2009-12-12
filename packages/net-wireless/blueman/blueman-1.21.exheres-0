@@ -14,26 +14,26 @@ PLATFORMS="~amd64"
 MYOPTIONS="gnome policykit pulseaudio"
 
 DEPENDENCIES="
-	dev-lang/python[>=2.5]
-	gnome-bindings/pygobject
-	net-wireless/bluez[>=4.25]
+    dev-lang/python[>=2.5]
+    gnome-bindings/pygobject
+    net-wireless/bluez[>=4.25]
 
 build:
     dev-libs/glib:2
-	x11-libs/gtk+:2[>=2.14]
-	x11-libs/startup-notification
+    x11-libs/gtk+:2[>=2.14]
+    x11-libs/startup-notification
     dev-util/intltool
     dev-python/Pyrex[>=0.9.8]
 
 run:
-	dev-python/dbus-python
-	dev-python/notify-python
-	gnome-bindings/pygtk
-	sys-apps/dbus
-	net-wireless/obex-data-server[>=0.4.3]
+    dev-python/dbus-python
+    dev-python/notify-python
+    gnome-bindings/pygtk
+    sys-apps/dbus
+    net-wireless/obex-data-server[>=0.4.3]
     virtual/notification-daemon
 
-	gnome? ( gnome-bindings/gnome-python[gconf] ) 
+    gnome? ( gnome-bindings/gnome-python[gconf] ) 
     policykit? ( gnome-desktop/PolicyKit-gnome )
     pulseaudio? ( media-sound/pulseaudio[>=9.15] ) 
 "

@@ -14,11 +14,11 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     dev-libs/boost
-	gnome-bindings/gtkmm[>=2.4]
-	gnome-platform/libgnomecanvasmm[>=2.6]
-	media-gfx/graphviz
+    gnome-bindings/gtkmm[>=2.4]
+    gnome-platform/libgnomecanvasmm[>=2.6]
+    media-gfx/graphviz
     build:
-    	dev-util/pkg-config
+        dev-util/pkg-config
         app-doc/doxygen
 "
 

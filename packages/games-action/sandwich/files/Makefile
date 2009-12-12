@@ -21,31 +21,31 @@
 # This makefile refers to http://xkcd.com/149/
 
 me a:
-	@true
+    @true
 
 sandwich.:
 ifeq ($(shell id -u),0)
-	@echo "Okay."
-	@echo ""
-	@echo ""
-	@echo "                    _.---._"
-	@echo "                _.-~       ~-._"
-	@echo "            _.-~               ~-._"
-	@echo "        _.-~                       ~---._"
-	@echo "    _.-~                                 ~\\"
-	@echo " .-~                                    _.;"
-	@echo " :-._                               _.-~./"
-	@echo " }-._~-._                   _..__.-~_.-~ )"
-	@echo " \`-._~-._~-._              /   ...-~H.-~"
-	@echo "     ~-nad.._\\.        _.-~ .::::  //"
-	@echo "         ~-. \\\`--...--~ _.-~__...==~"
-	@echo "            \\.\`--...---+-~~~~~"
-	@echo "              ~-..----~"
-	@echo ""
+    @echo "Okay."
+    @echo ""
+    @echo ""
+    @echo "                    _.---._"
+    @echo "                _.-~       ~-._"
+    @echo "            _.-~               ~-._"
+    @echo "        _.-~                       ~---._"
+    @echo "    _.-~                                 ~\\"
+    @echo " .-~                                    _.;"
+    @echo " :-._                               _.-~./"
+    @echo " }-._~-._                   _..__.-~_.-~ )"
+    @echo " \`-._~-._~-._              /   ...-~H.-~"
+    @echo "     ~-nad.._\\.        _.-~ .::::  //"
+    @echo "         ~-. \\\`--...--~ _.-~__...==~"
+    @echo "            \\.\`--...---+-~~~~~"
+    @echo "              ~-..----~"
+    @echo ""
 
 # TODO: Put here the code to really make the sandwich. ;)
 else
-	@echo "What? Make it yourself."
+    @echo "What? Make it yourself."
 endif
 
 .PHONY: me a sandwich.

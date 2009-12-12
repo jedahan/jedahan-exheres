@@ -12,15 +12,15 @@ MYOPTIONS="jack alsa"
 
 DEPENDENCIES="
     x11-libs/libXext
-	x11-libs/libXdamage
-	x11-libs/libXfixes
-	x11-libs/libICE
-	x11-libs/libSM
-	media-libs/libogg
-	media-libs/libvorbis
-	media-libs/libtheora
-	alsa? ( sys-sound/alsa-lib )
-	jack? ( media-sound/jack-audio-connection-kit )
+    x11-libs/libXdamage
+    x11-libs/libXfixes
+    x11-libs/libICE
+    x11-libs/libSM
+    media-libs/libogg
+    media-libs/libvorbis
+    media-libs/libtheora
+    alsa? ( sys-sound/alsa-lib )
+    jack? ( media-sound/jack-audio-connection-kit )
 "
 
 BUGS_TO="jedahan@gmail.com"

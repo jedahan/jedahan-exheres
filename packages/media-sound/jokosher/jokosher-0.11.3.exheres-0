@@ -35,7 +35,7 @@ DEPENDENCIES="
     ogg?  ( media-plugins/gst-plugins-base[gstreamer_plugins:ogg][gstreamer_plugins:vorbis] )
 
     build:
-	    app-text/scrollkeeper-dtd
+        app-text/scrollkeeper-dtd
 "
 
 PYTHON_MODNAME="Jokosher"

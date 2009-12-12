@@ -14,9 +14,9 @@ WORK=${WORKBASE}/${PN}
 
 DEPENDENCIES="
     net-misc/curl[>=7.17.1]
-	sys-fs/fuse[>=2.6.0]
-	dev-libs/libxml2
-	dev-libs/openssl
+    sys-fs/fuse[>=2.6.0]
+    dev-libs/libxml2
+    dev-libs/openssl
     run:
         app-admin/mime-support
     "

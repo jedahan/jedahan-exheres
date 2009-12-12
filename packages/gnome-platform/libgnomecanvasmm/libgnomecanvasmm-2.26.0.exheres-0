@@ -13,9 +13,9 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     gnome-platform/libgnomecanvas
-	gnome-bindings/gtkmm
+    gnome-bindings/gtkmm
     build:
-	    dev-util/pkg-config
+        dev-util/pkg-config
 "
 
 BUGS_TO="jedahan@gmail.com"

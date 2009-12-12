@@ -21,7 +21,7 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     net-dialup/ppp
-	dev-lang/perl
+    dev-lang/perl
 "
 
 WORK="${WORKBASE}/pptp-${PV}"

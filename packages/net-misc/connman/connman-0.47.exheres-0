@@ -18,14 +18,14 @@ DEPENDENCIES="
     build+run:
         dev-libs/glib[>=2.16]
         sys-apps/dbus[>=1.2]
-    	bluetooth?    ( net-wireless/bluez )
-    	dhclient?     ( net-misc/dhcp )
-    	policykit?    ( sys-auth/PolicyKit[>=0.7] )
-    	ppp?          ( net-dialup/ppp )
-    	udev?         ( sys-fs/udev[>=141] )
-    	wifi?         ( net-wireless/wpa_supplicant[dbus] )
+        bluetooth?    ( net-wireless/bluez )
+        dhclient?     ( net-misc/dhcp )
+        policykit?    ( sys-auth/PolicyKit[>=0.7] )
+        ppp?          ( net-dialup/ppp )
+        udev?         ( sys-fs/udev[>=141] )
+        wifi?         ( net-wireless/wpa_supplicant[dbus] )
     build:
-	    doc? ( dev-util/gtk-doc )
+        doc? ( dev-util/gtk-doc )
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( 

@@ -5,7 +5,7 @@ require distutils
 
 SUMMARY="Abstract shooter - defeat auto-created huge battleships"
 HOMEPAGE="http://www.asahi-net.or.jp/~cs8k-cyu/windows/rr_e.html
-	http://rrootage.sourceforge.net/"
+    http://rrootage.sourceforge.net/"
 DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
 
 LICENCES="BSD"
@@ -17,9 +17,9 @@ BUGS_TO="jedahan@gmail.com"
 
 DEPENDENCIES="
     x11-dri/mesa
-	media-libs/SDL
-	media-libs/SDL_mixer[ogg]
-	dev-libs/libbulletml[>=0.0.3]
+    media-libs/SDL
+    media-libs/SDL_mixer[ogg]
+    dev-libs/libbulletml[>=0.0.3]
 "
 
 WORK="${WORKBASE}/${PN}/src"

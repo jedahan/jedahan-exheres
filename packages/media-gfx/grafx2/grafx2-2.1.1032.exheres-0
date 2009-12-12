@@ -20,10 +20,10 @@ UPSTREAM_CHANGELOG="${HOMEPAGE}/wiki/History"
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/wiki/UserManual"
 
 DEPENDENCIES="
-	media-libs/SDL
+    media-libs/SDL
     media-libs/SDL_image
-	media-libs/SDL_ttf
-	media-libs/freetype
+    media-libs/SDL_ttf
+    media-libs/freetype
 "
 
 WORK="${WORKBASE}/${PN}"

@@ -4,18 +4,18 @@
 # $Header: $
 
 depend() {
-	need dbus localmount
-	after bootmisc modules
+    need dbus localmount
+    after bootmisc modules
 }
 
 start() {
-	ebegin "Starting Connection Manager daemon"
-	start-stop-daemon --start --exec /usr/sbin/connmand
-	eend $?
+    ebegin "Starting Connection Manager daemon"
+    start-stop-daemon --start --exec /usr/sbin/connmand
+    eend $?
 }
 
 stop() {
-	ebegin "Stopping Connection Manager daemon"
-	start-stop-daemon --stop --exec /usr/sbin/connmand
-	eend $?
+    ebegin "Stopping Connection Manager daemon"
+    start-stop-daemon --stop --exec /usr/sbin/connmand
+    eend $?
 }

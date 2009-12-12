@@ -12,7 +12,7 @@ BUGS_TO="jedahan@gmail.com"
 
 DEPENDENCIES="
     build:
-	    dev-util/intltool[>=0.35]
+        dev-util/intltool[>=0.35]
     build+run:
         dev-libs/glib[>=2.16]
         sys-apps/dbus[>=1.2]

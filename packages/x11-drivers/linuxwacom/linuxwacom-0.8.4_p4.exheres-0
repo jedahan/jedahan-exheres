@@ -19,17 +19,17 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-	gtk? ( x11-libs/gtk+:2 )
-	tcl? ( dev-lang/tcl )
-	tk?  ( dev-lang/tk )
+    gtk? ( x11-libs/gtk+:2 )
+    tcl? ( dev-lang/tcl )
+    tk?  ( dev-lang/tk )
     sys-devel/gcc[>=4.2]
-	sys-fs/udev
-	sys-libs/ncurses
-	x11-server/xorg-server
+    sys-fs/udev
+    sys-libs/ncurses
+    x11-server/xorg-server
     x11-proto/inputproto
 
     build:
-    	usb? ( sys-kernel/linux-headers )
+        usb? ( sys-kernel/linux-headers )
 "
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PN}-0.8.3_p6-xf86config.patch" )

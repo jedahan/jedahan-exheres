@@ -7,11 +7,11 @@ MYOPTIONS=""
 DEPENDENCIES="
     x11-libs/gtk+:2
 
-	run:
-    	dev-ruby/ruby-atk[>=${PV}]
+    run:
+        dev-ruby/ruby-atk[>=${PV}]
         dev-ruby/ruby-gdkpixbuf2
-    	dev-ruby/ruby-glib2[>=${PV}]
-    	dev-ruby/ruby-pango[>=${PV}]
+        dev-ruby/ruby-glib2[>=${PV}]
+        dev-ruby/ruby-pango[>=${PV}]
 "
 
 LICENCES="GPL-2"

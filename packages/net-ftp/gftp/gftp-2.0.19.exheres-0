@@ -12,7 +12,7 @@ PLATFORMS="~amd64"
 MYOPTIONS="gtk ssl"
 
 DEPENDENCIES="
-    build+run
+    build+run:
         dev-libs/glib:2
         sys-devel/gettext
         sys-libs/ncurses

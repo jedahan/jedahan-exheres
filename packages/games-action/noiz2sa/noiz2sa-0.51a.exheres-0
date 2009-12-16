@@ -1,13 +1,10 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require distutils
+require distutils sourceforge [ suffix=gz ]
 
 SUMMARY="Abstract shooter - defeat auto-created huge battleships"
-HOMEPAGE="
-    http://www.asahi-net.or.jp/~cs8k-cyu/windows/rr_e.html
-    http://rrootage.sourceforge.net/"
-DOWNLOADS="mirror://sourceforge/${PN}/${PNV}.tar.gz"
+HOMEPAGE+="http://www.asahi-net.or.jp/~cs8k-cyu/windows/rr_e.html"
 
 LICENCES="BSD"
 SLOT="0"

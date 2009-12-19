@@ -1,7 +1,7 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Purpose License v2
 
-require sourceforge [ suffix=gz ]
+require sourceforge [ suffix=tar.gz ]
 
 SUMMARY="Advanced IRC Bouncer / Proxy"
 DESCRIPTION="

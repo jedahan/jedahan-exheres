@@ -10,8 +10,8 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-run:
-    app-shells/bash
+    run:
+        app-shells/bash
 "
 
 WORK=${WORKBASE}/${PN}
@@ -22,7 +22,7 @@ src_install() {
      dosym defaultlist /var/cache/localepurge/localelist
      insinto /etc
      doins locale.nopurge
-     dobin localepurge || die
+     dobin localepurge
      doman localepurge.8
 }
 

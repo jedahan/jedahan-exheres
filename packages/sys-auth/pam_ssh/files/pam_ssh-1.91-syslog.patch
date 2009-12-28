@@ -1,3 +1,7 @@
+Reason: Missing header
+Source: Gentoo
+Upstream: No
+
 Index: pam_ssh-1.91/pam_ssh.c
 ===================================================================
 --- pam_ssh-1.91.orig/pam_ssh.c

@@ -1,3 +1,7 @@
+Source: Gentoo
+Reason: Bug 1055465
+Upstream: In 1.97
+
 --- libpam-ssh-1.91.0.orig/pam_ssh.c    2004-04-12 08:55:08.000000000 -0500
 +++ libpam-ssh-1.91.0/pam_ssh.c    2005-04-03 21:18:58.140936716 -0500
 @@ -279,9 +279,8 @@

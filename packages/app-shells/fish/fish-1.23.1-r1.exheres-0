@@ -60,7 +60,7 @@ src_install() {
     insinto /usr/share/doc/${PNVR}
     doins -r user_doc/html
     default
-    edo find "${IMAGE}"/usr/share/doc/ -maxdepth 1 -type f | xargs rm -f
+    edo find "${IMAGE}"/usr/share/doc/ -maxdepth 1 -type f -delete
     edo rm "${IMAGE}"/usr/share/doc/${PNVR}/history.{c,h,o}
 }
 

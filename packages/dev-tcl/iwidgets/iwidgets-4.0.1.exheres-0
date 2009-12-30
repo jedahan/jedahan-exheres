@@ -1,0 +1,59 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+# Based upon 'iwidgets-4.0.1-r1.ebuild', which is 
+#   Copyright 1999-2009 Gentoo Foundation
+
+require multilib sourceforge
+
+MY_PNV="${PN}${PV}"
+ITCL_PNV="itcl3.2.1"
+
+SUMMARY="Widget collection for incrTcl/incrTk"
+HOMEPAGE="http://incrtcl.sourceforge.net/itcl/"
+DOWNLOADS="
+    mirror://sourceforge/incrtcl/${MY_PNV}.tar.gz
+    mirror://sourceforge/incrtcl/${ITCL_PNV}_src.tgz
+"
+
+LICENCES="as-is BSD"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    dev-tcl/itcl[>=3.2.1]
+    dev-tcl/itk[>=3.2.1]
+"
+
+WORK="${WORKBASE}/${MY_PNV}"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( 
+    --with-itcl=${WORKBASE}/${ITCL_PNV}
+    --hates=docdir
+)
+
+src_prepare() {
+    edo sed -i -e "/^\(LIB\|SCRIPT\)_INSTALL_DIR =/s|lib|$(get_libdir)|" \
+    ${WORK}/Makefile.in
+}
+
+src_compile() {
+    :
+}
+
+src_install() {
+    # parallel borks #177088
+    emake -j1 INSTALL_ROOT="${IMAGE}" install
+    emagicdocs
+
+    # symlink libraries
+    dosym /usr/$(get_libdir)/${PNV} /usr/$(get_libdir)/${PN}
+
+    # fix manpages
+    dodir /usr/share/man
+    edo mv "${IMAGE}"/usr/man/mann "${IMAGE}"/usr/share/man/
+    rmdir "${IMAGE}"/usr/man
+
+    # move demos under docs
+    edo mv "${IMAGE}/usr/$(get_libdir)/${MY_PNV}/demos" "${IMAGE}/usr/share/doc/${PNVR}/"
+}
+

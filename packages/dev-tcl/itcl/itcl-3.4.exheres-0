@@ -7,7 +7,7 @@ SUMMARY="Object Oriented Enhancements for Tcl/Tk"
 
 SLOT="0"
 LICENCES="BSD"
-PLATFORMS="~amd64"
+PLATFORMS=""
 
 DEPENDENCIES="dev-lang/tcl"
 

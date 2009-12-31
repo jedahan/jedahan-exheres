@@ -17,7 +17,7 @@ DOWNLOADS="
 
 LICENCES="as-is BSD"
 SLOT="0"
-PLATFORMS="~amd64"
+PLATFORMS=""
 
 DEPENDENCIES="
     dev-tcl/itcl[>=3.2.1]

@@ -11,7 +11,7 @@ managers, and misc commands."
 
 SLOT="0"
 LICENCES="BSD"
-PLATFORMS="~amd64"
+PLATFORMS=""
 BUGS_TO="jedahan@gmail.com"
 
 DEPENDENCIES="

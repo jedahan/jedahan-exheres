@@ -8,13 +8,13 @@ HOMEPAGE="http://tclx.sourceforge.net"
 
 LICENCES="BSD"
 SLOT="0"
-PLATFORMS="~amd64"
+PLATFORMS=""
 MYOPTIONS="tk threads"
 BUGS_TO="jedahan@gmail.com"
 
 DEPENDENCIES="
-    dev-lang/tcl[>=8.4.6]
-    tk? ( dev-lang/tk[>=8.4.6] )
+    dev-lang/tcl
+    tk? ( dev-lang/tk )
 "
 
 WORK=${WORKBASE}/${PN}${PV}

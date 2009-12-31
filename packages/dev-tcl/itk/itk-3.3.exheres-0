@@ -8,7 +8,7 @@ HOMEPAGE="http://incrtcl.sourceforge.net/"
 
 SLOT="0"
 LICENCES="BSD"
-PLATFORMS="~amd64"
+PLATFORMS=""
 
 DEPENDENCIES="
     dev-lang/tk

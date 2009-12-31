@@ -1,0 +1,40 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require multilib sourceforge [ pnv=${PN}${PV} suffix=tar.gz ]
+
+HOMEPAGE="http://blt.sourceforge.net/"
+DOWNLOADS="mirror://sourceforge/blt/BLT2.4z.tar.gz"
+
+SUMMARY="BLT is an extension to the Tk toolkit adding new widgets, geometry
+managers, and misc commands."
+
+SLOT="0"
+LICENCES="BSD"
+PLATFORMS="~amd64"
+BUGS_TO="jedahan@gmail.com"
+
+DEPENDENCIES="
+    dev-lang/tk
+    x11-libs/libX11
+"
+
+WORK="${WORKBASE}/${PN}${PV}"
+
+DEFAULT_SRC_PREPARE_PATCHES=( ${FILES}/${PNV}-*.patch )
+DEFAULT_SRC_CONFIGURE_PARAMS=( --with-blt=/usr/$(get_libdir) --hates=docdir )
+
+src_prepare() {
+    default
+    # Set the correct libdir
+    edo sed -i -e "s:\(^libdir=\${exec_prefix}/\)lib:\1$(get_libdir):" configure*
+    edo sed -i -e "/^scriptdir =/s:lib:$(get_libdir):" Makefile.in demos/Makefile.in
+}
+
+src_install() {
+    dodir /usr/share
+    emake -j1 INSTALL_ROOT="${IMAGE}" install
+    emagicdocs
+    edo find "${IMAGE}" -empty -type d -delete
+}
+

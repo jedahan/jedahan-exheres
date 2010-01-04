@@ -6,7 +6,6 @@
 require gnome-2 distutils [ python_dep=2.4 ]
 
 SUMMARY="A simple yet powerful multi-track studio"
-DESCRIPTION="${SUMMARY}"
 HOMEPAGE="http://www.jokosher.org"
 DOWNLOADS="http://launchpad.net/jokosher/0.11/${PV}/+download/${PNV}.tar.gz"
 

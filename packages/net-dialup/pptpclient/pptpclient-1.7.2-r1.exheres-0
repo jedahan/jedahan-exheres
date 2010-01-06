@@ -1,8 +1,6 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require toolchain-funcs
-
 SUMMARY="Linux client for PPTP"
 DESCRIPTION="
 PPTP Client is a Linux, FreeBSD, NetBSD and OpenBSD client for the proprietary 
@@ -29,7 +27,7 @@ DEPENDENCIES="
 WORK="${WORKBASE}/pptp-${PV}"
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-ip-path.patch" )
-DEFAULT_SRC_COMPILE_PARAMS=( CC=$(tc-getCC) )
+DEFAULT_SRC_COMPILE_PARAMS=( CC="${CC}" )
 
 src_prepare() {
     default

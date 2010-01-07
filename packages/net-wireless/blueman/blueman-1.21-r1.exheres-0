@@ -36,29 +36,3 @@ DEPENDENCIES="
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --with-no-runtime-deps-check --enable-nls )
 
-#src_prepare() {
-    # disable pyc compiling
-#    rm py-compile
-#    ln -s $(type -P true) py-compile
-#}
-
-#src_install() {
-#    default
-#
-#    if ! option gnome ; then
-#        python_version
-#        rm "${IMAGE}$(python_get_sitedir)/blueman/plugins/config/Gconf.py"
-#    fi
-
-#    python_need_rebuild
-#}
-
-#pkg_postinst() {
-#    python_version
-#    python_mod_optimize $(python_get_sitedir)/blueman
-#}
-
-#pkg_postrm() {
-#    python_mod_cleanup
-#}
-

@@ -12,9 +12,10 @@ PLATFORMS="~amd64"
 MYOPTIONS="gtk ssl"
 
 DEPENDENCIES="
+    build:
+        sys-devel/gettext
     build+run:
         dev-libs/glib:2
-        sys-devel/gettext
         sys-libs/ncurses
         sys-libs/readline
         gtk? ( x11-libs/gtk+:2 )

@@ -9,5 +9,9 @@ LICENCES="GPL-2 LGPL-2.1"
 SLOT="0"
 PLATFORMS="~amd64"
 
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-{autotools,fix-leaks}.patch )
+src_install() {
+    dobin bin/*
+    dobin wcstools
+    emagicdocs
+}
 

@@ -1,0 +1,18 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="C and Fortran library for manipulating FITS files"
+HOMEPAGE="http://heasarc.gsfc.nasa.gov/docs/software/fitsio/fitsio.html"
+DOWNLOADS="ftp://heasarc.gsfc.nasa.gov/software/fitsio/c/${PN}${PV//.}.tar.gz"
+
+LICENCES="BSD GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+# TODO: add fortran support
+MYOPTIONS="threads"
+
+WORK="${WORKBASE}/${PN}"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-autotools.patch )
+DEFAULT_STC_CONFIGURE_OPTION_ENABLES=( 'threads reentrant' )
+

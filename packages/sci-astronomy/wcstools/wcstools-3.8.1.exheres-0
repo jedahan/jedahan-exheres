@@ -1,0 +1,13 @@
+# Copyright 1999-2009 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="World Coordinate System library for astronomical FITS images"
+HOMEPAGE="http://tdc-www.harvard.edu/software/wcstools"
+DOWNLOADS="${HOMEPAGE}/${PNV}.tar.gz"
+
+LICENCES="GPL-2 LGPL-2.1"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-{autotools,fix-leaks}.patch )
+

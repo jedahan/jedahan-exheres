@@ -1,0 +1,26 @@
+require scons
+
+SUMMARY="Key-Value store"
+DESCRIPTION="
+"
+HOMEPAGE="http://www.mongodb.org"
+DOWNLOADS="http://downloads.mongodb.org/src/${PN}-src-r${PV}.tar.gz -> ${PNV}.tar.gz"
+
+LICENCES="AGPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+
+#TODO: requires spidermonkey headers
+
+DEPENDENCIES="
+    build:
+        dev-libs/boost
+    build+run:
+        dev-libs/spidermonkey
+"
+
+WORK="${WORKBASE}/${PN}-src-r${PV}"
+BUGS_TO="jedahan@gmail.com"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( )
+

@@ -1,0 +1,20 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require multilib
+
+SUMMARY="Nouveau driver firmware"
+HOMEPAGE="http://nouveau.freedesktop.org/"
+DOWNLOADS="http://people.freedesktop.org/~pq/nouveau-drm/${PNV}.tar.gz"
+
+LICENCES="NVIDIA"
+SLOT="0"
+PLATFORMS="~amd64"
+
+WORK=${WORKBASE}
+
+src_install() {
+    insinto /$(get_libdir)/firmware
+    doins -r nouveau
+}
+

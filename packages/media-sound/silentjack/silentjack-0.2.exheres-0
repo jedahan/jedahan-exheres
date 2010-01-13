@@ -1,0 +1,20 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Silence/dead air detector for the Jack Audio Connection Kit."
+HOMEPAGE="http://www.aelius.com/njh/silentjack/"
+DOWNLOADS="${HOMEPAGE}${PNV}.tar.gz"
+
+LICENCES="GPL"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+        media-sound/jack-audio-connection-kit
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir )
+

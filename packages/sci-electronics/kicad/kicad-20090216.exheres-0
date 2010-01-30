@@ -1,0 +1,28 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require cmake
+
+DESCRIPTION="Electronic Schematic and PCB design tools."
+HOMEPAGE="http://kicad.sourceforge.net"
+DOWNLOADS="http://iut-tice.ujf-grenoble.fr/cao/kicad-sources-2009-02-16.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="python"
+
+DEPENDENCIES="
+    build+run:
+        sys-devel/cmake
+        dev-libs/boost
+        dev-libs/glib
+        x11-libs/wxGTK:2.8
+    build:
+        app-arch/xz
+    run:
+        python? ( dev-lang/python )
+"
+
+WORK="${WORKBASE}/${PN}-2009-02-16"
+

@@ -1,0 +1,44 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Command-line downloader and uploader for file-sharing websites"
+HOMEPAGE="http://code.google.com/p/plowshare/"
+DOWNLOADS="http://${PN}.googlecode.com/files/${PNV}.tgz"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="javascript view-captcha
+           javascript [[ note = [ enable zshare and mediafire support ] ]]"
+
+BUGS_TO="jedahan@gmail.com"
+
+# TODO:
+# MYOPTIONS+=view-captcha
+# DEPENDENCIES+=view-captcha? ( media-gfx/aview )
+
+DEPENDENCIES="
+    run:
+        javascript? ( dev-lang/spidermonkey )
+        app-text/recode
+        app-text/tesseract[linguas:en]
+        media-gfx/ImageMagick[tiff]
+        net-misc/curl
+    suggestion:
+        media-libs/libcaca
+"
+
+src_install() {
+    insinto /usr/share/${PN}
+    doins src/{download,upload,delete,lib}.sh
+    doins -r src/modules
+
+    dodir /usr/bin/
+    dosym /usr/share/${PN}/download.sh /usr/bin/plowdown
+    dosym /usr/share/${PN}/upload.sh /usr/bin/plowup
+    dosym /usr/share/${PN}/delete.sh /usr/bin/plowdel
+    chmod +x /usr/bin/plow{down,up,del}
+
+    emagicdocs
+}
+

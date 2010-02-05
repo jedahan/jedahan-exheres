@@ -29,9 +29,9 @@ DEPENDENCIES="
         net-wireless/obex-data-server[>=0.4.3]
         sys-apps/dbus
         virtual/notification-daemon
-        gnome? ( gnome-bindings/gnome-python[gconf] ) 
+        gnome? ( gnome-bindings/gnome-python[gconf] )
         policykit? ( gnome-desktop/PolicyKit-gnome )
-        pulseaudio? ( media-sound/pulseaudio[>=9.15] ) 
+        pulseaudio? ( media-sound/pulseaudio[>=0.9.15] )
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --with-no-runtime-deps-check --enable-nls )

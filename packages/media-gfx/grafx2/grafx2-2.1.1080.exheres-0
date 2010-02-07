@@ -34,10 +34,5 @@ DEPENDENCIES="
 "
 
 WORK="${WORKBASE}/${PN}"
-DEFAULT_SRC_INSTALL_PARAMS=( DESTDIR="${IMAGE}" prefix="/usr" )
-
-src_prepare() {
-    default
-    sed -i -e 's/$(DESTDIR)$(datadir)\/grafx2/$(DESTDIR)$(datadir)\/${PNV}/g' "${WORK}/Makefile"
-}
+DEFAULT_SRC_INSTALL_PARAMS=( prefix="/usr" )
 

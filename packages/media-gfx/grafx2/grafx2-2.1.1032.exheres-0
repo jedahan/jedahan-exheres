@@ -1,6 +1,8 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
+require googlecode [suffix=tgz]
+
 SUMMARY="A pixelart-oriented painting program"
 DESCRIPTION="
 GrafX2 is a bitmap paint program that allows you to draw in more than 60 video
@@ -14,7 +16,6 @@ you aren't used to the art of drawing with up to 256 colors, it will be a
 little more difficult for you, but you should give it a try (or more, because 
 most of the power of this program won't show up on the first try).
 "
-HOMEPAGE="http://code.google.com/p/${PN}"
 DOWNLOADS="http://${PN}.googlecode.com/files/${PNV}-src.tgz"
 
 LICENCES="GPL-2"

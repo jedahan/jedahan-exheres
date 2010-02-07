@@ -2,10 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 MY_PV="r${PV}-source"
+require googlecode [ suffix=tar.gz ]
 
 SUMMARY="Amazon mounting S3 via fuse"
-HOMEPAGE="http://s3fs.googlecode.com/"
-DOWNLOADS="${HOMEPAGE}files/${PN}-${MY_PV}.tar.gz"
 LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"

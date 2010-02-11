@@ -1,10 +1,10 @@
-# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="Sketching software"
 DESCRIPTION="
 Alchemy is an open drawing project aimed at exploring how we can sketch, draw,
-and create on computers in new ways. Alchemy isn\u2019t software for creating 
+and create on computers in new ways. Alchemy isn't software for creating 
 finished artwork, but rather a sketching environment that focuses on the 
 absolute initial stage of the creation process. Experimental in nature, Alchemy
 lets you brainstorm visually to explore an expanded range of ideas and 
@@ -13,8 +13,8 @@ possibilities in a serendipitous way.
 HOMEPAGE="http://al.chemy.org"
 DOWNLOADS="${HOMEPAGE}/downloads/${PNV}.tar.gz"
 
-UPSTREAM_DOCUMENTATION="http://en.flossmanuals.net/${PN}"
-UPSTREAM_CHANGELOG=""
+UPSTREAM_DOCUMENTATION="http://en.flossmanuals.net/Alchemy/"
+UPSTREAM_CHANGELOG="http://al.chemy.org/download/version-history/"
 
 LICENCES="GPL-3"
 SLOT="0"

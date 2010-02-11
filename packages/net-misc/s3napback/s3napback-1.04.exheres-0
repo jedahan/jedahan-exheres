@@ -13,7 +13,7 @@ DESCRIPTION="
       containing multiple Subversion repositories (including incremental
       backups-- thanks to Kevin Ross for that). 
 "
-HOMEPAGE="http://dev.davidsoergel.com/trac/s3napback"
+HOMEPAGE="http://dev.davidsoergel.com/trac/s3napback/"
 DOWNLOADS="${HOMEPAGE}/raw-attachment/wiki/Releases/${PNV}.tgz"
 
 LICENCES="as-is"

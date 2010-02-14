@@ -9,7 +9,7 @@ of the interpreter into any Java application with full two-way access between
 the Java and the Ruby code (similar to Jython for the Python language).
 "
 HOMEPAGE="http://www.jruby.org/"
-DOWNLOADS="http://dist.codehaus.org/${PN}/${PV}/${PN}-src-${PV}.tar.gz"
+DOWNLOADS="http://jruby.kenai.com/downloads/${PV}/${PN}-src-${PV}.tar.gz"
 
 LICENCES="|| ( CPL-1.0 GPL-2 LGPL-2.1 )"
 PLATFORMS="~amd64"

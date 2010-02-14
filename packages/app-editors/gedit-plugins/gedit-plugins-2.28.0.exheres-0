@@ -25,7 +25,7 @@ Here follows a list of plugins currently available in gedit-plugins:
         A simple terminal widget accessible from the bottom panel 
 "
 HOMEPAGE="http://live.gnome.org/GeditPlugins"
-DOWNLOADS="ftp://ftp.gnome.org/pub/gnome/sources/${PN}/2.26/${PNV}.tar.bz2"
+DOWNLOADS="ftp://ftp.gnome.org/pub/gnome/sources/${PN}/2.28/${PNV}.tar.bz2"
 
 BUGS_TO="jedahan@gmail.com"
 

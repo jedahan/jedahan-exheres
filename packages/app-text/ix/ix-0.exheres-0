@@ -21,7 +21,8 @@ POST:
 "
 
 HOMEPAGE="http://ix.io"
-DOWNLOADS="${HOMEPAGE}/client -> ix"
+DOWNLOADS=" ${HOMEPAGE} -> README
+            ${HOMEPAGE}/client -> ${PN}"
 
 BUGS_TO="jedahan@gmail.com"
 
@@ -37,9 +38,7 @@ DEPENDENCIES="
 WORK="${WORKBASE}"
 
 src_install() {
-    cp "${FETCHEDDIR}"/ix "${WORK}/"
-    wget http://ix.io -O README
-    dobin ix
-    emagicdocs
+    dobin "${FETCHEDDIR}"/${PN}
+    dodoc "${FETCHEDDIR}"/README
 }
 

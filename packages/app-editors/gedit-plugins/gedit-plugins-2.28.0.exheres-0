@@ -51,13 +51,8 @@ DEPENDENCIES="
 src_configure() {
     local plugins=bookmarks,drawspaces,showtabbar
 
-    if option python ; then
-        plugins+=,bracketcompletion,codecomment,colorpicker,joinlines,sessionsaver,smartspaces
-    fi
-
-    if option terminal ; then
-        plugin+=,terminal
-    fi
+    option terminal && plugin+=,terminal
+    option python && plugins+=,bracketcompletion,codecomment,colorpicker,joinlines,sessionsaver,smartspaces
 
     econf "--with-plugins=${plugins}" $(option_enable python)
 }

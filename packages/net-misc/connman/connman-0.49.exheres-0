@@ -46,6 +46,6 @@ src_install() {
 
     keepdir /var/lib{,64}/${PN}
     keepdir /usr/lib{,64}/${PN}/scripts
-    newinitd ${FILES}/${PN}.initd
+    newinitd ${FILES}/${PN}.initd ${PN}
+    newconfd ${FILES}/${PN}.confd ${PN}
 }
-

@@ -5,7 +5,8 @@ require cmake
 
 DESCRIPTION="Electronic Schematic and PCB design tools."
 HOMEPAGE="http://kicad.sourceforge.net"
-DOWNLOADS="http://iut-tice.ujf-grenoble.fr/cao/kicad-sources-2009-02-16.tar.gz"
+DOWNLOADS="http://iut-tice.ujf-grenoble.fr/cao/kicad-sources-2009-02-16.tar.gz
+           http://iut-tice.ujf-grenoble.fr/cao/doc_components-2009-02-16.tgz"
 
 LICENCES="GPL-2"
 SLOT="0"
@@ -25,4 +26,9 @@ DEPENDENCIES="
 "
 
 WORK="${WORKBASE}/${PN}-2009-02-16"
+
+src_prepare() {
+    default
+    edo mv ../doc .
+}
 

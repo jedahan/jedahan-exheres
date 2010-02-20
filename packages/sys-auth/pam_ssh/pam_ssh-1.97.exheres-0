@@ -1,11 +1,29 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require pam_ssh
+require pam sourceforge [ project=pam-ssh suffix=tar.bz2 ] autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.7 ] ]
 
+SUMMARY="Uses ssh-agent for a single sign-on"
+DESCRIPTION="This PAM module provides single sign-on behavior for SSH. The user
+types an SSH passphrase when logging in (probably to GDM, KDM, or XDM) and is 
+authenticated if the passphrase successfully decrypts the user's SSH private 
+key. In the PAM session phase, an ssh-agent process is started and keys are 
+added. For the entire session, the user can SSH to other hosts that accept key
+authentication without typing any passwords."
+
+LICENCES="BSD as-is"
 PLATFORMS="~amd64"
+SLOT="0"
+BUGS_TO="jedahan@gmail.com"
 
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-double-free.patch" )
+DEPENDENCIES="
+    net-misc/openssh
+    sys-libs/pam
+"
 
-DEFAULT_SRC_CONFIGURE_PARAMS+=( --hates=docdir )
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-double-free.patch )
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir --with-pam-dir=$(getpam_mod_dir) )
+
+DEFAULT_SRC_INSTALL_EXTRA_DOCS=( "${FILES}"/system-auth.example )
 

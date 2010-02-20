@@ -27,26 +27,26 @@ Fish's design is governed by 6 laws, these are:
         A program should be designed to make its features as easy as possible to
         discover for the user.
 "
-HOMEPAGE="http://fishshell.org"
+HOMEPAGE="http://fishshell.org/"
 DOWNLOADS="${HOMEPAGE}/files/${PV}/${PNV}.tar.bz2"
 
 BUGS_TO="jedahan@gmail.com"
 
 UPSTREAM_CHANGELOG="${HOMEPAGE}changes.html"
-UPSTREAM_DOCUMENTATION="${HOMEPAGE}/user_doc"
+UPSTREAM_DOCUMENTATION="${HOMEPAGE}user_doc/"
 
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
 SLOT="0"
 MYOPTIONS="
-    X [[ description = [ enable xsel ] ]]
+    X [[ description = [ enable xsel for copy/paste to the X buffer ] ]]
 "
 
 DEPENDENCIES="
     sys-libs/ncurses
     sys-apps/bc
     X? ( x11-utils/xsel )
-    
+
     build:
         app-doc/doxygen
         sys-devel/gettext
@@ -56,11 +56,7 @@ DEFAULT_SRC_CONFIGURE_PARAMS=( --bindir=/bin )
 DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( 'X xsel' )
 
 src_install() {
-    dodoc ChangeLog
-    insinto /usr/share/doc/${PNVR}
-    doins -r user_doc/html
     default
-    edo find "${IMAGE}"/usr/share/doc/ -maxdepth 1 -type f -delete
-    edo rm "${IMAGE}"/usr/share/doc/${PNVR}/history.{c,h,o}
+    dodoc -r user_doc/html
 }
 

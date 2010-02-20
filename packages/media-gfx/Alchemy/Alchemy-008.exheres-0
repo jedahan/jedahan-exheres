@@ -34,8 +34,8 @@ src_compile() {
 }
 
 src_install() {
+    dobin "${FILES}"/Alchemy
     insinto /opt/${PN}
     doins -r .
-    dobin "${FILES}"/Alchemy
 }
 

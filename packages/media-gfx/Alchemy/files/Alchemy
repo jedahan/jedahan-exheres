@@ -1,5 +1,5 @@
 #!/bin/sh
-cd `dirname $0`
+cd /opt/Alchemy
 if [ -n "$JAVA_HOME" ]; then
   $JAVA_HOME/bin/java -jar /opt/Alchemy/Alchemy.jar $*
 else

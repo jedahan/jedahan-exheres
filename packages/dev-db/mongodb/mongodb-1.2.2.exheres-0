@@ -1,14 +1,19 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
 require scons
 
-SUMMARY="Key-Value store"
-DESCRIPTION="
-"
+SUMMARY="A scalable, high-performance, schema-free, document-oriented database"
+DESCRIPTION="Written in C++, MongoDB bridges the gap between key-value stores
+(which are fast and highly scalable) and traditional RDBMS systems (which
+provide structured schemas and powerful queries)."
 HOMEPAGE="http://www.mongodb.org"
 DOWNLOADS="http://downloads.mongodb.org/src/${PN}-src-r${PV}.tar.gz -> ${PNV}.tar.gz"
 
 LICENCES="AGPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
+BUGS_TO="jedahan@gmail.com"
 
 #TODO: requires spidermonkey headers
 
@@ -20,7 +25,4 @@ DEPENDENCIES="
 "
 
 WORK="${WORKBASE}/${PN}-src-r${PV}"
-BUGS_TO="jedahan@gmail.com"
-
-DEFAULT_SRC_CONFIGURE_PARAMS=( )
 

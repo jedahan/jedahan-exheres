@@ -13,6 +13,7 @@ SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS="3G bluetooth debug dhclient dnsproxy doc ethernet policykit ppp
 threads tools udev wifi" #TODO: modemmanager ofono ospm resolvconf wimax
+RESTRICT="test"
 
 DEPENDENCIES="
     build+run:

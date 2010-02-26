@@ -1,0 +1,13 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gem
+
+SUMMARY="Provides POSIX tarchive management from Ruby programs."
+#HOMEPAGE="http://rubyforge.org/projects/ruwiki/"
+#DOWNLOADS="mirror://rubyforge/ruwiki/${PNV}.tar.gz"
+
+LICENCES="GPL-2 Ruby"
+SLOT="0"
+PLATFORMS="~amd64"
+

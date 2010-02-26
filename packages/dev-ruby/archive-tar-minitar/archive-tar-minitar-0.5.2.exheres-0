@@ -4,8 +4,6 @@
 require gem
 
 SUMMARY="Provides POSIX tarchive management from Ruby programs."
-#HOMEPAGE="http://rubyforge.org/projects/ruwiki/"
-#DOWNLOADS="mirror://rubyforge/ruwiki/${PNV}.tar.gz"
 
 LICENCES="GPL-2 Ruby"
 SLOT="0"

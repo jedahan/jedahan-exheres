@@ -1,0 +1,45 @@
+From: Jonathan Dahan <jedahan@gmail.com>
+Date: Mon, 1 Mar 2010 11:28:16 -0500
+Subject: [PATCH] Fix sydbox violation
+
+---
+ configure |   16 ++++++++--------
+ 1 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/configure b/configure
+index 285f6f6..429f0cb 100755
+--- a/configure
++++ b/configure
+@@ -47,7 +47,7 @@ else
+ 	$INSTALL = 'install -D'
+ end
+ 
+-$GTK2 = false
++$GTK2 = true
+ $CLI = false
+ $LANG = []
+ $LANG_SUPPORT = ["nl", "de", "fr", "hu", "ru", "es", "se", "bg", "it"]
+@@ -94,13 +94,13 @@ def check_deps
+ 	
+ 	puts "\nChecking the OPTIONAL dependencies..."
+ 	
+-	puts "Testing support for the graphical frontend..."
+-	begin
+-		require 'gtk2'
+-		puts "ruby-gtk2 bindings found"
+-	rescue LoadError
+-		puts "ruby-gtk2 is not found. The graphical frontend won't work!"
+-	end
++#	puts "Testing support for the graphical frontend..."
++#	begin
++#		require 'gtk2'
++#		puts "ruby-gtk2 bindings found"
++#	rescue LoadError
++#		puts "ruby-gtk2 is not found. The graphical frontend won't work!"
++#	end
+ 	
+ 	puts "\nTesting support for freedb metadata fetching..."
+ 	(installed('cd-discid') || installed('discid')) ? puts("cd-discid or discid found...") : puts("Neither cd-discid or discid could be found.")
+-- 
+1.7.0.1
+

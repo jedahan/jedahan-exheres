@@ -1,0 +1,38 @@
+# Copyright 2009 Ali Polatel <alip@exherbo.org>
+# Distributed under the terms of the GNU General Public License v2
+
+require sourceforge [ project=ruby-gnome2 suffix=tar.gz ]
+SUMMARY="Ruby language bindings for the GTK+ 2.0"
+#HOMEPAGE="http://ruby-gnome2.sourceforge.jp/"
+#DOWNLOADS="mirror://sourceforge/ruby-gnome2/${PNV}.tar.gz"
+
+LICENCES="Ruby"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-util/pkg-config
+    build+run:
+        dev-lang/ruby[>=1.8]
+        x11-libs/gtk+[>=2]
+        dev-libs/glib
+        x11-libs/pango
+        dev-ruby/rcairo
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+#WORK="${WORKBASE}"/${PN}-all-${PV}
+
+src_configure() {
+    edo ruby extconf.rb
+}
+
+src_install() {
+    default
+
+    edo rm -rf "${IMAGE}"/usr/lib*/pkgconfig
+}
+

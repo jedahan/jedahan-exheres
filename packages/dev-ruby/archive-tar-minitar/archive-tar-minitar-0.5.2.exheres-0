@@ -3,9 +3,11 @@
 
 require gem
 
-SUMMARY="Provides POSIX tarchive management from Ruby programs."
+SUMMARY="POSIX tarchive management from Ruby programs."
 
 LICENCES="GPL-2 Ruby"
 SLOT="0"
 PLATFORMS="~amd64"
+
+BUGS_TO="jedahan@gmail.com"
 

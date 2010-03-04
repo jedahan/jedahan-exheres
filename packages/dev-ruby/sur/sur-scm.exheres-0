@@ -39,11 +39,11 @@ DEPENDENCIES="
 "
 
 src_compile() {
-    rake destdir="${IMAGE}"
+    edo rake destdir="${IMAGE}"
 }
 
 src_install() {
-    rake destdir="${IMAGE}" install
+    edo rake destdir="${IMAGE}" install
     emagicdocs
 }
 

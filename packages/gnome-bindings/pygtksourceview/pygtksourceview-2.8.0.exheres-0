@@ -1,12 +1,12 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License
 
-require gnome-2 flag-o-matic multilib
+require gnome-2
 
 SUMMARY="GTK+2 bindings for Python"
-DESCRIPTION=""
+#DESCRIPTION=""
 HOMEPAGE="http://www.pygtk.org/"
-DOWNLOADS=""
+#DOWNLOADS=""
 
 BUGS_TO="jedahan@gmail.com"
 
@@ -19,7 +19,7 @@ DEPENDENCIES="
     build+run:
         gnome-bindings/pygobject[>=2.15.2]
         gnome-bindings/pygtk[>=2.8]
-        gnome-desktop/gtksourceview[>=2.3]
+        gnome-desktop/gtksourceview[>=2.8.1]
     build:
         doc? (
             app-text/docbook-xml-dtd[>=4.1.2]

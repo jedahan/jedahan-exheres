@@ -30,8 +30,9 @@ DOWNLOADS="ftp://ftp.gnome.org/pub/gnome/sources/${PN}/2.28/${PNV}.tar.bz2"
 BUGS_TO="jedahan@gmail.com"
 
 MYOPTIONS="
-    python [[ note = [ enable bracketcompletion,codecomment,colorpicker,joinlines,sessionsaver,smartspaces ] ]]
-    terminal [[ requires = python ]] [[ note = [ enable built-in terminal ] ]]"
+    python [[ description = [ enable bracketcompletion,codecomment,colorpicker,joinlines,sessionsaver,smartspaces ] ]]
+    terminal [[ requires = [ python ] description = [ enable built-in terminal ] ]]
+"
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
 SLOT="0"

@@ -53,5 +53,5 @@ DEPENDENCIES="
         vorbis? ( media-libs/libvorbis )
 "
 
-CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D', 'doc DOCS_INFO', 'doc DOCS_HTML', 'flac FLAC', 'jpeg JPEG', 'openal OPENAL', 'opengl OPENGL', 'oss OSS', 'png PNG', 'sndfile SNDFILE', 'ttf TTF', 'vorbis VORBIS', 'X X11' )
+CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D' 'doc DOCS_INFO' 'doc DOCS_HTML' 'flac FLAC' 'jpeg JPEG' 'openal OPENAL' 'opengl OPENGL' 'oss OSS' 'png PNG' 'sndfile SNDFILE' 'ttf TTF' 'vorbis VORBIS' 'X X11' )
 

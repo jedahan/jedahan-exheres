@@ -24,7 +24,7 @@ DEPENDENCIES="
 "
 
 src_install() {
-    cd ${WORK}
+    cd "${WORK}"
     /usr/share/ant/bin/ant
 }
 

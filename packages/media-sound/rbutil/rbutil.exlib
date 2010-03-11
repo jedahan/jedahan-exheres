@@ -18,13 +18,11 @@ DEPENDENCIES="
     x11-libs/qt:4 
 "
 
-WORK="${WORK}/${PN}"
+WORK="${WORK}"/${PN}
 
 src_install() {
-    dobin ${WORK}/rbutilqt/rbutilqt
-    insinto "/etc"
-    doins ${WORK}/rbutilqt/rbutil.ini
-#    newicon ${S}/rbutil/rbutilqt/icons/rockbox.ico ${PN}.ico
-#    make_desktop_entry rbutilqt "Rockbox Utility" /usr/share/pixmaps/${PN}.ico
+    dobin "${WORK}"/rbutilqt/rbutilqt
+    insinto /etc
+    doins "${WORK}"/rbutilqt/rbutil.ini
 }
 

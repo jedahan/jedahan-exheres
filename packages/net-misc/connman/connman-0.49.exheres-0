@@ -42,11 +42,11 @@ DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
 )
 
 src_install() {
-    emake DESTDIR=${IMAGE} install
+    emake DESTDIR="${IMAGE}" install
     dobin client/cm
 
     keepdir /var/lib{,64}/${PN}
     keepdir /usr/lib{,64}/${PN}/scripts
-    newinitd ${FILES}/${PN}.initd ${PN}
-    newconfd ${FILES}/${PN}.confd ${PN}
+    newinitd "${FILES}"/${PN}.initd ${PN}
+    newconfd "${FILES}"/${PN}.confd ${PN}
 }

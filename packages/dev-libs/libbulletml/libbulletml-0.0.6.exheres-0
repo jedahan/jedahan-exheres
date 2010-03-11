@@ -11,9 +11,9 @@ PLATFORMS="~amd64"
 
 BUGS_TO="jedahan@gmail.com"
 
-WORK="${WORKBASE}/${PN#lib}/src"
+WORK="${WORKBASE}"/${PN#lib}/src
 
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-gcc43.patch" )
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-gcc43.patch )
 
 src_install() {
     dolib.a libbulletml.a

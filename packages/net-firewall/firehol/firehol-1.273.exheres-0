@@ -13,8 +13,14 @@ require sourceforge
 
 SUMMARY="iptables stateful packet filtering firewall builder"
 DESCRIPTION="
-FireHOL is an iptables firewall generator producing stateful iptables packet filtering firewalls, on Linux hosts and routers with any number of network interfaces, any number of routes, any number of services served, any number of complexity between variations of the services (including positive and negative expressions).
-FireHOL is a language to express firewalling rules, not just a script that produces some kind of a firewall.
+FireHOL is an iptables firewall generator producing stateful iptables packet
+filtering firewalls, on Linux hosts and routers with any number of network
+interfaces, any number of routes, any number of services served, any number of
+complexity between variations of the services (including positive and negative
+expressions).
+
+FireHOL is a language to express firewalling rules, not just a script that
+produces some kind of a firewall.
 "
 
 BUGS_TO="jedahan@gmail.com"
@@ -38,7 +44,7 @@ src_install() {
     insinto /etc/firehol/examples
     doins examples/*
 
-    newconfd "${FILES}/firehol.conf.d" firehol
+    newconfd "${FILES}"/firehol.conf.d firehol
 
     dodoc ChangeLog README TODO WhatIsNew
 
@@ -47,7 +53,7 @@ src_install() {
 
     doman man/*.1 man/*.5
 
-    newinitd "${FILES}/firehol.initrd" firehol
+    newinitd "${FILES}"/firehol.initrd firehol
 }
 
 pkg_postinst() {

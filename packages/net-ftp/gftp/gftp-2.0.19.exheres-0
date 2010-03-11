@@ -2,8 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="gtk+ FTP Client"
-HOMEPAGE="http://www.gftp.org"
-DOWNLOADS="${HOMEPAGE}/${PNV}.tar.bz2"
+HOMEPAGE="http://www.gftp.org/"
+DOWNLOADS="${HOMEPAGE}${PNV}.tar.bz2"
 
 LICENCES="GPL-2"
 SLOT="0"
@@ -22,7 +22,7 @@ DEPENDENCIES="
         ssl? ( dev-libs/openssl )
 "
 
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-expand-path-sigsegv.patch" )
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-expand-path-sigsegv.patch )
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'gtk gtkport' 'ssl' )
 DEFAULT_SRC_INSTALL_EXTRA_DOCS=( 'docs/USERS-GUIDE' )
 

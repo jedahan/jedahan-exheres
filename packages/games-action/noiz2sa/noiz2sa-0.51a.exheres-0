@@ -22,13 +22,13 @@ DEPENDENCIES="
         x11-dri/mesa
 "
 
-WORK="${WORKBASE}/${PN}/src"
+WORK="${WORKBASE}"/${PN}/src
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-gcc41.patch )
 
 src_prepare() {
     default
-    sed -e 's/-lglut/-lGL -lGLU/' makefile.lin > Makefile || die "sed failed"
+    edo sed -e 's/-lglut/-lGL -lGLU/' makefile.lin > Makefile
 }
 
 src_compile() {
@@ -37,8 +37,8 @@ src_compile() {
 
 src_install() {
     dobin ${PN}
-    dodir "usr/share/games/${PN}"
-    edo cp -r ../${PN}_share/* "${IMAGE}/usr/share/games/${PN}"
+    dodir usr/share/games/${PN}
+    edo cp -r ../${PN}_share/* "${IMAGE}"/usr/share/games/${PN}
     dodoc ../readme*
 }
 

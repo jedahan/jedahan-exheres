@@ -27,7 +27,7 @@ DEPENDENCIES="
 
 WORK="${WORKBASE}/pptp-${PV}"
 
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}/${PNV}-ip-path.patch" )
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-ip-path.patch )
 DEFAULT_SRC_COMPILE_PARAMS=( CC="${CC}" )
 
 src_prepare() {

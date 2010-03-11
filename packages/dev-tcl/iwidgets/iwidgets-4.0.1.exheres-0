@@ -33,7 +33,7 @@ DEFAULT_SRC_CONFIGURE_PARAMS=(
 
 src_prepare() {
     edo sed -i -e "/^\(LIB\|SCRIPT\)_INSTALL_DIR =/s|lib|$(get_libdir)|" \
-    ${WORK}/Makefile.in
+    "${WORK}"/Makefile.in
 }
 
 src_compile() {
@@ -54,6 +54,6 @@ src_install() {
     rmdir "${IMAGE}"/usr/man
 
     # move demos under docs
-    edo mv "${IMAGE}/usr/$(get_libdir)/${MY_PNV}/demos" "${IMAGE}/usr/share/doc/${PNVR}/"
+    edo mv "${IMAGE}"/usr/$(get_libdir)/${MY_PNV}/demos "${IMAGE}"/usr/share/doc/${PNV}/
 }
 

@@ -15,8 +15,6 @@ SLOT="0"
 PLATFORMS="~amd64"
 BUGS_TO="jedahan@gmail.com"
 
-#TODO: requires spidermonkey headers
-
 DEPENDENCIES="
     build:
         dev-libs/boost
@@ -25,4 +23,8 @@ DEPENDENCIES="
 "
 
 WORK="${WORKBASE}/${PN}-src-r${PV}"
+
+src_install() {
+    escons DESTDIR="${IMAGE}" "${SCONS_SRC_INSTALL_PARAMS[@]}" --prefix="${IMAGE}"/usr install
+}
 

@@ -1,0 +1,27 @@
+# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Purpose License v2
+
+SUMMARY="Cleans up --uninstall-unused"
+DESCRIPTION="Fake dependencies - maybe these should be bugreported"
+
+BUGS_TO="jedahan@gmail.com"
+
+LICENCES="GPL-2"
+PLATFORMS="~amd64"
+SLOT="0"
+
+DEPENDENCIES="
+    group/audio
+    group/disk
+    group/games
+    group/news
+    group/smmsp
+    group/usb
+    group/utmp
+    group/uucp
+    group/haldaemon
+    user/news
+    user/smmsp
+    user/uucp
+"
+

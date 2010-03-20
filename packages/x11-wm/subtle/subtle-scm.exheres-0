@@ -8,9 +8,10 @@ require scm-hg
 
 SUMMARY="Semi-automatic tiling window manager scriptable with ruby"
 DESCRIPTION="
-subtle is a semi-automatic tiling window manager with a strong focus on easy but customizable
-handling and look and feel. Semi-automatic tiling means that there is no layout enforcement or
-general rule: Clients can freely be arranged in different positions of a variable grid.
+subtle is a semi-automatic tiling window manager with a strong focus on easy but
+customizable handling and look and feel. Semi-automatic tiling means that there
+is no layout enforcement or general rule: Clients can freely be arranged in
+different positions of a variable grid.
 "
 
 HOMEPAGE="http://unexist.scrapping.cc/projects/subtle"
@@ -33,13 +34,16 @@ DEPENDENCIES="
         dev-ruby/sur
 "
 
+src_configure() {
+    edo rake destdir="${IMAGE}" config
+}
+
 src_compile() {
-    rake destdir="${IMAGE}" config
-    rake build
+    edo rake build
 }
 
 src_install() {
-    rake install
+    edo rake install
     emagicdocs
 }
 

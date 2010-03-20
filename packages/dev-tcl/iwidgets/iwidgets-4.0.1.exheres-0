@@ -24,10 +24,10 @@ DEPENDENCIES="
     dev-tcl/itk[>=3.2.1]
 "
 
-WORK="${WORKBASE}/${MY_PNV}"
+WORK="${WORKBASE}"/${MY_PNV}
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( 
-    --with-itcl=${WORKBASE}/${ITCL_PNV}
+    --with-itcl="${WORKBASE}"/${ITCL_PNV}
     --hates=docdir
 )
 

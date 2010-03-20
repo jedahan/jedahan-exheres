@@ -1,0 +1,12 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="https://pcsxr.svn.codeplex.com/svn/${PN}"
+SCM_SVN_RAW_URI=true
+
+require pcsxr scm-svn
+
+DOWNLOADS=""
+
+PLATFORMS="~amd64"
+

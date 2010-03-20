@@ -1,0 +1,24 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="PlayStation Emulator based on PCSX-df 1.9"
+DESCRIPTION="PCSX-Reloaded (pcsxr) is based on the debian fork of pcsx, pcsx-df"
+HOMEPAGE="http://www.codeplex.com/pcsxr"
+
+LICENCES="GPL-2"
+SLOT="0"
+MYOPTIONS="alsa opengl"
+
+DEPENDENCIES="
+    gnome-platform/libglade
+    media-libs/SDL
+    x11-libs/gtk+:2
+    alsa?   ( sys-sound/alsa-lib )
+    opengl? (
+        x11-dri/mesa
+        x11-libs/libXxf86vm )
+"
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'alsa' 'opengl' )
+DEFAULT_SRC_INSTALL_EXTRA_DOCS=( 'doc/keys.txt' 'doc/tweaks.txt' )
+

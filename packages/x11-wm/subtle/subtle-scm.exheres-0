@@ -1,7 +1,7 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-SCM_REPOSITORY="http://hg.scrapping.cc/${PN}/"
+SCM_REPOSITORY="http://hg.subforge.org/${PN}/"
 SCM_BRANCH="trunk"
 
 require scm-hg
@@ -14,7 +14,7 @@ is no layout enforcement or general rule: Clients can freely be arranged in
 different positions of a variable grid.
 "
 
-HOMEPAGE="http://unexist.scrapping.cc/projects/subtle"
+HOMEPAGE="http://subforge.org/projects/subtle"
 DOWNLOADS=""
 
 BUGS_TO="jedahan@gmail.com"

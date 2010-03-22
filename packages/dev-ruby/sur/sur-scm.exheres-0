@@ -1,7 +1,7 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-SCM_REPOSITORY="http://hg.scrapping.cc/${PN}/"
+SCM_REPOSITORY="http://hg.subforge.org/${PN}/"
 
 require scm-hg
 
@@ -13,7 +13,7 @@ sur the manager script itself
 surserver a webserver that manages a repository
 "
 
-HOMEPAGE="http://unexist.scrapping.cc/projects/sur"
+HOMEPAGE="http://subforge.org/projects/sur"
 DOWNLOADS=""
 
 MYOPTIONS="server [[ description = [ build surserver ] ]]"

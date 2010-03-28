@@ -29,8 +29,9 @@ DEPENDENCIES="
 "
 
 src_install() {
+    exeinto /usr/share/${PN}
+    doexe src/{download,upload,delete,lib}.sh
     insinto /usr/share/${PN}
-    doins src/{download,upload,delete,lib}.sh
     doins -r src/modules
 
     dodir /usr/bin/

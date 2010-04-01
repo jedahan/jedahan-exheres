@@ -29,9 +29,10 @@ DEPENDENCIES="
 "
 
 src_install() {
+    exeinto /usr/share/${PN}
+    doexe src/{download,upload,delete,lib}.sh
     insinto /usr/share/${PN}
-    doins src/{download,upload,delete,lib}.sh
-    doins -r src/modules
+    doins -r src/modules src/tesseract
 
     dodir /usr/bin/
     dosym /usr/share/${PN}/download.sh /usr/bin/plowdown

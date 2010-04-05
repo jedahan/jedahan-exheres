@@ -1,0 +1,51 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://github.com/makerbot/${PN}.git"
+SVM_REVISION="8bf62f35ae5e19bf2c21ad3249a53ed73b70ac46"
+
+require scm-git
+
+SUMMARY="A simple, open source machine controller"
+DESCRIPTION="
+This is the software that will drive your CupCake CNC, RepRap machine, or
+generic CNC machine. You feed it GCode, it parses the GCode, and then controls
+your machine via a driver. Its cross platform, easily installed, and is based
+on the familiar Arduino / Processing environments. It is still in early stages
+of development, but it is pretty usable at this point in time. We've printed
+dozens of objects and logged many hours of runtime with it. Users and testers
+are greatly appreciated!
+"
+HOMEPAGE="http://replicat.org"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build:
+        dev-java/apache-ant
+    run:
+        virtual/jre
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+src_compile() {
+    edo ant -Dreplicatorg.version=$SCM_REVISION dist-linux
+}
+
+src_install() {
+    local dest=/opt/${PN}
+    cd dist/linux/replicatorg-
+
+    exeinto ${dest}
+    doexe replicatorg
+
+    insinto ${dest}
+    doins -r *
+
+    dodir /usr/bin
+    dosym ${dest}/replicatorg /usr/bin/
+}
+

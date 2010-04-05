@@ -11,16 +11,16 @@ PLATFORMS="~amd64"
 SLOT="0"
 
 DEPENDENCIES="
-    group/audio
+    group/cdrom
     group/disk
     group/games
     group/news
+    group/nobody
     group/smmsp
-    group/usb
     group/utmp
     group/uucp
-    group/haldaemon
     user/news
+    user/nobody
     user/smmsp
     user/uucp
 "

@@ -1,0 +1,27 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="
+Pd (aka Pure Data) is a real-time graphical programming environment for audio,
+video, and graphical processing. It is the third major branch of the family of
+patcher programming languages known as Max (Max/FTS, ISPW Max, Max/MSP, jMax,
+etc.) originally developed by Miller Puckette and company at IRCAM. The core of
+Pd is written and maintained by Miller Puckette and includes the work of many
+developers, making the whole package very much a community effort
+"
+HOMEPAGE="http://puredata.info/"
+
+LICENCES="as-is"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    || (
+        media/pd-extended
+        media/pd-vanilla
+        media/desiredata
+    )
+"
+
+BUGS_TO="jedahan@gmail.com"
+

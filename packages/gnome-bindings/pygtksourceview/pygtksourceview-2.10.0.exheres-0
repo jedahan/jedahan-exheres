@@ -4,9 +4,7 @@
 require gnome-2
 
 SUMMARY="GTK+2 bindings for Python"
-#DESCRIPTION=""
 HOMEPAGE="http://www.pygtk.org/"
-#DOWNLOADS=""
 
 BUGS_TO="jedahan@gmail.com"
 
@@ -17,14 +15,14 @@ MYOPTIONS="doc"
 
 DEPENDENCIES="
     build+run:
-        gnome-bindings/pygobject[>=2.15.2]
-        gnome-bindings/pygtk[>=2.8]
-        gnome-desktop/gtksourceview[>=2.8.1]
+        gnome-bindings/pygobject
+        gnome-bindings/pygtk
+        gnome-desktop/gtksourceview
     build:
         doc? (
-            app-text/docbook-xml-dtd[>=4.1.2]
-            app-text/docbook-xsl-stylesheets[>=1.70.1]
-            dev-doc/gtk-doc[>=1.10]
+            app-text/docbook-xml-dtd
+            app-text/docbook-xsl-stylesheets
+            dev-doc/gtk-doc
             dev-libs/libxslt
         )
 "

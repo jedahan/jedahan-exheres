@@ -14,8 +14,6 @@ DEPENDENCIES="
     build+run:
         gnome-bindings/gtkmm
         gnome-platform/libgnomecanvas
-    build:
-        dev-util/pkg-config
 "
 
 BUGS_TO="jedahan@gmail.com"

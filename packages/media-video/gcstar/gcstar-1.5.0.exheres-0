@@ -49,7 +49,7 @@ src_prepare() {
     # Remove unused languages
     for lang in ${LANGS}; do
         if ! option linguas:${lang}; then
-            rm -rf "${WORK}"/lib/${PN}/GCLang/$(echo ${lang} | tr '[:lower:]' '[:upper:]')
+            edo rm -rf "${WORK}"/lib/${PN}/GCLang/$(echo ${lang} | tr '[:lower:]' '[:upper:]')
         fi
     done
 }

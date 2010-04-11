@@ -6,10 +6,10 @@ require cmake multilib
 SUMMARY="C/C++ game programming library"
 DESCRIPTION="
 Allegro is a game programming library for C/C++ developers distributed freely,
-supporting the following platforms: DOS, Unix (Linux, FreeBSD, Irix, Solaris, 
+supporting the following platforms: DOS, Unix (Linux, FreeBSD, Irix, Solaris,
 Darwin), Windows, QNX, BeOS and MacOS X. It provides many functions for graphics
-, sounds, player input (keyboard, mouse and joystick) and timers. It also 
-provides fixed and floating point mathematical functions, 3d functions, file 
+, sounds, player input (keyboard, mouse and joystick) and timers. It also
+provides fixed and floating point mathematical functions, 3d functions, file
 management functions, compressed datafile and a GUI.
 "
 HOMEPAGE="http://alleg.sourceforge.net/"
@@ -27,13 +27,13 @@ MYOPTIONS="
     doc [[ description = [ html and info documentation ] ]]
     flac
     jpeg
-    openal 
+    openal
     opengl
-    oss 
+    oss
     physfs [[ description = [ File i/o abstraction ] ]]
-    png 
+    png
     sndfile [[ description = [ WAV/AIFF/FLAC audio codec support ] ]]
-    ttf 
+    ttf
     vorbis
     X
 

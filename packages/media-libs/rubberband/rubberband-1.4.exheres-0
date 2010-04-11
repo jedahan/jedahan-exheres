@@ -3,7 +3,7 @@
 
 require multilib
 
-DESCRIPTION="An audio time-stretching and pitch-shifting library and utility program"
+SUMMARY="An audio time-stretching and pitch-shifting library and utility program"
 HOMEPAGE="http://www.breakfastquay.com/rubberband/"
 DOWNLOADS="${HOMEPAGE}files/${PNV}p1.tar.bz2"
 

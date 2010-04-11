@@ -1,7 +1,7 @@
-# Copyright 1999-2009 Gentoo Foundation
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-DESCRIPTION="World Coordinate System library for astronomical FITS images"
+SUMMARY="World Coordinate System library for astronomical FITS images"
 HOMEPAGE="http://tdc-www.harvard.edu/software/wcstools"
 DOWNLOADS="${HOMEPAGE}/${PNV}.tar.gz"
 

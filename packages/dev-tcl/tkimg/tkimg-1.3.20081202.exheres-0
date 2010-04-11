@@ -3,7 +3,7 @@
 
 require sourceforge [ suffix=tar.gz pnv=${PN}${PV} ]
 
-DESCRIPTION="Adds a lot of image formats to Tcl/Tk"
+SUMMARY="Adds a lot of image formats to Tcl/Tk"
 HOMEPAGE="http://tkimg.sourceforge.net/"
 
 MYOPTIONS="doc"

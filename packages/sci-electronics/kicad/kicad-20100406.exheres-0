@@ -3,7 +3,7 @@
 
 require cmake
 
-DESCRIPTION="Electronic Schematic and PCB design tools."
+SUMMARY="Electronic Schematic and PCB design tools."
 HOMEPAGE="http://kicad.sourceforge.net"
 DOWNLOADS="http://iut-tice.ujf-grenoble.fr/cao/kicad-sources-2010-04-06-SVN2508-final.tar.gz"
 

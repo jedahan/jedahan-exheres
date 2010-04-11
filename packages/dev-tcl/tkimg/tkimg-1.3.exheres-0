@@ -3,7 +3,7 @@
 
 require sourceforge [ suffix=tar.gz pnv=${PN}${PV} ]
 
-DESCRIPTION="Adds a lot of image formats to Tcl/Tk"
+SUMMARY="Adds a lot of image formats to Tcl/Tk"
 HOMEPAGE="http://tkimg.sourceforge.net/"
 
 MYOPTIONS="doc"
@@ -21,18 +21,4 @@ WORK="${WORKBASE}"/${PN}${PV}
 DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir )
 
 DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-*.patch )
-
-#src_prepare() {
-#    default
-#    edo sed -i -e 's:$(prefix)/man:$(prefix)/share/man:g' Makefile.in
-#}
-
-#src_install() {
-#    emake \
-#        DESTDIR="${IMAGE}" \
-#        INSTALL_ROOT="${IMAGE}" \
-#        install || die "emake install failed"
-
-#    emagicdocs
-#}
 

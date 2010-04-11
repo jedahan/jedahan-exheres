@@ -27,15 +27,20 @@ DEPENDENCIES="
 
 BUGS_TO="jedahan@gmail.com"
 
+RESTRICT="strip"
 WORK="${WORKBASE}/${PN}"
 
-src_compile() {
-    :
+src_prepare() {
+    sed -i -e 's/`dirname $0`/\/usr\/share\/java\/alchemy\//' Alchemy
 }
 
 src_install() {
-    dobin "${FILES}"/Alchemy
-    insinto /opt/${PN}
-    doins -r .
+    dodir /usr/{share/{applications,java/alchemy},bin/}
+    insinto /usr/share/java/alchemy
+    doins -r Alchemy.jar lib modules shapes
+    dobin Alchemy
+    insinto /usr/share/applications
+    doins ${FILES}/alchemy.desktop
+    dodoc ReadMe* Alchemy.pdf
 }
 

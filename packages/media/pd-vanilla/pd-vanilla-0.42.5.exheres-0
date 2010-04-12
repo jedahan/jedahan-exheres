@@ -7,9 +7,9 @@ require pd
 DOWNLOADS="mirror://sourceforge/pure-data/${MY_PNV}.src.tar.gz"
 
 SLOT="0"
-PLATFORMS="~amd64"
+PLATFORMS="~amd64 ~x86"
 
-DEPENDENCIES="
+DEPENDENCIES+="
     !media/desiredata
     !media/pd-extended
 "

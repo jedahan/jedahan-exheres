@@ -7,9 +7,9 @@ MY_PNV=Pd-${PV}-extended
 DOWNLOADS="mirror://sourceforge/${PN}/${MY_PNV}.tar.bz2"
 
 SLOT="0"
-PLATFORMS="~amd64"
+PLATFORMS="~amd64 ~x86"
 
-DEPENDENCIES="
+DEPENDENCIES+="
     !media/desiredata
     !media/pd-vanilla
 "

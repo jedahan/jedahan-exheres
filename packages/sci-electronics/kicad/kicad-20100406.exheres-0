@@ -3,9 +3,10 @@
 
 require cmake
 
+MY_PV=2010-04-06-SVN2508
 SUMMARY="Electronic Schematic and PCB design tools."
 HOMEPAGE="http://kicad.sourceforge.net"
-DOWNLOADS="http://iut-tice.ujf-grenoble.fr/cao/kicad-sources-2010-04-06-SVN2508-final.tar.gz"
+DOWNLOADS="http://iut-tice.ujf-grenoble.fr/cao/kicad-sources-${MY_PV}-final.tar.gz"
 
 LICENCES="GPL-2"
 SLOT="0"
@@ -24,5 +25,5 @@ DEPENDENCIES="
         python? ( dev-lang/python )
 "
 
-WORK="${WORKBASE}/${PN}-2010-04-06"
+WORK="${WORKBASE}/${PN}-${MY_PV}"
 

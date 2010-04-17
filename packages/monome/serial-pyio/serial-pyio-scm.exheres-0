@@ -1,0 +1,54 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+
+SCM_REPOSITORY="https://${PN}.svn.sourceforge.net/svnroot/${PN}"
+require scm-svn sourceforge
+
+SUMMARY="Serial/OSC/MIDI converter for monome devices"
+DESCRIPTION="
+Similar to MonomeSerial, but platform independent and with additional features.
+It also includes an API-like suite of Python objects for interfacing directly
+with monome devices.
+"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    run:
+        dev-python/pyPortMidi
+        dev-python/pyttk
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+WORK="${WORK}"/main
+
+src_prepare() {
+    edo sed -e 's|serial|/opt/serial-pyio/serial|g' -i serial-pyio.sh
+}
+
+src_install() {
+    insinto /opt/${PN}
+    doins -r {docs,fonts,serial-pyio.py,src,icons,etc}
+    dobin serial-pyio.sh
+    find "${IMAGE}" -name .svn -print0 | xargs -0 rm -rf
+}
+
+#TODO: fix setup.py, lots of problems there, it almost works with distutils
+
+#DEFAULT_SRC_PREPARE_PATCHES="${FILES}"/${PN}-setup.patch
+#DEFAULT_SRC_INSTALL_EXTRA_DOCS="docs/user-manual.pdf"
+
+#src_prepare() {
+#    distutils_src_prepare
+#    edo sed -e 's|sys\.path\[0\]|"/usr/share/serial-pyio"|g' -i src/util/presetmanager.py
+#}
+
+#src_install() {
+#    dodir /usr/share/${PN}/icons
+#    insinto /usr/share/${PN}/icons
+#    doins icons/*{png,gif}
+#    distutils_src_install
+#}
+

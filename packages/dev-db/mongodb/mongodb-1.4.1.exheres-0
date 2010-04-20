@@ -24,7 +24,5 @@ DEPENDENCIES="
 
 WORK="${WORKBASE}/${PN}-src-r${PV}"
 
-src_install() {
-    escons DESTDIR="${IMAGE}" "${SCONS_SRC_INSTALL_PARAMS[@]}" --prefix="${IMAGE}"/usr install
-}
+SCONS_SRC_CONFIGURE_PARAMS=( --prefix="${IMAGE}"/usr )
 

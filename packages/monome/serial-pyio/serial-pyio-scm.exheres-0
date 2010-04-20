@@ -1,4 +1,7 @@
 # Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+# TODO: Install correctly, check the history for what to do
 
 SCM_REPOSITORY="https://${PN}.svn.sourceforge.net/svnroot/${PN}"
 require scm-svn sourceforge
@@ -34,21 +37,4 @@ src_install() {
     dobin serial-pyio.sh
     find "${IMAGE}" -name .svn -print0 | xargs -0 rm -rf
 }
-
-#TODO: fix setup.py, lots of problems there, it almost works with distutils
-
-#DEFAULT_SRC_PREPARE_PATCHES="${FILES}"/${PN}-setup.patch
-#DEFAULT_SRC_INSTALL_EXTRA_DOCS="docs/user-manual.pdf"
-
-#src_prepare() {
-#    distutils_src_prepare
-#    edo sed -e 's|sys\.path\[0\]|"/usr/share/serial-pyio"|g' -i src/util/presetmanager.py
-#}
-
-#src_install() {
-#    dodir /usr/share/${PN}/icons
-#    insinto /usr/share/${PN}/icons
-#    doins icons/*{png,gif}
-#    distutils_src_install
-#}
 

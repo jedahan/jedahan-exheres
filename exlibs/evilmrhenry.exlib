@@ -1,0 +1,47 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+# TODO: Nethackify to respect user settings
+
+require distutils sourceforge [ suffix=tar.gz ]
+
+MY_BIN=${MY_BIN:-$PN}
+MY_PN=${MY_PN:-$PN}
+
+SUMMARY="Abstract shooter - defeat auto-created huge battleships"
+HOMEPAGE+="http://www.asahi-net.or.jp/~cs8k-cyu/windows/rr_e.html"
+
+LICENCES="BSD"
+SLOT="0"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/libbulletml[>=0.0.3]
+        media-libs/SDL
+        media-libs/SDL_mixer[ogg]
+        x11-dri/mesa
+"
+
+WORK="${WORKBASE}"/${MY_PN}/src
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/evilmrhenry-gcc41.patch )
+
+src_prepare() {
+    default
+    edo sed -e 's/-lglut/-lGL -lGLU/' makefile.lin > Makefile
+}
+
+src_compile() {
+    emake MORE_CFLAGS="${CFLAGS}"
+}
+
+src_install() {
+    dobin ${MY_BIN}
+    dodir /usr/share/games/${MY_PN}
+    insinto /usr/share/games/${MY_PN}
+    doins -r ../${MY_BIN}_share/*
+    dodoc ../readme*
+}
+

@@ -1,5 +1,8 @@
---- src/foecommand.h.old    2009-11-22 16:45:53.067851262 -0500
-+++ src/foecommand.h    2009-11-22 16:46:08.334873177 -0500
+  Reason: Extra qualification error
+  Source: Google
+Upstream: Upstream stopped maintaining this 5 years ago
+--- src/foecommand.h.old    2009-11-22 16:49:57.277869629 -0500
++++ src/foecommand.h    2009-11-22 16:50:10.030868891 -0500
 @@ -36,10 +36,10 @@
    
    virtual void doChangeDirection(double d);

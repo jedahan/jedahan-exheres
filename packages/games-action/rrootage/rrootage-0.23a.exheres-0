@@ -1,46 +1,13 @@
-# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-# TODO: nethackify to respect user settings
-
-require distutils sourceforge [ suffix=tar.gz ]
-
+MY_BIN="rr"
 MY_PN="rRootage"
-MY_PNV="${MY_PN}-${PV}"
-SUMMARY="Abstract shooter - defeat auto-created huge battleships"
 HOMEPAGE+="http://www.asahi-net.or.jp/~cs8k-cyu/windows/rr_e.html"
 
-LICENCES="BSD"
-SLOT="0"
+require evilmrhenry
+
+WORK="${WORKBASE}"/rRootage/src
+
 PLATFORMS="~amd64"
-
-BUGS_TO="jedahan@gmail.com"
-
-DEPENDENCIES="
-    build+run:
-        dev-libs/libbulletml[>=0.0.3]
-        media-libs/SDL
-        media-libs/SDL_mixer[ogg]
-        x11-dri/mesa
-"
-
-WORK="${WORKBASE}"/${MY_PN}/src
-
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-gcc41.patch )
-
-src_prepare() {
-    default
-    edo sed -e 's/-lglut/-lGL -lGLU/' makefile.lin > Makefile
-}
-
-src_compile() {
-    emake MORE_CFLAGS="${CFLAGS}"
-}
-
-src_install() {
-    dobin rr
-    dodir usr/share/games/${MY_PN}
-    edo cp -r ../rr_share/* "${IMAGE}"/usr/share/games/${MY_PN}
-    dodoc ../readme*
-}
 

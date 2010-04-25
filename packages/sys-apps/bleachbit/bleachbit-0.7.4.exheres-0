@@ -1,0 +1,20 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require sourceforge
+
+SUMMARY="Cleans files to free disk space and to maintain privacy"
+DESCRIPTION="BleachBit frees space and maintains privacy by quickly wiping files you don't need and
+didn't know you had. Supported applications include Firefox, Flash, Internet Explorer, Java, Opera,
+Safari, GNOME, and many others."
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="gnome-bindings/pygtk"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEFAULT_SRC_INSTALL_PARAMS=( prefix=/usr )
+

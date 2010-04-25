@@ -1,5 +1,5 @@
 TODO:
-    bleachbit, codeswarm, diskegrator
+    codeswarm, diskegrator
 
 cave show '*/*::jedahan'
     app-editors/diakonos
@@ -62,6 +62,7 @@ cave show '*/*::jedahan'
     sci-astronomy/wcstools
     sci-electronics/kicad
     sci-libs/cfitsio
+    sys-apps/bleachbit
     sys-auth/pam\_ssh
     virtual/pd
     virtual/uninstall-fixes

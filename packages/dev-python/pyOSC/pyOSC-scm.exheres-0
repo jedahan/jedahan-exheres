@@ -1,0 +1,22 @@
+
+SCM_REPOSITORY="git://gitorious.org/$PN/devel.git"
+
+require distutils scm-git
+
+SUMMARY="A Simple OpenSoundControl implementation, in Pure Python"
+DESCRIPTION="
+This module is loosely based on the good old ‘SimpleOSC’ implementation by
+Daniel Holth & Clinton McChesney. It has been mostly rewritten, and a whole set
+of new Classes has been added, providing support for OSC-bundles, a simple
+OSC-client, a simple OSC-server, threading & forking OSC-servers and a more
+complex ‘Multiple-Unicast’ OSC-client that supports subscriptions and OSC-
+address based message-filtering.
+"
+HOMEPAGE="https://trac.v2.nl/wiki/pyOSC"
+
+LICENCES="LGPL"
+SLOT="0"
+PLATFORMS="~amd64"
+
+BUGS_TO="jedahan@gmail.com"
+

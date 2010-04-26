@@ -1,0 +1,32 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://github.com/tehn/${PN}.git"
+require scm-git
+
+SUMMARY="Serial/OSC/MIDI converter for monome devices"
+DESCRIPTION="
+Similar to MonomeSerial, but platform independent and with additional features.
+It also includes an API-like suite of Python objects for interfacing directly
+with monome devices.
+"
+
+UPSTREAM_DOCUMENTATION="http://docs.monome.org/doku.php?id=app:${PN}"
+LICENCES=""
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    run:
+        dev-python/pybonjour
+        dev-python/pyOSC
+        dev-python/pyserial
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+src_install() {
+    insinto /opt/${PN}
+    doins -r *
+}
+

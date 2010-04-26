@@ -15,6 +15,6 @@ PLATFORMS="~amd64"
 
 src_install() {
     dobin linksys-tftp
-    dodoc README
+    emagicdocs
 }
 

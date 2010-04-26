@@ -1,0 +1,24 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require distutils googlecode [ suffix=tar.gz ]
+
+SUMMARY="provides a pure-Python interface to Apple Bonjour and compatible
+DNS-SD libraries (such as Avahi)"
+DESCRIPTION="
+pybonjour provides a pure-Python interface to Apple Bonjour and compatible
+DNS-SD libraries (such as Avahi). It allows Python scripts to take advantage
+of Zero Configuration Networking (Zeroconf) to register, discover, and resolve
+services on both local and wide-area networks. Since pybonjour is implemented
+in pure Python, scripts that use it can easily be ported to Mac OS X, Windows,
+Linux, and other systems that run Bonjour.
+"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES+="net-dns/avahi[dns_sd]"
+
+BUGS_TO="jedahan@gmail.com"
+

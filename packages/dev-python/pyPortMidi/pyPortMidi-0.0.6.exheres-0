@@ -12,7 +12,7 @@ MIDI data in realtime from Python.
 HOMEPAGE="http://bitbucket.org/aalex/pyportmidi/"
 DOWNLOADS="${HOMEPAGE}downloads/${PNV}.tar.gz"
 
-LICENCES=""
+LICENCES="pyPortMidi"
 SLOT="0"
 PLATFORMS="~amd64"
 

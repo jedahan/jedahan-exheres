@@ -24,5 +24,8 @@ DEPENDENCIES="
 
 WORK="${WORKBASE}/${PN}-src-r${PV}"
 
-SCONS_SRC_CONFIGURE_PARAMS=( --prefix="${IMAGE}"/usr )
+src_install(){
+    escons --prefix="${IMAGE}"/usr DESTDIR="${IMAGE}" --release=RELEASE install
+    emagicdocs
+}
 

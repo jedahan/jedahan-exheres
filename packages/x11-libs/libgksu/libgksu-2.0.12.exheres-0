@@ -1,0 +1,25 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome-2
+
+SUMMARY="A library for integration of su into applications"
+HOMEPAGE="http://www.nongnu.org/gksu/"
+DOWNLOADS="http://people.debian.org/~kov/gksu/${PNV}.tar.gz"
+
+LICENCES="LGPL-2"
+SLOT="2"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    x11-libs/gtk+[>=2.12]
+    gnome-platform/GConf
+    gnome-desktop/libgnome-keyring[>=0.4.4]
+    x11-libs/startup-notification
+    gnome-desktop/libgtop
+    dev-doc/gtk-doc
+    app-admin/sudo
+"
+
+BUGS_TO="jedahan@gmail.com"
+

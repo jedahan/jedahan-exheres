@@ -1,0 +1,30 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://${PN}.git.sourceforge.net/gitroot/${PN}/${PN}"
+SCM_TAG="rel-v0.8"
+require scm-git sourceforge multilib
+
+SUMMARY="Mono gui for aircrack, aireplay and other related wep cracking tools"
+DOWNLOADS=""
+LICENCES="GPL"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+        dev-lang/mono
+        net-wireless/aircrack-ng
+        gnome-bindings/gtk-sharp
+    suggestion:
+        net-wireless/mdk3 [[ note = [   ] ]]
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+
+# TODO: get --config=RELEASE to work, symlink wepcrackgui
+src_configure() {
+    edo ./configure --prefix=/usr --libdir=/usr/$(get_libdir)
+}
+

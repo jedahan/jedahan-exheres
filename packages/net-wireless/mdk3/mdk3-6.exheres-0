@@ -1,0 +1,21 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+MY_PNV="${PN}-v${PV}"
+
+SUMMARY="Improved essid scanning and other cool features"
+HOMEPAGE="http://homepages.tu-darmstadt.de/~p_larbig/wlan/"
+DOWNLOADS="${HOMEPAGE}${MY_PNV}.tar.bz2"
+LICENCES="GPL"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build:
+        dev-libs/libpcap
+"
+
+WORK="${WORKBASE}/${MY_PNV}"
+
+DEFAULT_SRC_COMPILE_PARAMS=( "-j1" )
+

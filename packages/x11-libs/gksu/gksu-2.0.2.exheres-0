@@ -1,0 +1,23 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome-2
+
+SUMMARY="gtk+ frontend for libgksu"
+HOMEPAGE="http://www.nongnu.org/gksu/"
+DOWNLOADS="http://people.debian.org/~kov/gksu/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    x11-libs/libgksu[>=2.0.8]
+    x11-libs/gtk+[>=2.4.0]
+    gnome-platform/GConf
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --disable-nautilus-extension )
+

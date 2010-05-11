@@ -33,11 +33,11 @@ MYOPTIONS="
     physfs [[ description = [ File i/o abstraction ] ]]
     png
     sndfile [[ description = [ WAV/AIFF/FLAC audio codec support ] ]]
-    ttf
+    truetype
     vorbis
     X
 
-    ( jpeg opengl png ttf ) [[ requires = X ]]
+    ( jpeg opengl png truetype ) [[ requires = X ]]
 "
 
 DEPENDENCIES="
@@ -50,8 +50,13 @@ DEPENDENCIES="
         opengl? ( x11-dri/mesa )
         physfs? ( dev-games/physfs )
         sndfile? ( media-libs/libsndfile )
-        vorbis? ( media-libs/libvorbis )
+        truetype? ( media-libs/freetype )
+        vorbis? (
+            media-libs/libvorbis
+            media-libs/libogg
+        )
 "
 
-CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D' 'doc DOCS_INFO' 'doc DOCS_HTML' 'flac FLAC' 'jpeg JPEG' 'openal OPENAL' 'opengl OPENGL' 'oss OSS' 'png PNG' 'sndfile SNDFILE' 'ttf TTF' 'vorbis VORBIS' 'X X11' )
+CMAKE_SRC_CONFIGURE_OPTION_WANTS=( 'd3d D3D' 'doc DOCS_INFO' 'doc DOCS_HTML' 'flac FLAC' 'jpeg JPEG'
+'openal OPENAL' 'opengl OPENGL' 'oss OSS' 'png PNG' 'sndfile SNDFILE' 'truetype TTF' 'vorbis VORBIS' 'X X11' )
 

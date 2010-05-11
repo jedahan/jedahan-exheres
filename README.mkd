@@ -1,7 +1,7 @@
-TODO:
-    codeswarm, diskegrator
+todo:
+    media/codeswarm
 
-cave show '*/*::jedahan'
+apps:
     app-editors/diakonos
     app-embedded/ReplicatorG
     app-emulation/pcsxr
@@ -15,6 +15,9 @@ cave show '*/*::jedahan'
     dev-libs/Mini-XML
     dev-libs/d-feet
     dev-libs/libbulletml
+    dev-python/pyOSC
+    dev-python/pyPortMidi
+    dev-python/pybonjour
     dev-ruby/sur
     dev-tcl/blt
     dev-tcl/itk
@@ -26,7 +29,6 @@ cave show '*/*::jedahan'
     games-action/noiz2sa
     games-action/rrootage
     games-action/sandwich
-    gnome-bindings/pygtksourceview
     gnome-bindings/sexy-python
     gnome-platform/libgnomecanvasmm
     media/Processing
@@ -35,6 +37,7 @@ cave show '*/*::jedahan'
     media/pd-vanilla
     media-gfx/Alchemy
     media-libs/allegro
+    media-libs/portmidi
     media-libs/rubberband
     media-libs/vamp-plugin-sdk
     media-plugins/resynthesizer
@@ -46,6 +49,8 @@ cave show '*/*::jedahan'
     media-video/gcstar
     media-video/gtk-recordmydesktop
     media-video/recordmydesktop
+    monome/serial-pyio
+    monome/serialosc
     net-apps/NetworkManager-pptp
     net-dialup/pptpclient
     net-firewall/firehol
@@ -58,17 +63,21 @@ cave show '*/*::jedahan'
     net-misc/s3fs
     net-misc/s3napback
     net-wireless/blueman
+    net-wireless/mdk3
+    net-wireless/wepcrackgui
     sci-astronomy/skycat
     sci-astronomy/wcstools
     sci-electronics/kicad
     sci-libs/cfitsio
     sys-apps/bleachbit
-    sys-auth/pam\_ssh
+    sys-auth/pam_ssh
     virtual/pd
     virtual/uninstall-fixes
     x11-drivers/linuxwacom
     x11-libs/flowcanvas
-    x11-misc/rednotebook
+    x11-libs/gksu
+    x11-libs/libgksu
     x11-themes/gnome-colors
     x11-utils/xsel
+    x11-wm/scrotwm
     x11-wm/subtle

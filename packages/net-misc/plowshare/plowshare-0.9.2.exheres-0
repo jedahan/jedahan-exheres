@@ -8,24 +8,19 @@ SUMMARY="Command-line downloader and uploader for file-sharing websites"
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS="javascript view-captcha
-           javascript [[ note = [ enable zshare and mediafire support ] ]]"
+MYOPTIONS="javascript view-captcha"
 
 BUGS_TO="jedahan@gmail.com"
 
-# TODO:
-# MYOPTIONS+=view-captcha
-# DEPENDENCIES+=view-captcha? ( media-gfx/aview )
-
 DEPENDENCIES="
     run:
-        javascript? ( dev-lang/spidermonkey )
         app-text/recode
         app-text/tesseract[linguas:en]
         media-gfx/ImageMagick[tiff]
         net-misc/curl
     suggestion:
         media-libs/libcaca
+        dev-lang/spidermonkey [[ description = [ zshare and mediafire support ] ]]
 "
 
 src_install() {

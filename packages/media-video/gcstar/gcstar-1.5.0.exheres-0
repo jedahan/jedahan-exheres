@@ -15,7 +15,7 @@ LANGS="ar bg ca cs de el en es fr gl hu id it nl pl pt ro ru sr sv tr uk"
 #       spell? ( dev-perl/Gtk2-Spell )
 #       vorbis? ( dev-perl/Ogg-Vorbis-Header-PurePerl )
 
-MYOPTIONS="cddb gnome spell tellico util linguas: ${LANGS}"
+MYOPTIONS="cddb gnome tellico util linguas: ${LANGS}"
 
 DEPENDENCIES="
     build+run:

@@ -15,7 +15,6 @@ sur consists of two parts which are designed to work with each other:
 HOMEPAGE="http://subforge.org/projects/sur"
 DOWNLOADS=""
 
-MYOPTIONS="server [[ description = [ build surserver ] ]]"
 BUGS_TO="jedahan@gmail.com"
 UPSTREAM_CHANGELOG="${HOMEPAGE}/repository/revisions/"
 UPSTREAM_DOCUMENTATION="${HOMEPAGE}/wiki/"
@@ -30,11 +29,13 @@ DEPENDENCIES="
         dev-lang/ruby[>=1.8]
         dev-ruby/curb[>=0.5.1.0]
         dev-ruby/rake[>=0.8]
+    run:
         x11-wm/subtle[>=0.8]
-        server? (
+    suggestion:
+        (
             dev-ruby/datamapper[>=0.9.11]
             dev-ruby/sinatra[>=0.9.4]
-        )
+        ) [[ description = [ for surserver ] ]]
 "
 
 src_compile() {

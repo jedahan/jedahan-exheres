@@ -17,14 +17,13 @@ DOWNLOADS="http://olwtools.googlecode.com/files/${MY_PNV}.tar.gz"
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS="alsa"
 
 DEPENDENCIES="
     run:
         dev-lang/perl
         dev-perl/Gtk2-Perl
         dev-perl/Gtk2-TrayIcon
-        alsa? ( sys-sound/alsa-utils )
+        sys-sound/alsa-utils
 "
 
 WORK="${WORKBASE}/${MY_PNV}"

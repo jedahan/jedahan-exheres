@@ -1,0 +1,49 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Community maintained variant of Linley's Dungeon Crawl"
+HOMEPAGE="http://crawl.develz.org/"
+DOWNLOADS="http://downloads.sourceforge.net/sourceforge/crawl-ref/stone_soup-${PV}-nodeps.tar.bz2"
+
+LICENCES="crawl"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="tile [[ description = [ enable graphical mode ] ]]"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEPENDENCIES="
+    build:
+        sys-devel/bison
+        sys-devel/flex
+        tile? (
+            media-libs/libpng
+            media-libs/SDL_image 
+            x11-libs/libX11
+            )
+    run:
+        dev-lang/lua
+"
+
+WORK="${WORK}/source"
+
+src_prepare() {
+    edo sed -i -e 's|bin_prefix    := bin|bin_prefix    := usr/bin|' \
+               -e 's/INSTALL_UGRP := games:games/INSTALL_UGRP := root:games/' makefile
+}
+
+src_compile() {
+    local myconf=
+    optionq tile && myconf="TILES=y"
+    emake $myconf
+}
+
+DEFAULT_SRC_INSTALL_PARAMS=( SAVEDIR="/usr/share/stone-soup/save"
+                             DATADIR="/usr/share/stone-soup/data"
+                             STRIP= USE_UNICODE=y )
+
+src_install() {
+    default
+    keepdir /usr/share/stone-soup/save/morgue
+}
+

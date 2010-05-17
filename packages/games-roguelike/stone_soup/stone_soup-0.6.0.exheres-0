@@ -27,23 +27,24 @@ DEPENDENCIES="
 
 WORK="${WORK}/source"
 
+STONESOUP_OPTIONS=( SAVEDIR="/usr/share/stone-soup/save"
+                    DATADIR="/usr/share/stone-soup/data"
+                    STRIP= USE_UNICODE=y )
+
 src_prepare() {
-    edo sed -i -e 's|bin_prefix    := bin|bin_prefix    := usr/bin|' \
-               -e 's/INSTALL_UGRP := games:games/INSTALL_UGRP := root:games/' makefile
+    edo sed -i -e 's|bin_prefix    := bin|bin_prefix    := usr/bin|' makefile
+}
+
+src_configure() {
+    option tile && STONESOUP_OPTIONS+=( TILES=y )
 }
 
 src_compile() {
-    local myconf=
-    optionq tile && myconf="TILES=y"
-    emake $myconf
+    emake "${STONESOUP_OPTIONS[@]}"
 }
 
-DEFAULT_SRC_INSTALL_PARAMS=( SAVEDIR="/usr/share/stone-soup/save"
-                             DATADIR="/usr/share/stone-soup/data"
-                             STRIP= USE_UNICODE=y )
-
 src_install() {
-    default
+    emake DESTDIR="${IMAGE}" "${STONESOUP_OPTIONS[@]}" install
     keepdir /usr/share/stone-soup/save/morgue
 }
 

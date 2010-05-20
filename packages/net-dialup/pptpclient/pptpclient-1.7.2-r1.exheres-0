@@ -1,4 +1,4 @@
-# Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="Linux client for PPTP"
@@ -33,10 +33,9 @@ DEFAULT_SRC_COMPILE_PARAMS=( CC="${CC}" )
 src_prepare() {
     default
 
-    sed -e "/^OPTIMIZE=/s:.*:& ${CFLAGS}:" \
-        -e "/^LDFLAGS\t=/s:.*:& ${LDFLAGS}:" \
-        -e "/^DEBUG\t=/s:.*::" \
-        -i Makefile || die "sed Makefile failed"
+    edo sed -e "/^OPTIMIZE=/s:.*:& ${CFLAGS}:" \
+            -e "/^LDFLAGS\t=/s:.*:& ${LDFLAGS}:" \
+            -e "/^DEBUG\t=/s:.*::" -i Makefile
 }
 
 src_install() {

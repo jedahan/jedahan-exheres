@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SCM_REPOSITORY="git://github.com/makerbot/${PN}.git"
-SCM_REVISION="a3c2e1470430f43c5577dad8b59903115ac99890"
+SCM_REVISION="b50d0e844626e227d7fd9bb723f3893c5309e8b0"
 
 require scm-git
 
@@ -37,7 +37,7 @@ src_compile() {
 
 src_install() {
     local dest=/opt/${PN}
-    cd dist/linux/replicatorg-
+    cd dist/linux/replicatorg*
 
     exeinto ${dest}
     doexe replicatorg

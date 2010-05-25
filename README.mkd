@@ -70,7 +70,7 @@ apps:
     sci-electronics/kicad
     sci-libs/cfitsio
     sys-apps/bleachbit
-    sys-auth/pam_ssh
+    sys-auth/pam\_ssh
     virtual/pd
     virtual/uninstall-fixes
     x11-drivers/linuxwacom

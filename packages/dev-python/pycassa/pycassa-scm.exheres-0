@@ -1,4 +1,5 @@
-
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
 
 SCM_REPOSITORY="git://github.com/vomjom/${PN}.git"
 
@@ -17,8 +18,4 @@ DEPENDENCIES="
 "
 
 BUGS_TO="jedahan@gmail.com"
-
-DEFAULT_SRC_CONFIGURE_PARAMS=( )
-DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( )
-DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( )
 

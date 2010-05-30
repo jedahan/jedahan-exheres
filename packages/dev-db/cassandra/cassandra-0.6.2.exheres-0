@@ -1,0 +1,56 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+# TODO: A good beer to anyone who can get this working
+require ant
+
+SUMMARY="highly scalable second-generation distributed database, bringing together Dynamo's fully
+distributed design and Bigtable's ColumnFamily-based data model"
+HOMEPAGE="http://cassandra.apache.org/"
+DOWNLOADS="mirror://apache/${PN}/${PV}/apache-${PNV}-src.tar.gz"
+
+LICENCES="Apache-2.0"
+SLOT="0"
+PLATFORMS="~amd64"
+DEPENDENCIES="
+    build:
+        dev-java/apache-ant        
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+WORK=${WORKBASE}/apache-${PNV}-src
+
+src_prepare() {
+  sydboxcmd sandunbox/net
+  default
+}
+
+src_compile() {
+  sydboxcmd sandunbox/net
+  ant_src_compile
+}
+
+src_install() {
+  sydboxcmd sandunbox/net
+  ant_src_install jar
+
+  dobin bin/*
+
+  java_do_jar lib/*.jar
+  java_do_jar build/apache-${PNV}.jar ${PN}.jar
+
+  insinto /etc/cassandra
+  doins conf/*.{properties,xml}
+
+  # Runtime dirs needed
+  dodir /var/log/cassandra/
+        /var/lib/cassandra/{commitlog,data}
+
+  edo chown -R cassandra:cassandra
+            "${IMAGE}/var/lib/cassandra"
+            "${IMAGE}/var/log/cassandra"
+
+  emagicdocs
+}
+

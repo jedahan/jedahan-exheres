@@ -1,0 +1,24 @@
+
+
+SCM_REPOSITORY="git://github.com/vomjom/${PN}.git"
+
+require distutils scm-git
+
+SUMMARY="Cassandra library for python"
+HOMEPAGE="http://github.com/vomjom/pycassa"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    run:
+        dev-libs/thrift
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( )
+DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( )
+

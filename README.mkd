@@ -1,5 +1,7 @@
 todo:
+    app-pda/spirit-linux
     media/codeswarm
+    media/libmonome
 
 apps:
     app-editors/diakonos
@@ -10,11 +12,14 @@ apps:
     app-text/ix
     app-text/pastie-simple
     base/nada
+    dev-db/cassandra
     dev-db/mongodb
     dev-java/jruby
     dev-libs/Mini-XML
     dev-libs/d-feet
     dev-libs/libbulletml
+    dev-libs/thrift
+    dev-python/pycassa
     dev-python/pyOSC
     dev-python/pyPortMidi
     dev-python/pybonjour

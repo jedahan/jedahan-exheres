@@ -76,6 +76,7 @@ apps:
     sci-libs/cfitsio
     sys-apps/bleachbit
     sys-auth/pam\_ssh
+    sys-fs/testdisk
     virtual/pd
     virtual/uninstall-fixes
     x11-drivers/linuxwacom

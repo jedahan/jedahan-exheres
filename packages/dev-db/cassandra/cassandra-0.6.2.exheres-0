@@ -1,7 +1,6 @@
 # Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-# TODO: A good beer to anyone who can get this working
 require ant
 
 SUMMARY="highly scalable second-generation distributed database, bringing together Dynamo's fully
@@ -15,6 +14,9 @@ PLATFORMS="~amd64"
 DEPENDENCIES="
     build:
         dev-java/apache-ant        
+        dev-java/apache-ivy
+        user/cassandra
+        group/cassandra
 "
 
 BUGS_TO="jedahan@gmail.com"
@@ -22,17 +24,11 @@ BUGS_TO="jedahan@gmail.com"
 WORK=${WORKBASE}/apache-${PNV}-src
 
 src_prepare() {
-  sydboxcmd sandunbox/net
-  default
-}
-
-src_compile() {
-  sydboxcmd sandunbox/net
-  ant_src_compile
+  edo rm -rf lib
+  #TODO: patch out dependencies from build.xml
 }
 
 src_install() {
-  sydboxcmd sandunbox/net
   ant_src_install jar
 
   dobin bin/*

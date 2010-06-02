@@ -19,3 +19,5 @@ DEPENDENCIES="
 
 BUGS_TO="jedahan@gmail.com"
 
+DISTUTILS_SRC_INSTALL_PARAMS=( --cassandra )
+

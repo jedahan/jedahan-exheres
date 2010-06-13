@@ -1,0 +1,30 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require waf
+
+MY_PNV="${PN}-v${PV}"
+SUMMARY="A convenient command and access tool, like Gnome-Do or Quicksilver"
+HOMEPAGE="http://kaizer.se/wiki/kupfer/"
+DOWNLOADS="http://kaizer.se/publicfiles/${PN}/${MY_PNV}.tar.gz"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    build+run:
+	dev-python/dbus-python
+	dev-python/keyring
+	gnome-bindings/pygobject[>=2.18]
+	gnome-bindings/pygtk[>=2.16]
+    recommendation:
+    	dev-python/python-keybinder
+        gnome-desktop/gnome-keyring
+    	gnome-desktop/gvfs
+	gnome-desktop/libwnck
+    	x11-apps/xdg-terminal
+"
+
+WORK="${WORKBASE}/${MY_PNV}"
+

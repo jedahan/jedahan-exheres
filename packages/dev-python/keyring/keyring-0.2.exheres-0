@@ -1,0 +1,19 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require pypi distutils [ python_dep=2.6 ]
+
+
+SUMMARY="Store and access your passwords safely"
+DESCRIPTION="
+The Python keyring lib provides a easy way to access the system keyring service
+from python. It can be used in any application that needs safe password storage
+It supports OSXKeychain, KDEKWallet, GnomeKeyring and (Un)CryptedFileKeyring.
+"
+HOMEPAGE="http://home.python-keyring.org/"
+LICENCES="PSF"
+SLOT="0"
+PLATFORMS="~amd64"
+
+BUGS_TO="jedahan@gmail.com"
+

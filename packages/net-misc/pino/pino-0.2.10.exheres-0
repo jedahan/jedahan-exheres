@@ -31,8 +31,6 @@ DEPENDENCIES="
     	dev-util/intltool
 "
 
-WORK="${WORKBASE}/test"
-
 src_prepare() {
     ! option indicate && edo sed -i -e 's|indicate|indicate-false|' wscript
 }

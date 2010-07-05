@@ -13,6 +13,7 @@ PLATFORMS="~amd64"
 MYOPTIONS="perl python ruby"
 
 DEPENDENCIES="
+  dev-libs/boost
   dev-libs/libevent
   sys-devel/bison
 "

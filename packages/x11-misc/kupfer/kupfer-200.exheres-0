@@ -12,9 +12,8 @@ LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
 
-#    recommendation:
+#   recommendation:
 #        x11-apps/xdg-terminal
-#   	 dev-python/python-keybinder
 DEPENDENCIES="
     build+run:
 	dev-python/dbus-python
@@ -26,6 +25,7 @@ DEPENDENCIES="
     recommendation:
         gnome-desktop/gnome-keyring
     	gnome-desktop/gvfs
+        dev-libs/keybinder
 	gnome-desktop/libwnck
 "
 

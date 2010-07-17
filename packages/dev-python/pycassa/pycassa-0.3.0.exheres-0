@@ -1,0 +1,22 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require distutils
+
+SUMMARY="Cassandra library for python"
+HOMEPAGE="http://github.com/vomjom/pycassa"
+DOWNLOADS="http://github.com/downloads/vomjom/${PN}/${PNV}.tar.gz"
+
+LICENCES="MIT"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEPENDENCIES="
+    run:
+        dev-libs/thrift
+"
+
+BUGS_TO="jedahan@gmail.com"
+
+DISTUTILS_SRC_INSTALL_PARAMS=( --cassandra )
+

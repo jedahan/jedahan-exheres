@@ -6,7 +6,7 @@
 require waf googlecode [ project=pino-twitter ]
 
 SUMMARY="Twitter and Identi.ca desktop client written in Vala"
-HOMEPAGE+=="http://pino-app.appspot.com/"
+HOMEPAGE+=" http://pino-app.appspot.com/"
 
 LICENCES="LGPL-3"
 SLOT="0"
@@ -15,21 +15,23 @@ MYOPTIONS="indicate"
 
 DEPENDENCIES="
     build+run:
+        app-spell/gtkspell
+        base/libgee[>=0.5.0]
         dev-libs/glib[>=2.14]
-    	x11-libs/gtk+[>=2.10]
-    	base/libgee[>=0.5.0]
-    	x11-libs/libnotify
-    	gnome-desktop/libsoup:2.4
-    	dev-libs/libxml2:2.0
-    	net-libs/webkit-gtk[>=1.1]
-    	dev-libs/unique
-    	app-spell/gtkspell
-    	indicate? ( dev-libs/libindicate )
+        dev-libs/libxml2:2.0
+        dev-libs/unique
+        gnome-desktop/libsoup:2.4
+        net-libs/webkit-gtk[>=1.1]
+        x11-libs/gtk+[>=2.10]
+        x11-libs/libnotify
+        indicate? ( dev-libs/libindicate )
     build:
-    	dev-lang/vala[>=0.7.9]
-    	sys-devel/gettext
-    	dev-util/intltool
+        dev-lang/vala[>=0.9]
+        dev-util/intltool
+        sys-devel/gettext
 "
+
+WORK="${WORKBASE}/${PN}-0.2.10"
 
 src_prepare() {
     ! option indicate && edo sed -i -e 's|indicate|indicate-false|' wscript

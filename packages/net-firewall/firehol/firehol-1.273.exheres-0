@@ -30,6 +30,7 @@ UPSTREAM_DOCUMENTATION="http://${PN}.sourceforge.net/support.html"
 LICENCES="GPL-2"
 PLATFORMS="~amd64"
 SLOT="0"
+MYOPTIONS="baselayout"
 
 DEPENDENCIES="
     build+run:
@@ -44,7 +45,7 @@ src_install() {
     insinto /etc/firehol/examples
     doins examples/*
 
-    newconfd "${FILES}"/firehol.conf.d firehol
+    option baselayout && newconfd "${FILES}"/firehol.conf.d firehol
 
     dodoc ChangeLog README TODO WhatIsNew
 
@@ -53,7 +54,7 @@ src_install() {
 
     doman man/*.1 man/*.5
 
-    newinitd "${FILES}"/firehol.initrd firehol
+    option baselayout && newinitd "${FILES}"/firehol.initrd firehol
 }
 
 pkg_postinst() {

@@ -12,13 +12,13 @@ LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS="3G baselayout bluetooth debug dhclient dnsproxy doc ethernet policykit ppp
-threads tools udev wifi" #TODO: modemmanager ofono ospm resolvconf wimax
+threads tools udev wifi"
 RESTRICT="test"
 
 DEPENDENCIES="
     build+run:
         dev-libs/glib[>=2.16]
-        sys-apps/dbus[>=1.2]
+        sys-apps/dbus[>=1.2.24]
         bluetooth?    ( net-wireless/bluez )
         dhclient?     ( net-misc/dhcp )
         policykit?    ( sys-auth/PolicyKit:0[>=0.7] )
@@ -31,8 +31,8 @@ DEPENDENCIES="
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( 
     --localstatedir=/var
-    --enable-{client,datafiles,fake,loopback}
-    --disable-{iospm,udhcp,iwmx}
+    --enable-{client,datafiles,fake,loopback=builtin}
+    --disable-{iospm,hh2serial-gps,portal,meego,openconnect,iwmx,capng,ofono}
 )
 
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 
@@ -45,8 +45,7 @@ src_install() {
     emake DESTDIR="${IMAGE}" install
     dobin client/cm
 
-    keepdir /var/lib{,64}/${PN}
-    keepdir /usr/lib{,64}/${PN}/scripts
+    keepdir /var/$(get_libdir)/${PN}
     if option baselayout ; then
         newinitd "${FILES}"/${PN}.initd ${PN}
         newconfd "${FILES}"/${PN}.confd ${PN}

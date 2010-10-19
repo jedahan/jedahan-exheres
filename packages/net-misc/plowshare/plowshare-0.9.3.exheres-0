@@ -1,0 +1,42 @@
+# Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require googlecode [ suffix=tgz ]
+
+SUMMARY="Command-line downloader and uploader for file-sharing websites"
+
+LICENCES="GPL-3"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="javascript view-captcha"
+
+BUGS_TO="jedahan@gmail.com"
+
+DEPENDENCIES="
+    run:
+        app-text/recode
+        app-text/tesseract[linguas:en]
+        media-gfx/ImageMagick[tiff]
+        net-misc/curl
+    suggestion:
+        media-libs/libcaca
+        dev-libs/spidermonkey [[ description = [ zshare and mediafire support ] ]]
+"
+
+src_install() {
+    exeinto /usr/share/${PN}
+    doexe src/{download,upload,delete,list,lib}.sh
+    insinto /usr/share/${PN}
+    doins -r src/modules src/tesseract
+
+    dodir /usr/bin/
+    dosym /usr/share/${PN}/download.sh /usr/bin/plowdown
+    dosym /usr/share/${PN}/upload.sh /usr/bin/plowup
+    dosym /usr/share/${PN}/delete.sh /usr/bin/plowdel
+    dosym /usr/share/${PN}/list.sh /usr/bin/plowlist
+
+    chmod +x /usr/bin/plow{down,up,del,list}
+
+    emagicdocs
+}
+

@@ -20,7 +20,7 @@ DEPENDENCIES="
         net-misc/curl
     suggestion:
         media-libs/libcaca
-        dev-lang/spidermonkey [[ description = [ zshare and mediafire support ] ]]
+        dev-libs/spidermonkey [[ description = [ zshare and mediafire support ] ]]
 "
 
 src_install() {

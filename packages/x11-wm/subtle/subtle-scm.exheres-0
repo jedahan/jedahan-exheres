@@ -24,11 +24,9 @@ PLATFORMS="~amd64"
 
 DEPENDENCIES="
     build+run:
-        dev-lang/ruby[>=1.8]
+        dev-lang/ruby[>=1.9]
         dev-ruby/rake[>=0.8]
         x11-libs/libX11
-    recommendation:
-        dev-ruby/sur
 "
 
 src_configure() {

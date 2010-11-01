@@ -16,16 +16,16 @@ DEPENDENCIES="
     run:
         app-text/recode
         app-text/tesseract[linguas:en]
-        media-gfx/ImageMagick[tiff]
+        media-gfx/ImageMagick[tiff][perl]
         net-misc/curl
     suggestion:
         media-libs/libcaca
-        dev-libs/spidermonkey [[ description = [ zshare and mediafire support ] ]]
+        dev-libs/spidermonkey [[ description = [ badongo, zshare and mediafire support ] ]]
 "
 
 src_install() {
     exeinto /usr/share/${PN}
-    doexe src/{download,upload,delete,lib}.sh
+    doexe src/{download,upload,delete,list,lib}.sh
     insinto /usr/share/${PN}
     doins -r src/modules src/tesseract
 
@@ -33,7 +33,9 @@ src_install() {
     dosym /usr/share/${PN}/download.sh /usr/bin/plowdown
     dosym /usr/share/${PN}/upload.sh /usr/bin/plowup
     dosym /usr/share/${PN}/delete.sh /usr/bin/plowdel
-    chmod +x /usr/bin/plow{down,up,del}
+    dosym /usr/share/${PN}/list.sh /usr/bin/plowlist
+
+    chmod +x /usr/bin/plow{down,up,del,list}
 
     emagicdocs
 }

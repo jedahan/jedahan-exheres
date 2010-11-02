@@ -11,7 +11,7 @@ DOWNLOADS="http://ftp.easysw.com/pub/mxml/${PV}/${MY_PNV}.tar.gz"
 
 LICENCES="Mini-XML"
 SLOT="0"
-PLATFORMS="~amd64"
+PLATFORMS="~amd64 ~x86"
 MYOPTIONS="threads"
 
 WORK="${WORKBASE}/${MY_PNV}"

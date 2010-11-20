@@ -3,7 +3,7 @@
 
 require pcsxr
 
-DOWNLOADS="http://download.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=pcsxr&DownloadId=140521&FileTime=129254829621800000&Build=17027"
+DOWNLOADS="http://download.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=pcsxr&DownloadId=140521&FileTime=129254829621800000&Build=17358 -> ${PNV}.tar.bz2"
 
 PLATFORMS="~amd64"
 

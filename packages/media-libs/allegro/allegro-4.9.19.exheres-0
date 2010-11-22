@@ -35,7 +35,7 @@ MYOPTIONS="
     sndfile [[ description = [ WAV/AIFF/FLAC audio codec support ] ]]
     truetype
     vorbis
-    X
+    X [[ requires = opengl ]]
 
     ( jpeg opengl png truetype ) [[ requires = X ]]
 "

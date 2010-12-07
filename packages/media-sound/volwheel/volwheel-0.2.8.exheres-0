@@ -1,9 +1,8 @@
 # Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require perl-module
+require perl-module googlecode [ project=olwtools suffix=tar.gz ]
 
-MY_PNV=${PNV}-fixed
 SUMMARY="Tray icon to change volume with the mouse"
 DESCRIPTION="
 VolWheel is a little application which lets you control the sound volume easily
@@ -11,33 +10,21 @@ through a tray icon you can scroll on. It is written in Perl/Gtk2 and works
 both for ALSA and OSS. You can configure it quickly through its configuration
 interface.
 "
-HOMEPAGE="http://oliwer.net/b/volwheel.html"
-DOWNLOADS="http://olwtools.googlecode.com/files/${MY_PNV}.tar.gz"
 
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
-    run:
+    build:
         dev-lang/perl
+    run:
         dev-perl/Gtk2-Perl
         dev-perl/Gtk2-TrayIcon
         sys-sound/alsa-utils
 "
 
-WORK="${WORKBASE}/${MY_PNV}"
-
 src_install() {
-    dobin volwheel
-
-    insinto /usr/share/${PN}
-    doins -r icons
-
-    perlinfo
-    insinto ${VENDOR_LIB}
-    doins lib/*.pm
-
-    emagicdocs
+     edo ./install.pl --prefix=/usr --destdir=${IMAGE}
 }
 

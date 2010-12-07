@@ -1,7 +1,8 @@
 # Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require sourceforge [[ suffix=tar.gz ]]
+MY_PN=${PN/client}
+require sourceforge [[ suffix=tar.gz project=pptpclient ]]
 SUMMARY="Linux client for PPTP"
 DESCRIPTION="
 PPTP Client is a Linux, FreeBSD, NetBSD and OpenBSD client for the proprietary 

@@ -2,6 +2,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
 MY_PNV=${PNV/P/p}
+require ant googlecode
+
 SUMMARY="Easy to use language and ide for digital artists"
 DESCRIPTION="
 Processing is an open source programming language and environment for people 
@@ -12,7 +14,6 @@ visual context and to serve as a software sketchbook and professional production
 tool.
 "
 HOMEPAGE="http://processing.org"
-DOWNLOADS="${HOMEPAGE}/download/${MY_PNV}.tgz"
 
 LICENCES="GPL-2"
 SLOT="0"
@@ -26,13 +27,4 @@ DEPENDENCIES="
 BUGS_TO="jedahan@gmail.com"
 
 WORK=${WORKBASE}/${MY_PNV}
-
-src_install() {
-    dodir /usr/{share/{applications,java/processing},bin/}
-    insinto /usr/share/java/processing
-    doins -r *
-    dobin ${FILES}/processing
-    insinto /usr/share/applications
-    doins ${FILES}/processing.desktop
-}
 

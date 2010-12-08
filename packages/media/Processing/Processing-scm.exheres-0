@@ -1,8 +1,8 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-MY_PNV=${PNV/P/p}
-require ant googlecode
+SCM_REPOSITORY="http://processing.googlecode.com/svn"
+require ant googlecode scm-svn
 
 SUMMARY="Easy to use language and ide for digital artists"
 DESCRIPTION="
@@ -19,12 +19,14 @@ LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
 
+WORK="${WORK}/processing/build"
+
 DEPENDENCIES="
+    build:
+        dev-java/apache-ant[ant_tasks:antlr]
     run:
         virtual/jdk
 "
 
 BUGS_TO="jedahan@gmail.com"
-
-WORK=${WORKBASE}/${MY_PNV}
 

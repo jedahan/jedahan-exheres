@@ -25,20 +25,19 @@ PLATFORMS="~amd64"
 DEPENDENCIES="
     build+run:
         dev-lang/ruby[>=1.9]
-        dev-ruby/rake[>=0.8]
         x11-libs/libX11
 "
 
 src_configure() {
-    edo rake destdir="${IMAGE}" config
+    edo rake1.9 destdir="${IMAGE}" config
 }
 
 src_compile() {
-    edo rake build
+    edo rake1.9 build
 }
 
 src_install() {
-    edo rake install
+    edo rake1.9 install
     emagicdocs
 }
 

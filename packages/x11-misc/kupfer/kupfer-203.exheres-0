@@ -11,22 +11,23 @@ DOWNLOADS="http://kaizer.se/publicfiles/${PN}/${MY_PNV}.tar.gz"
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS="keyring"
 
 #   recommendation:
 #        x11-apps/xdg-terminal
 DEPENDENCIES="
     build+run:
-	dev-python/dbus-python
-	dev-python/keyring
-	dev-libs/libxml2[python]
-	dev-python/pyxdg
-	gnome-bindings/pygobject[>=2.18]
-	gnome-bindings/pygtk[>=2.16]
+	    dev-python/dbus-python
+	    dev-libs/libxml2[python]
+	    dev-python/pyxdg
+	    gnome-bindings/pygobject[>=2.18]
+	    gnome-bindings/pygtk[>=2.16]
+        keyring? ( dev-python/keyring )
     recommendation:
         gnome-desktop/gnome-keyring
     	gnome-desktop/gvfs
         dev-libs/keybinder
-	gnome-desktop/libwnck
+	    gnome-desktop/libwnck
 "
 
 WORK="${WORKBASE}/${MY_PNV}"

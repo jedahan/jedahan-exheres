@@ -3,7 +3,6 @@
 
 require pypi distutils [ python_dep=2.6 ]
 
-
 SUMMARY="Store and access your passwords safely"
 DESCRIPTION="
 The Python keyring lib provides a easy way to access the system keyring service

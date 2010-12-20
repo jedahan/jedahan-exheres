@@ -23,9 +23,28 @@ SLOT="0"
 PLATFORMS="~amd64"
 
 DEPENDENCIES="
+    build:
+        dev-ruby/rake[>=0.8]
     build+run:
         dev-lang/ruby[>=1.9]
-        x11-libs/libX11
+        x11-libs/libX11[>=6.8.2]
+    recommendation:
+        dev-ruby/curb[>=0.5.1.0] [[ 
+          description = [ required for sur ] 
+          group-name = [ subtle-sur ]
+        ]]
+        dev-ruby/archive-tar-minitar[>=0.5.2] [[ 
+          description = [ required for sur ] 
+          group-name = [ subtle-sur ]
+        ]]
+        dev-ruby/datamapper[>=0.9.11] [[
+          description = [ to serve sublets with surserver ]
+          group-name = [ subtle-surserver ]
+        ]]
+        dev-ruby/sinatra[>=0.9.4] [[
+          description = [ to serve subtlets with surserver ]
+          group-name = [ subtle-surserver ]
+        ]]
 "
 
 src_configure() {

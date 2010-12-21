@@ -1,7 +1,7 @@
 # Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require waf
+require freedesktop-desktop freedesktop-mime waf
 
 MY_PNV="${PN}-v${PV}"
 SUMMARY="A convenient command and access tool, like Gnome-Do or Quicksilver"
@@ -11,7 +11,8 @@ DOWNLOADS="http://kaizer.se/publicfiles/${PN}/${MY_PNV}.tar.gz"
 LICENCES="GPL-3"
 SLOT="0"
 PLATFORMS="~amd64"
-MYOPTIONS="keyring"
+MYOPTIONS="gmail keyring
+           gnome [[ description = [ install nautilus extension ] ]]"
 
 #   recommendation:
 #        x11-apps/xdg-terminal
@@ -23,6 +24,9 @@ DEPENDENCIES="
 	    gnome-bindings/pygobject[>=2.18]
 	    gnome-bindings/pygtk[>=2.16]
         keyring? ( dev-python/keyring )
+    run:
+        gmail? ( dev-python/gdata )
+        gnome? ( gnome-desktop/nautilus ) 
     recommendation:
         gnome-desktop/gnome-keyring
     	gnome-desktop/gvfs
@@ -31,4 +35,14 @@ DEPENDENCIES="
 "
 
 WORK="${WORKBASE}/${MY_PNV}"
+
+src_configure() {
+    WAF_SRC_CONFIGURE_PARAMS=(
+        --no-update-mime
+        --no-runtime-deps
+        $(option !gnome && echo --no-install-nautilus-extension)
+    )
+
+  waf_src_configure
+}
 

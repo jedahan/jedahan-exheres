@@ -2,12 +2,11 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SL_PATCH="sl5-1.patch"
-
 SUMMARY="Sophisticated graphical program which corrects your miss typing"
 HOMEPAGE="http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/ http://www.izumix.org.uk/sl/"
-DOWNLOADS="http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/sl/${PN}.tar
-	http://www.linet.gr.jp/~izumi/sl/${SL_PATCH}
-	http://www.sodan.ecc.u-tokyo.ac.jp/~okayama/sl/${PN}.en.1.gz"
+DOWNLOADS="
+  http://www.tkl.iis.u-tokyo.ac.jp/~toyoda/sl/${PN}.tar
+  http://www.izumix.org.uk/sl/${SL_PATCH}"
 
 LICENCES="freedist"
 SLOT="0"
@@ -15,20 +14,14 @@ PLATFORMS="~amd64"
 
 DEPENDENCIES="sys-libs/ncurses"
 
-WORK=${WORKDIR}/${PN}
+WORK=${WORKBASE}/${PN}
 
-DEFAULT_SRC_PREPARE_PATCHES="(${SL_PATCH})"
-
-#src_prepare() {
-#	epatch "${DISTDIR}/${SL_PATCH}"
-#	epatch "${FILESDIR}/${P}-gentoo.diff"
-#	epatch "${FILESDIR}/Makefile.patch"
-#	epatch "${FILESDIR}/fix_compilation.patch"
-#}
+DEFAULT_SRC_PREPARE_PATCHES=(
+    ${FETCHEDDIR}/${SL_PATCH}
+    ${FILES}/fix_compilation.patch
+    ${FILES}/Makefile.patch )
 
 src_install() {
 	dobin sl
-
-	doman "${WORKDIR}/sl.en.1" sl.1
-	dodoc sl.txt
+	emagicdocs
 }

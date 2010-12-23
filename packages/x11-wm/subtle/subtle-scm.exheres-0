@@ -27,7 +27,7 @@ DEPENDENCIES="
         dev-ruby/rake[>=0.8]
     build+run:
         dev-lang/ruby[>=1.9]
-        dev-libs/libX11[>=1.3.6]
+        x11-libs/libX11[>=1.3.6]
     recommendation:
         dev-ruby/curb[>=0.5.1.0] [[ 
           description = [ required for sur ] 
@@ -37,6 +37,7 @@ DEPENDENCIES="
           description = [ required for sur ] 
           group-name = [ subtle-sur ]
         ]]
+    suggestion:
         dev-ruby/datamapper[>=0.9.11] [[
           description = [ to serve sublets with surserver ]
           group-name = [ subtle-surserver ]

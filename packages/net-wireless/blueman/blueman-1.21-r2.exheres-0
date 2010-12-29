@@ -30,7 +30,7 @@ DEPENDENCIES="
         sys-apps/dbus
         virtual/notification-daemon
         gnome? ( gnome-bindings/gnome-python[gconf] )
-        policykit? ( gnome-desktop/PolicyKit-gnome )
+        policykit? ( gnome-desktop/polkit-gnome )
         pulseaudio? ( media-sound/pulseaudio[>=0.9.15] )
 "
 

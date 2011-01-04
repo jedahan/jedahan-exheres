@@ -29,12 +29,12 @@ DEPENDENCIES="
         dev-lang/ruby[>=1.9]
         x11-libs/libX11[xcb(+)]
     recommendation:
-        dev-ruby/curb[>=0.5.1.0] [[ 
-          description = [ required for sur ] 
+        dev-ruby/curb[>=0.5.1.0] [[
+          description = [ required for sur ]
           group-name = [ subtle-sur ]
         ]]
-        dev-ruby/archive-tar-minitar[>=0.5.2] [[ 
-          description = [ required for sur ] 
+        dev-ruby/archive-tar-minitar[>=0.5.2] [[
+          description = [ required for sur ]
           group-name = [ subtle-sur ]
         ]]
     suggestion:

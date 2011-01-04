@@ -27,7 +27,7 @@ DEPENDENCIES="
         dev-ruby/rake[>=0.8]
     build+run:
         dev-lang/ruby[>=1.9]
-        x11-libs/libX11[xcb]
+        x11-libs/libX11[xcb(+)]
     recommendation:
         dev-ruby/curb[>=0.5.1.0] [[ 
           description = [ required for sur ] 

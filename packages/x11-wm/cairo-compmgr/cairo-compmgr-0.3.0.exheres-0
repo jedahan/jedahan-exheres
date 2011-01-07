@@ -12,7 +12,7 @@ PLATFORMS="~amd64"
 DEPENDENCIES="
     x11-libs/gtk+:2
     x11-libs/cairo
-    dev-lang/vala:0
+    dev-lang/vala
     x11-libs/pixman
     build:
         x11-proto/glproto"

@@ -15,4 +15,4 @@ DEPENDENCIES="
     dev-lang/vala:0
     x11-libs/pixman
     build:
-        >=x11-proto/glproto-1.4.9"
+        x11-proto/glproto"

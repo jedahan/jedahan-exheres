@@ -9,6 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
+MYOPTIONS="keyring"
 
 DEPENDENCIES="
     build+run:

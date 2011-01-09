@@ -7,7 +7,7 @@ SUMMARY="Simple Painting for Gtk"
 HOMEPAGE="http://pinta-project.com"
 DOWNLOADS="http://github.com/downloads/jpobst/${PN/p/P}/${PNV}.tar.gz"
 
-LICENSE="MIT"
+LICENCES="MIT"
 SLOT="0"
 PLATFORMS="~amd64"
 

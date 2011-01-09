@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 SCM_REPOSITORY="git://github.com/makerbot/${PN}.git"
-SCM_REVISION="b50d0e844626e227d7fd9bb723f3893c5309e8b0"
+SCM_BRANCH="release-${PV/0}"
 
 require scm-git
 

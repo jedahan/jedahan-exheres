@@ -8,7 +8,7 @@ export CLASSPATH="${JAVA_PATH}/lib/rt.jar:${JAVA_PATH}/lib/tools.jar:${JAVA_PATH
 
 # export processing library paths
 for LIB in ${PROCESSING_PATH}/lib/*.jar; do
-	export CLASSPATH="${CLASSPATH}:${LIB}"
+    export CLASSPATH="${CLASSPATH}:${LIB}"
 done
 
 # set user.dir to correct working directory

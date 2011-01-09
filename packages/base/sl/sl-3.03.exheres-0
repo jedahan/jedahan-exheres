@@ -22,6 +22,6 @@ DEFAULT_SRC_PREPARE_PATCHES=(
     ${FILES}/Makefile.patch )
 
 src_install() {
-	dobin sl
-	emagicdocs
+    dobin sl
+    emagicdocs
 }

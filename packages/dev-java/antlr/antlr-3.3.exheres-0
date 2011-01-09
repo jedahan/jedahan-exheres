@@ -34,57 +34,57 @@ src_install() {
 }
 
 #antlr3() {
-#	local cp="${S}/bootstrap:${S}/tool/src/main/resources/"
-#	edo java -cp "${cp}":$(java-pkg_getjars antlr,stringtemplate) org.antlr.Tool "${@}"
+#    local cp="${S}/bootstrap:${S}/tool/src/main/resources/"
+#    edo java -cp "${cp}":$(java-pkg_getjars antlr,stringtemplate) org.antlr.Tool "${@}"
 #}
 
 # Uses maven so let's just do things manully for now
 # when bumping use jardiff and apicheck to make sure
 # produced jars are good
 #src_compile() {
-#	einfo "Bootstrapping antlr3 with bundled sources"
-#	cd tool/src/main/antlr2/org/antlr/grammar/v2/ || die
-#	# the command line only takes one at a time
-#	for grammar in *.g; do
-#		antlr2 ${grammar} || die
-#	done
+#    einfo "Bootstrapping antlr3 with bundled sources"
+#    cd tool/src/main/antlr2/org/antlr/grammar/v2/ || die
+#    # the command line only takes one at a time
+#    for grammar in *.g; do
+#        antlr2 ${grammar} || die
+#    done
 #
-#	cd "${S}" || die
-#	mkdir bootstrap || die
-#	build_antlr bootstrap
+#    cd "${S}" || die
+#    mkdir bootstrap || die
+#    build_antlr bootstrap
 #
-#	einfo "Building v3 grammars with boostrapped antlr"
-#	local v3dir=tool/src/main/antlr/org/antlr/grammar/v3/
-#	rm -v "${v3dir}"/*.java || die
-#	antlr3 "${v3dir}"/*.g
+#    einfo "Building v3 grammars with boostrapped antlr"
+#    local v3dir=tool/src/main/antlr/org/antlr/grammar/v3/
+#    rm -v "${v3dir}"/*.java || die
+#    antlr3 "${v3dir}"/*.g
 #
-#	mkdir build || die
-#	cp -r "${S}"/tool/src/main/resources/* build || die
-#	build_antlr build
+#    mkdir build || die
+#    cp -r "${S}"/tool/src/main/resources/* build || die
+#    build_antlr build
 #
-#	if use gunit; then
-#		einfo "building gunit"
-#		antlr3 gunit/src/main/antlr3/org/antlr/gunit/*.g
+#    if use gunit; then
+#        einfo "building gunit"
+#        antlr3 gunit/src/main/antlr3/org/antlr/gunit/*.g
 #
-#		find gunit -name "*.java" > "${T}/gunit" || die
-#		ejavac -d build -cp $(java-pkg_getjars stringtemplate,junit-4):build \
-#			"@${T}/gunit"
+#        find gunit -name "*.java" > "${T}/gunit" || die
+#        ejavac -d build -cp $(java-pkg_getjars stringtemplate,junit-4):build \
+#            "@${T}/gunit"
 #
-#		cp -vr gunit/src/main/resources/org build || die
-#	fi
+#        cp -vr gunit/src/main/resources/org build || die
+#    fi
 #
-#	# jar things up
-#	cd build
-#	find -type f >> "${T}/classes" || die
-#	jar cf ${PN}3.jar "@${T}/classes" || die "jar failed"
+#    # jar things up
+#    cd build
+#    find -type f >> "${T}/classes" || die
+#    jar cf ${PN}3.jar "@${T}/classes" || die "jar failed"
 #}
 #
 #src_install() {
-#	# Single jar like upstream
-#	java-pkg_dojar build/antlr3.jar
-#	java-pkg_dolauncher antlr3 --main org.antlr.Tool
-#	use gunit && java-pkg_dolauncher gunit --main org.antlr.gunit.Interp
+#    # Single jar like upstream
+#    java-pkg_dojar build/antlr3.jar
+#    java-pkg_dolauncher antlr3 --main org.antlr.Tool
+#    use gunit && java-pkg_dolauncher gunit --main org.antlr.gunit.Interp
 #
-#	use source && java-pkg_dosrc tool/src/main/org \
-#		runtime/Java/src/main/java/org/
+#    use source && java-pkg_dosrc tool/src/main/org \
+#        runtime/Java/src/main/java/org/
 #}

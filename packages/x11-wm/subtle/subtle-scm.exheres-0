@@ -49,15 +49,15 @@ DEPENDENCIES="
 "
 
 src_configure() {
-    edo rake1.9 destdir="${IMAGE}" config
+    edo rake destdir="${IMAGE}" config
 }
 
 src_compile() {
-    edo rake1.9 build
+    edo rake build
 }
 
 src_install() {
-    edo rake1.9 install
+    edo rake install
     emagicdocs
 }
 

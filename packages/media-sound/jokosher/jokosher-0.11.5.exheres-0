@@ -3,11 +3,10 @@
 # Based upon 'jokosher-0.11.1.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-require gnome-2 freedesktop-mime distutils [ python_dep=2.4 ]
+require gnome-2 freedesktop-mime distutils [ python_dep=2.4 ] launchpad [ branch=trunk ]
 
 SUMMARY="A simple yet powerful multi-track studio"
 HOMEPAGE="http://www.jokosher.org"
-DOWNLOADS="http://launchpad.net/jokosher/0.11/${PV}/+download/${PNV}.tar.gz"
 
 BUGS_TO="jedahan@gmail.com"
 
@@ -39,7 +38,7 @@ DEPENDENCIES="
 
 PYTHON_MODNAME="Jokosher"
 
-DEFAULT_SRC_PREPARE_PATCHES=${FILES}/${PN}-0.11.1-update-database.patch
+DEFAULT_SRC_PREPARE_PATCHES=( ${FILES}/${PN}-0.11.1-update-database.patch )
 
 pkg_postinst() {
     freedesktop-mime_update_mime_database

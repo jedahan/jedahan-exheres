@@ -4,7 +4,7 @@
 SUMMARY="Minecraft is a game about placing blocks while running from skeletons"
 HOMEPAGE="http://www.minecraft.net"
 
-DOWNLOADS="http://www.minecraft.net/download/minecraft.jar?v=1297980924687 -> ${PN}.jar"
+DOWNLOADS="http://www.minecraft.net/download/minecraft.jar?v=1298416791616 -> ${PN}.jar"
 
 SLOT="0"
 PLATFORMS="~amd64"

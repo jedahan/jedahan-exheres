@@ -1,3 +1,3 @@
 #!/bin/sh
 cd "/opt/Minecraft-bin"
-java -Xmx1024M -Xms512M -cp "Minecraft-bin.jar" net.minecraft.LauncherFrame
+exec java -Xmx1024M -Xms512M -cp "Minecraft-bin.jar" net.minecraft.LauncherFrame "${@}"

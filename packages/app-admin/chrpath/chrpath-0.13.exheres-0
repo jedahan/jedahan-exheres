@@ -1,0 +1,16 @@
+# Copyright 2011 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="chrpath can modify the rpath and runpath of ELF executables"
+HOMEPAGE="http://directory.fsf.org/project/chrpath/"
+# original upstream no longer exists (ftp://ftp.hungry.com/pub/hungry)
+DOWNLOADS="http://ftp.tux.org/pub/X-Windows/ftp.hungry.com/${PN}/${PNV}.tar.gz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/${PNV}-testsuite.patch )
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --hates=docdir )
+

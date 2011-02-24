@@ -1,0 +1,13 @@
+# Copyright 2011 Jonathan Dahan <jedahan@gmail.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require distutils [ python_dep=2.5 ]
+
+SUMMARY="Python Lex-Yacc library"
+HOMEPAGE="http://www.dabeaz.com/ply/ http://pypi.python.org/pypi/ply"
+DOWNLOADS="http://www.dabeaz.com/ply/${PNV}.tar.gz"
+
+LICENCES="BSD"
+SLOT="0"
+PLATFORMS="~amd64"
+

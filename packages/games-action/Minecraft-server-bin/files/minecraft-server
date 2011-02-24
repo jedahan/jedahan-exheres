@@ -1,3 +1,0 @@
-#!/bin/sh
-cd "/opt/Minecraft-server-bin"
-java -Xmx1024M -Xms1024M -jar "Minecraft-server-bin.jar" nogui

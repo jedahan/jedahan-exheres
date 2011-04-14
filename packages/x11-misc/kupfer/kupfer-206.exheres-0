@@ -1,7 +1,7 @@
 # Copyright 2010, 2011 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require freedesktop-desktop freedesktop-mime waf
+require freedesktop-desktop freedesktop-mime gtk-icon-cache waf
 
 MY_PNV="${PN}-v${PV}"
 SUMMARY="A convenient command and access tool, like Gnome-Do or Quicksilver"
@@ -31,7 +31,7 @@ DEPENDENCIES="
         gnome-desktop/gnome-keyring
         gnome-desktop/gvfs
         dev-libs/keybinder
-        gnome-desktop/libwnck
+        gnome-bindings/gnome-python-desktop[wnck]
 "
 
 WORK="${WORKBASE}/${MY_PNV}"

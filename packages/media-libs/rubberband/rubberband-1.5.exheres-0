@@ -1,8 +1,6 @@
 # Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require multilib
-
 SUMMARY="An audio time-stretching and pitch-shifting library and utility program"
 HOMEPAGE="http://www.breakfastquay.com/rubberband/"
 DOWNLOADS="http://code.breakfastquay.com/attachments/download/1/${PNV}.tar.bz2"
@@ -22,10 +20,10 @@ DEPENDENCIES="
 DEFAULT_SRC_INSTALL_PARAMS=(
     INSTALL_BINDIR="${IMAGE}/usr/bin" \
     INSTALL_INCDIR="${IMAGE}/usr/include/rubberband" \
-    INSTALL_LIBDIR="${IMAGE}/usr/$(get_libdir)" \
-    INSTALL_LADSPADIR="${IMAGE}/usr/$(get_libdir)/ladspa" \
+    INSTALL_LIBDIR="${IMAGE}/usr/${LIBDIR}" \
+    INSTALL_LADSPADIR="${IMAGE}/usr/${LIBDIR}/ladspa" \
     INSTALL_LRDFDIR="${IMAGE}/usr/share/ladspa/rdf" \
-    INSTALL_PKGDIR="${IMAGE}/usr/$(get_libdir)/pkgconfig"
+    INSTALL_PKGDIR="${IMAGE}/usr/${LIBDIR}/pkgconfig"
 )
 
 BUGS_TO="jedahan@gmail.com"

@@ -20,6 +20,6 @@ DEPENDENCIES="
 BUGS_TO="jedahan@gmail.com"
 
 src_configure() {
-    edo ./configure --config=RELASE --prefix=/usr --libdir=/usr/$(get_libdir)
+    edo ./configure --config=RELASE --prefix=/usr --libdir=/usr/${LIBDIR}
 }
 

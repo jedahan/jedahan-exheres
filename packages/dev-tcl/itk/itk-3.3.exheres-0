@@ -1,7 +1,7 @@
 # Copyright 2009 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require multilib sourceforge [ project=incrtcl pnv=${PN}${PV} suffix=tar.gz ]
+require sourceforge [ project=incrtcl pnv=${PN}${PV} suffix=tar.gz ]
 
 SUMMARY="Object Oriented Enhancements for Tcl/Tk"
 HOMEPAGE="http://incrtcl.sourceforge.net/"
@@ -17,8 +17,8 @@ DEPENDENCIES="
 
 WORK="${WORKBASE}"/${PN}${PV}
 
-DEFAULT_SRC_CONFIGURE_PARAMS=( 
-    --with-itcl=/usr/$(get_libdir)
+DEFAULT_SRC_CONFIGURE_PARAMS=(
+    --with-itcl=/usr/${LIBDIR}
     --hates=docdir
 )
 

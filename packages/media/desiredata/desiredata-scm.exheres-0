@@ -3,7 +3,7 @@
 
 SCM_REPOSITORY="https://pure-data.svn.sourceforge.net/svnroot/pure-data/"
 SCM_SUBPATH="pd"
-require scm-svn multilib autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
+require scm-svn autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 
 SUMMARY="Pure Data fork with enhanced GUI and core"
 HOMEPAGE="http://artengine.ca/desiredata/"
@@ -23,7 +23,7 @@ DEFAULT_SRC_COMPILE_PARAMS=( STRIP=true )
 
 src_install() {
     default
-    insinto /usr/$(get_libdir)/pd/
+    insinto /usr/${LIBDIR}/pd/
     doins -r "${WORKBASE}"/${PNV}/tcl
     edo find "${IMAGE}" -type d -name ".svn" | xargs rm -rf
 }

@@ -1,7 +1,7 @@
 # Copyright 2010 Jonathan Dahan <jedahan@gmail.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require multilib sourceforge [ project=vamp suffix=tar.gz ]
+require sourceforge [ project=vamp suffix=tar.gz ]
 
 SUMMARY="Audio processing plugin system for plugins that extract descriptive information from audio data"
 HOMEPAGE="http://www.vamp-plugins.org"
@@ -20,13 +20,13 @@ DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/missing-header.patch )
 
 src_prepare() {
     default
-    edo sed -i -e "s:/usr/lib/vamp:/usr/$(get_libdir)/vamp:" src/vamp-hostsdk/PluginHostAdapter.cpp
+    edo sed -i -e "s:/usr/lib/vamp:/usr/${LIBDIR}/vamp:" src/vamp-hostsdk/PluginHostAdapter.cpp
 }
 
 DEFAULT_SRC_INSTALL_PARAMS=(
-    INSTALL_SDK_LIBS="/usr/$(get_libdir)" \
-    INSTALL_PKGCONFIG="/usr/$(get_libdir)/pkgconfig" \
-    INSTALL_PLUGINS="/usr/$(get_libdir)/vamp"
+    INSTALL_SDK_LIBS="/usr/${LIBDIR}" \
+    INSTALL_PKGCONFIG="/usr/${LIBDIR}/pkgconfig" \
+    INSTALL_PLUGINS="/usr/${LIBDIR}/vamp"
 )
 
 src_install() {

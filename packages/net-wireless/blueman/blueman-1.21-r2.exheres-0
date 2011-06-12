@@ -3,7 +3,7 @@
 # Based in part upon 'blueman-1.10.ebuild', which is:
 #   Copyright 1999-2009 Gentoo Foundation
 
-require launchpad [ branch=1.2 ] multilib python
+require launchpad [ branch=1.2 ] python
 
 SUMMARY="GTK+ Bluetooth Manager, designed to be simple and intuitive for everyday bluetooth tasks."
 LICENCES="GPL-3"
